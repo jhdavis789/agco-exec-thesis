@@ -190,14 +190,43 @@ td.gold { color: var(--gold-400); }
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <span class="exhibit-num">Exhibit 1b</span>
+        <h3>Market Share — Global Large Ag Fleet</h3>
+        <canvas id="c1-global-share" style="max-height:220px"></canvas>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <span class="exhibit-num">Exhibit 1c</span>
+        <h3>Market Share by Region</h3>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div style="flex:1;text-align:center">
+            <canvas id="c1-region-na" style="max-height:160px"></canvas>
+            <div style="font-size:10px;color:var(--text-muted);margin-top:4px">North America — $57B</div>
+          </div>
+          <div style="flex:1;text-align:center">
+            <canvas id="c1-region-eu" style="max-height:160px"></canvas>
+            <div style="font-size:10px;color:var(--text-muted);margin-top:4px">Europe — $48B</div>
+          </div>
+          <div style="flex:1;text-align:center">
+            <canvas id="c1-region-sa" style="max-height:160px"></canvas>
+            <div style="font-size:10px;color:var(--text-muted);margin-top:4px">South America — $18B</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="card">
     <h3>Brand Portfolio</h3>
     <table>
-      <tr><th>Brand</th><th>Positioning</th><th>Geography</th><th class="r">Key Metric</th></tr>
-      <tr><td class="blue"><strong>Fendt</strong></td><td>Premium large ag — "the Porsche of tractors"</td><td>Europe (Germany #1)</td><td class="r blue">24%+ German share, ~17% margin</td></tr>
-      <tr><td><strong>Massey Ferguson</strong></td><td>Global value workhorse</td><td>140+ countries</td><td class="r">Broadest global reach</td></tr>
-      <tr><td><strong>Valtra</strong></td><td>Nordic / South America specialist</td><td>Finland, Brazil</td><td class="r">Strong in forestry + SA</td></tr>
-      <tr><td class="teal"><strong>PTx Trimble</strong></td><td>Precision ag retrofit (85% owned)</td><td>Global — brand agnostic</td><td class="r teal">$860M rev, ~30% EBITDA margin</td></tr>
+      <tr><th>Brand</th><th>Positioning</th><th>Geography</th><th class="r">% Rev</th><th class="r">Est % EBIT</th></tr>
+      <tr><td class="blue"><strong>Fendt</strong></td><td>Premium large ag — "the Porsche of tractors"</td><td>Europe (Germany #1)</td><td class="r blue">~45%</td><td class="r blue">~60%</td></tr>
+      <tr><td><strong>Massey Ferguson</strong></td><td>Global value workhorse</td><td>140+ countries</td><td class="r">~30%</td><td class="r">~12%</td></tr>
+      <tr><td><strong>Valtra</strong></td><td>Nordic / South America specialist</td><td>Finland, Brazil</td><td class="r">~9%</td><td class="r">~3%</td></tr>
+      <tr><td class="teal"><strong>PTx Trimble</strong></td><td>Precision ag retrofit (85% owned)</td><td>Global — brand agnostic</td><td class="r teal">~8.5%</td><td class="r teal">~25%</td></tr>
     </table>
   </div>
   <div class="callout">67% of revenue and virtually all profit is European. North America is losing money at trough (-6.7% margin) but that is the recovery opportunity. Fendt generates premium margins even in a downturn. PTx Trimble is the hidden asset — $860M of brand-agnostic precision ag revenue at 30% margins.</div>
@@ -268,7 +297,7 @@ td.gold { color: var(--gold-400); }
     <div class="col">
       <div class="card">
         <span class="exhibit-num">Exhibit 5</span>
-        <h3>Net Farm Income ($B) vs Deere Revenue ($B)</h3>
+        <h3>Net Farm Income ($B) vs Deere & AGCO Revenue ($B)</h3>
         <canvas id="c3-macro" style="max-height:300px"></canvas>
         <div class="source">Correlation: Farm Income → Equipment Revenue r=0.854</div>
       </div>
@@ -290,6 +319,7 @@ td.gold { color: var(--gold-400); }
       <tr><td><strong>Canada Combine Sales</strong></td><td class="green">YTD Feb 2026: +85.5% YoY</td><td class="green">First positive volume signal — leads US by 6-12mo</td></tr>
       <tr><td><strong>US 100+ HP Tractors</strong></td><td class="red">17,648 units (-36% from peak)</td><td>Still depressed, but comps get easier H2 2026</td></tr>
       <tr><td><strong>Net Farm Income</strong></td><td>$180B (2025E, with payments)</td><td>Stable with government support; $109B without</td></tr>
+      <tr><td><strong>Farm Profitability</strong></td><td class="red">Median farm income: -$1,498 (2025)</td><td class="red">&gt;50% of farm households lose money on operations; 55% of crop farms had negative OPM in 2024</td></tr>
       <tr><td><strong>Corn Price</strong></td><td>$4.35/bu (breakeven $4.90-5.60)</td><td class="red">Below production cost — squeezing farmers</td></tr>
       <tr><td><strong>Farm Bankruptcies</strong></td><td>315 filings (+46% YoY)</td><td class="gold">Elevated but manageable (peak was 599 in 2019)</td></tr>
     </table>
@@ -362,42 +392,76 @@ td.gold { color: var(--gold-400); }
 <!-- ═══════════════════════════════════════════════════ -->
 <div class="slide" id="s5">
   <div class="slide-title">Thesis 1: Customers Are <span>Generationally Locked In</span></div>
-  <div class="slide-subtitle">80% of farmers hope to transfer their operation to the next generation. The brand on the hood persists across decades. This is the stickiest customer base in industrial equipment.</div>
+  <div class="slide-subtitle">Ag equipment has the highest switching costs in industrials. Farmers defer purchases — they don't switch brands. Revenue fell 30% in 2024–25; FCF hit a record. The installed base is the business.</div>
 
   <div class="metrics">
-    <div class="metric"><div class="label">Avg Farmer Age</div><div class="value">57.5</div><div class="detail">US average (USDA)</div></div>
+    <div class="metric"><div class="label">Brand Repurchase</div><div class="value blue">70–85%</div><div class="detail">Industry est., Deere high end</div></div>
     <div class="metric"><div class="label">Succession Intent</div><div class="value green">80%</div><div class="detail">Plan to transfer to next gen</div></div>
-    <div class="metric"><div class="label">Fendt Share (DE)</div><div class="value blue">24%+</div><div class="detail">And growing at trough</div></div>
-    <div class="metric"><div class="label">PTx Dealer Network</div><div class="value teal">2,500+</div><div class="detail">Locations (incl. Deere dealers)</div></div>
+    <div class="metric"><div class="label">Tractor Useful Life</div><div class="value">15–25 yr</div><div class="detail">Parts & service every year</div></div>
+    <div class="metric"><div class="label">2025 Trough FCF</div><div class="value teal">$740M</div><div class="detail">Record — on 30% lower revenue</div></div>
   </div>
 
   <div class="row">
     <div class="col">
       <div class="card">
-        <h3>Why Customers Don't Switch — 5 Lock-In Layers</h3>
-        <table>
-          <tr><th>Lock-In Type</th><th>Mechanism</th></tr>
-          <tr><td class="blue"><strong>Financial</strong></td><td>Loss on trade-in value, obsolete parts inventory (~$50-100K sunk), re-training costs</td></tr>
-          <tr><td class="blue"><strong>Procedural</strong></td><td>Time to evaluate alternatives, learning curve on new equipment, dealer relationship establishment</td></tr>
-          <tr><td class="blue"><strong>Relational</strong></td><td>Institutional knowledge from current dealer, personal relationships built over years/decades, trusted service history</td></tr>
-          <tr><td class="blue"><strong>Psychological</strong></td><td>Multi-generational brand loyalty — "Deere family" or "Fendt family." 80% of farmers hope to transfer operation. Brand persists across generations.</td></tr>
-          <tr><td class="teal"><strong>Technology</strong></td><td>Data migration (yield maps, planting prescriptions, field boundaries), guidance calibration, prescription transfer. <strong>This layer is GROWING.</strong></td></tr>
-        </table>
+        <span class="exhibit-num">Exhibit 9</span>
+        <h3>Lifetime Economics of a Tractor Sale</h3>
+        <div style="display:flex;gap:24px;align-items:stretch;">
+          <div style="flex:1"><canvas id="c5-lifetime-rev" style="max-height:250px"></canvas></div>
+          <div style="flex:1"><canvas id="c5-lifetime-profit" style="max-height:250px"></canvas></div>
+        </div>
+        <div style="color:var(--text-secondary);font-size:11px;margin-top:10px;line-height:1.5">
+          A $500K tractor sale creates $420K+ of aftermarket revenue over its 20-year life. The initial sale is <strong>54%</strong> of lifetime revenue but only <strong>18%</strong> of lifetime gross profit. Parts & service carry 35–70% margins vs 5–15% on the iron. <em>Dealers don't make money selling tractors — they make money servicing the installed base.</em>
+        </div>
       </div>
     </div>
     <div class="col">
       <div class="card">
-        <span class="exhibit-num">Exhibit 9</span>
-        <h3>Recovery Return — AGCO Outperforms (24-Month %)</h3>
-        <canvas id="c5-recovery" style="max-height:260px"></canvas>
-      </div>
-      <div class="callout-teal callout" style="margin-top:16px">
-        <strong>The critical insight:</strong> Tractor brands are sticky today because of <em>physical</em> lock-in — parts, dealers, operator familiarity. In 5 years, the <em>software platform</em> will be stickier than the iron. The farmer who builds 5 years of yield data, planting prescriptions, and field maps on a precision ag platform has switching costs that compound every season.
+        <span class="exhibit-num">Exhibit 9b</span>
+        <h3>Proof: Revenue Down, FCF Up — Installed Base Durability</h3>
+        <canvas id="c5-fcf-proof" style="max-height:250px"></canvas>
+        <div style="color:var(--text-secondary);font-size:11px;margin-top:10px;line-height:1.5">
+          When farmers defer new equipment, they <em>maintain and repair</em> existing machines — aftermarket demand actually increases in downturns. Revenue declined 30% from peak; FCF hit a record $740M via working capital release and durable parts income.
+        </div>
       </div>
     </div>
   </div>
-  <div class="callout"><strong>For the user to extend:</strong> Add churn data, dealer retention rates, customer survey data, and specific examples of multi-generational brand loyalty from expert calls.</div>
-  <div class="source">Source: USDA Census of Agriculture, AGCO 10-K, industry expert interviews | JAOD Analysis</div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <h3>Five Lock-In Layers — Why Farmers Don't Switch</h3>
+        <table>
+          <tr><th style="width:22%">Layer</th><th>Mechanism</th><th style="width:22%">Switching Cost</th></tr>
+          <tr><td class="blue"><strong>Financial</strong></td><td>Trade-in discount on entire fleet, obsolete parts inventory, re-training mechanics</td><td class="r"><strong>$50–100K+</strong></td></tr>
+          <tr><td class="blue"><strong>Geographic</strong></td><td>50–100 mi service radius; 1–2 brand choices per county. Can't trial a tractor mid-harvest.</td><td class="r"><strong>Local monopoly</strong></td></tr>
+          <tr><td class="blue"><strong>Relational</strong></td><td>Dealer knows equipment history, maintenance habits, operational needs. Decades of trust.</td><td class="r"><strong>Non-transferable</strong></td></tr>
+          <tr><td class="blue"><strong>Identity</strong></td><td>"My grandfather bought Deere, my father bought Deere, I buy Deere." 80% plan to pass operation to next gen.</td><td class="r"><strong>2–3+ generations</strong></td></tr>
+          <tr><td class="teal"><strong>Data (growing)</strong></td><td>Years of yield maps, planting prescriptions, field boundaries on one platform. Migration is painful to impossible.</td><td class="r"><strong>Compounds yearly</strong></td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="col" style="flex:0 0 340px">
+      <div class="card">
+        <h3>Dealer P&L — Where the Profit Is</h3>
+        <table>
+          <tr><th>Source</th><th class="r">% Rev</th><th class="r">Gross Margin</th></tr>
+          <tr><td>New equipment</td><td class="r">50–60%</td><td class="r">5–15%</td></tr>
+          <tr><td>Used equipment</td><td class="r">15–20%</td><td class="r">10–15%</td></tr>
+          <tr><td class="teal"><strong>Parts</strong></td><td class="r">15–20%</td><td class="r teal"><strong>35–45%</strong></td></tr>
+          <tr><td class="teal"><strong>Service/labor</strong></td><td class="r">8–12%</td><td class="r teal"><strong>60–70%</strong></td></tr>
+        </table>
+        <div style="color:var(--text-secondary);font-size:11px;margin-top:10px;line-height:1.5">
+          Parts generate <strong>4x</strong> the net profit of new equipment sales. A single tractor sale creates a 15–20 year parts & service annuity for the dealer. This is why dealer territories are worth millions and why new entrants can't replicate the network.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout-teal callout">
+    <strong>The stickiness evolution:</strong> Today, lock-in is <em>physical</em> — parts inventory, dealer proximity, operator familiarity. Tomorrow, the precision ag <em>software platform</em> will be stickier than the iron. The farmer who builds 5 years of yield data and planting prescriptions on a platform has switching costs that compound every season. AGCO retrofits competitors' machines with PTx tech (2,500+ dealer locations, incl. Deere dealers) → captures their data → converts them to AGCO equipment at next replacement cycle.
+  </div>
+  <div class="source">Source: USDA Census of Agriculture (2022), AGCO 10-K (2025), Deere 10-K, industry dealer economics | JAOD Analysis</div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════ -->
@@ -418,8 +482,25 @@ td.gold { color: var(--gold-400); }
     <div class="col">
       <div class="card">
         <span class="exhibit-num">Exhibit 11</span>
-        <h3>Global Fleet — 65% Is NOT Deere</h3>
-        <canvas id="c6-fleet" style="max-height:280px"></canvas>
+        <h3>The Installed Base: 50M+ Tractors, 73% Unpenetrated</h3>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="flex:1">
+            <canvas id="c6-fleet" style="max-height:200px"></canvas>
+          </div>
+          <div style="flex:1">
+            <canvas id="c6-penetration" style="max-height:200px"></canvas>
+          </div>
+        </div>
+        <table style="margin-top:14px;font-size:11px">
+          <tr><th>Region</th><th class="r">Tractors</th><th class="r">Precision Ag Adoption</th><th class="r">Source</th></tr>
+          <tr><td>United States</td><td class="r">3.78M (1.25M &gt;100HP)</td><td class="r blue">27% all farms; 70% large</td><td class="r" style="color:var(--text-muted)">USDA Census 2022</td></tr>
+          <tr><td>Europe</td><td class="r">8-10M</td><td class="r gold">~30-40% large farms</td><td class="r" style="color:var(--text-muted)">World Bank / CEMA</td></tr>
+          <tr><td>India</td><td class="r">9.7M</td><td class="r red">&lt;5%</td><td class="r" style="color:var(--text-muted)">TMA India 2023</td></tr>
+          <tr><td>China (large/med)</td><td class="r">5.5M</td><td class="r red">&lt;10%</td><td class="r" style="color:var(--text-muted)">CEIC 2023</td></tr>
+          <tr><td>Brazil</td><td class="r">~1.2M</td><td class="r gold">~15-20% large farms</td><td class="r" style="color:var(--text-muted)">FAO + sales data</td></tr>
+          <tr><td style="border-top:2px solid var(--navy-800)"><strong>Global Total</strong></td><td class="r" style="border-top:2px solid var(--navy-800)"><strong>~50M+</strong></td><td class="r" style="border-top:2px solid var(--navy-800);color:var(--red-500)"><strong>&lt;15% globally</strong></td><td class="r" style="border-top:2px solid var(--navy-800)"></td></tr>
+        </table>
+        <div style="color:var(--teal-500);font-size:11px;margin-top:8px;font-weight:600">AGCO's own data: only 7% of farmers buy new equipment each year. 90% of PTx retrofit items go onto non-AGCO equipment. The other 93% is the TAM.</div>
       </div>
     </div>
   </div>
@@ -455,7 +536,7 @@ td.gold { color: var(--gold-400); }
   </div>
   <div class="callout"><strong>The platform play:</strong> AGCO retrofits a CNH or "other" tractor with PTx guidance and Precision Planting hardware. The farmer builds 3-5 years of yield data, planting prescriptions, and field maps on AGCO's platform. When that old tractor needs replacing, the switching cost is now <em>away from the AGCO platform</em>, not away from the old tractor brand. This is how you convert 65% of the global fleet from competitors to AGCO customers — one retrofit at a time.</div>
   <div class="callout-gold callout" style="margin-top:12px"><strong>The AI tailwind:</strong> I don't think the market has appropriately priced AI disruption in ag tech. In the next 12 months, examples of AI-driven precision ag (computer vision spraying, autonomous operations, yield prediction) will accelerate. This is <em>bullish for AGCO</em> because: (1) AI commoditizes the sensor layer — hardware becomes interchangeable, (2) platforms become easier to build and iterate on, (3) AGCO's open ecosystem benefits from AI faster than Deere's closed one, (4) but pure tech companies still can't enter because you need the heavy iron and the dealer network. SymphonyVision Duo already delivers 77% herbicide savings in beta — this catches up to Deere's See &amp; Spray.</div>
-  <div class="source">Source: AGCO 10-K, PTx Trimble filings, expert interviews, Deere 10-K | JAOD Analysis</div>
+  <div class="source">Source: AGCO 10-K, AGCO 2024 Analyst Day (SEC 8-K), PTx Trimble filings, USDA Census of Agriculture 2022, CEIC, TMA India, World Bank/FAO, expert interviews, Deere 10-K | JAOD Analysis</div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════ -->
@@ -610,6 +691,43 @@ function initS1() {
       }
     }
   });
+
+  // Global fleet share (doughnut)
+  new Chart(document.getElementById('c1-global-share'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Deere (~35%)', 'CNH (~25%)', 'AGCO (~15%)', 'Others (~25%)'],
+      datasets: [{ data: [35, 25, 15, 25], backgroundColor: [GRAY, COPPER, PRIMARY, '#D4D0C8'], borderWidth: 0 }]
+    },
+    options: { plugins: { legend: { position: 'bottom' } } }
+  });
+
+  // Regional share (three pie charts)
+  const regionPieOpts = (title) => ({
+    plugins: {
+      legend: { display: false },
+      title: { display: true, text: title, font: { size: 10, weight: 600 }, color: '#1C2B3A' },
+      tooltip: { callbacks: { label: (ctx) => ctx.label + ': ' + ctx.parsed + '%' } }
+    }
+  });
+  const regionLabels = ['Deere', 'CNH', 'AGCO', 'Others'];
+  const regionColors = [GRAY, COPPER, PRIMARY, '#D4D0C8'];
+
+  new Chart(document.getElementById('c1-region-na'), {
+    type: 'pie',
+    data: { labels: regionLabels, datasets: [{ data: [55, 28, 12, 5], backgroundColor: regionColors, borderWidth: 1, borderColor: '#fff' }] },
+    options: regionPieOpts('North America')
+  });
+  new Chart(document.getElementById('c1-region-eu'), {
+    type: 'pie',
+    data: { labels: regionLabels, datasets: [{ data: [18, 22, 22, 38], backgroundColor: regionColors, borderWidth: 1, borderColor: '#fff' }] },
+    options: regionPieOpts('Europe')
+  });
+  new Chart(document.getElementById('c1-region-sa'), {
+    type: 'pie',
+    data: { labels: regionLabels, datasets: [{ data: [22, 28, 28, 22], backgroundColor: regionColors, borderWidth: 1, borderColor: '#fff' }] },
+    options: regionPieOpts('South America')
+  });
 }
 
 // ── SLIDE 2 ──
@@ -667,9 +785,11 @@ function initS3() {
     data: {
       labels: macroYears,
       datasets: [
-        { label: 'Net Farm Income ($B)', data: [80, 114, 92, 67, 83, 121, 186, 155], backgroundColor: GREEN+'80', borderRadius: 4, yAxisID: 'y', order: 2 },
+        { label: 'Net Farm Income ($B)', data: [80, 114, 92, 67, 83, 121, 186, 155], backgroundColor: GREEN+'80', borderRadius: 4, yAxisID: 'y', order: 3 },
         { label: 'Deere Revenue ($B)', data: [26.0, 36.2, 36.1, 26.6, 37.4, 35.5, 52.6, 40.0], type: 'line',
-          borderColor: PRIMARY, pointRadius: 5, pointBackgroundColor: PRIMARY, borderWidth: 2.5, yAxisID: 'y1', order: 1 }
+          borderColor: PRIMARY, pointRadius: 5, pointBackgroundColor: PRIMARY, borderWidth: 2.5, yAxisID: 'y1', order: 1 },
+        { label: 'AGCO Revenue ($B)', data: [6.9, 10.0, 9.7, 7.4, 9.4, 9.2, 12.7, 11.7], type: 'line',
+          borderColor: TEAL, pointRadius: 5, pointBackgroundColor: TEAL, borderWidth: 2.5, borderDash: [5, 3], yAxisID: 'y2', order: 2 }
       ]
     },
     options: {
@@ -677,6 +797,7 @@ function initS3() {
       scales: {
         y: { grid: { color: GRID }, title: { display: true, text: 'Farm Income ($B)' } },
         y1: { grid: { display: false }, title: { display: true, text: 'Deere Rev ($B)' }, position: 'right' },
+        y2: { grid: { display: false }, title: { display: true, text: 'AGCO Rev ($B)' }, position: 'right', min: 0, max: 16 },
         x: { grid: { display: false } }
       }
     }
@@ -750,20 +871,100 @@ function initS4() {
 
 // ── SLIDE 5 ──
 function initS5() {
-  new Chart(document.getElementById('c5-recovery'), {
+  // Lifetime revenue breakdown (mid-point estimates, 20-year tractor life)
+  new Chart(document.getElementById('c5-lifetime-rev'), {
     type: 'bar',
     data: {
-      labels: ['2009\nRecovery', '2016\nRecovery', '2020\nRecovery'],
+      labels: ['Revenue ($K)'],
       datasets: [
-        { label: 'AGCO', data: [150, 73, 250], backgroundColor: PRIMARY, borderRadius: 4 },
-        { label: 'CNH', data: [120, 172, 200], backgroundColor: TEAL, borderRadius: 4 },
-        { label: 'Deere', data: [100, 158, 180], backgroundColor: COPPER, borderRadius: 4 }
+        { label: 'Tractor Sale', data: [500], backgroundColor: GRAY, borderRadius: 4 },
+        { label: 'Parts (20yr)', data: [225], backgroundColor: PRIMARY, borderRadius: 4 },
+        { label: 'Service (20yr)', data: [115], backgroundColor: TEAL, borderRadius: 4 },
+        { label: 'Tech Subs (20yr)', data: [35], backgroundColor: COPPER, borderRadius: 4 },
+        { label: 'Financing', data: [45], backgroundColor: NAVY, borderRadius: 4 }
       ]
     },
     options: {
-      plugins: { legend: { position: 'bottom' } },
+      indexAxis: 'y',
+      plugins: {
+        title: { display: true, text: 'Revenue ($K)', font: { size: 11 }, color: GRAY },
+        legend: { display: true, position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } },
+        tooltip: { callbacks: { label: function(c) { return c.dataset.label + ': $' + c.raw + 'K'; } } }
+      },
       scales: {
-        y: { grid: { color: GRID }, title: { display: true, text: '24-Month Return (%)' } },
+        x: { stacked: true, grid: { color: GRID }, title: { display: false }, max: 950 },
+        y: { stacked: true, grid: { display: false }, display: false }
+      }
+    }
+  });
+
+  // Lifetime gross profit breakdown
+  new Chart(document.getElementById('c5-lifetime-profit'), {
+    type: 'bar',
+    data: {
+      labels: ['Gross Profit ($K)'],
+      datasets: [
+        { label: 'Tractor Sale', data: [50], backgroundColor: GRAY, borderRadius: 4 },
+        { label: 'Parts', data: [90], backgroundColor: PRIMARY, borderRadius: 4 },
+        { label: 'Service', data: [75], backgroundColor: TEAL, borderRadius: 4 },
+        { label: 'Tech Subs', data: [28], backgroundColor: COPPER, borderRadius: 4 },
+        { label: 'Financing', data: [30], backgroundColor: NAVY, borderRadius: 4 }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      plugins: {
+        title: { display: true, text: 'Gross Profit ($K)', font: { size: 11 }, color: GRAY },
+        legend: { display: false },
+        tooltip: { callbacks: { label: function(c) { return c.dataset.label + ': $' + c.raw + 'K (' + [10,40,65,80,67][c.datasetIndex] + '% margin)'; } } }
+      },
+      scales: {
+        x: { stacked: true, grid: { color: GRID }, title: { display: false }, max: 300 },
+        y: { stacked: true, grid: { display: false }, display: false }
+      }
+    }
+  });
+
+  // FCF proof — revenue down 30%, FCF at record
+  const fcfCtx = document.getElementById('c5-fcf-proof');
+  new Chart(fcfCtx, {
+    type: 'bar',
+    data: {
+      labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+      datasets: [
+        {
+          label: 'Revenue ($B)',
+          data: [9.1, 11.1, 12.7, 14.4, 11.7, 10.1],
+          backgroundColor: PRIMARY + '30',
+          borderColor: PRIMARY,
+          borderWidth: 1,
+          borderRadius: 4,
+          yAxisID: 'y',
+          order: 2
+        },
+        {
+          label: 'Free Cash Flow ($M)',
+          type: 'line',
+          data: [627, 390, 450, 585, 297, 740],
+          borderColor: TEAL,
+          backgroundColor: TEAL,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          borderWidth: 2.5,
+          tension: 0,
+          yAxisID: 'y1',
+          order: 1
+        }
+      ]
+    },
+    options: {
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } },
+        tooltip: { callbacks: { label: function(c) { return c.datasetIndex === 0 ? 'Revenue: $' + c.raw + 'B' : 'FCF: $' + c.raw + 'M'; } } }
+      },
+      scales: {
+        y: { position: 'left', grid: { color: GRID }, title: { display: true, text: 'Revenue ($B)', font: { size: 10 } }, min: 0, max: 18 },
+        y1: { position: 'right', grid: { display: false }, title: { display: true, text: 'FCF ($M)', font: { size: 10 } }, min: 0, max: 900 },
         x: { grid: { display: false } }
       }
     }
@@ -796,17 +997,35 @@ function initS6() {
   new Chart(document.getElementById('c6-fleet'), {
     type: 'doughnut',
     data: {
-      labels: ['Deere (~35%)', 'CNH (~25%)', 'AGCO (~15%)', 'Others (~25%)'],
+      labels: ['Deere (~25%)', 'CNH (~20%)', 'AGCO (~12%)', 'Others (~43%)'],
       datasets: [{
-        data: [35, 25, 15, 25],
+        data: [25, 20, 12, 43],
         backgroundColor: [GRAY, COPPER, PRIMARY, '#D4D0C8'],
-        borderWidth: 0
+        borderWidth: 1, borderColor: '#fff'
       }]
     },
     options: {
       plugins: {
-        legend: { position: 'bottom' },
-        title: { display: true, text: '65% of global fleet needs retrofit — AGCO\'s TAM', font: { size: 11, weight: 600 }, color: GREEN }
+        legend: { position: 'bottom', labels: { boxWidth: 8, font: { size: 9 } } },
+        title: { display: true, text: 'Global Fleet by OEM (~50M+ tractors)', font: { size: 10, weight: 600 }, color: '#1C2B3A' }
+      }
+    }
+  });
+
+  new Chart(document.getElementById('c6-penetration'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Has Precision Ag (~15%)', 'No Precision Ag (~85%)'],
+      datasets: [{
+        data: [15, 85],
+        backgroundColor: [GREEN, '#E8E5E0'],
+        borderWidth: 1, borderColor: '#fff'
+      }]
+    },
+    options: {
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 8, font: { size: 9 } } },
+        title: { display: true, text: 'Global Precision Ag Penetration', font: { size: 10, weight: 600 }, color: '#1C2B3A' }
       }
     }
   });
