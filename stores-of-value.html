@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stores of Value: A Civilizational History</title>
+<meta name="description" content="A research dashboard tracing what humans have used to preserve wealth across 5,000 years — what survived, what failed, and exactly why.">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --ink-900: #0E0B07; --ink-800: #1A140C; --ink-700: #2A2117;
+  --parchment: #FAF6EE; --parchment-2: #F2EAD8; --parchment-3: #E8DCC2;
+  --rule: #C9B98F; --rule-soft: #DCCDA7;
+  --gold-900: #6B4A12; --gold-700: #8E6418; --gold-500: #B7892C;
+  --gold-400: #D2A845; --gold-300: #E6C36B; --gold-100: #F5E6B7;
+  --silver-500: #8C9099; --silver-300: #BFC4CC;
+  --copper-600: #8C4A2A; --copper-500: #B86639;
+  --bronze-600: #6E4923; --bronze-500: #8C5E2D;
+  --jade-600: #2F6B52; --jade-500: #3F8A6B;
+  --crimson-700: #7A1B1B; --crimson-500: #B23030;
+  --indigo-700: #2A3766; --indigo-500: #495E9E;
+  --good: #2F6B52; --bad: #7A1B1B; --mixed: #8E6418;
+  --text: #1A140C; --text-soft: #5A4F3E; --text-mute: #8B7E66;
+  --card: #FFFCF5; --card-border: #E0D2A8;
+  --shadow-sm: 0 1px 2px rgba(40,28,8,.06), 0 1px 3px rgba(40,28,8,.04);
+  --shadow-md: 0 4px 14px rgba(40,28,8,.08), 0 2px 4px rgba(40,28,8,.05);
+  --serif: 'Source Serif 4', Georgia, serif;
+  --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--sans); background: var(--parchment);
+  color: var(--text); line-height: 1.65;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(183,137,44,.06) 0, transparent 40%),
+    radial-gradient(circle at 88% 92%, rgba(74,55,18,.05) 0, transparent 50%);
+}
+
+/* ---------------- Nav ---------------- */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250,246,238,.92); backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule-soft);
+  display: flex; align-items: center; gap: 18px;
+  padding: 10px 20px; overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav-brand {
+  font-family: var(--serif); font-size: 15px; font-weight: 600;
+  color: var(--ink-800); white-space: nowrap; padding-right: 16px;
+  border-right: 1px solid var(--rule-soft);
+}
+.nav-brand .gilt { color: var(--gold-700); }
+.nav-links { display: flex; gap: 4px; align-items: center; }
+.nav a {
+  color: var(--text-soft); text-decoration: none; font-size: 13px;
+  padding: 6px 10px; border-radius: 6px; white-space: nowrap;
+  transition: all .15s ease;
+}
+.nav a:hover { color: var(--gold-700); background: var(--parchment-2); }
+
+/* ---------------- Layout ---------------- */
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+section { padding: 64px 0; border-bottom: 1px solid var(--rule-soft); }
+section:last-of-type { border-bottom: none; }
+.eyebrow {
+  font-family: var(--sans); font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1.6px;
+  color: var(--gold-700); margin-bottom: 12px;
+}
+h1, h2, h3, h4 { font-family: var(--serif); color: var(--ink-900); }
+h1 { font-size: clamp(34px, 5.4vw, 56px); line-height: 1.05; font-weight: 600; letter-spacing: -.01em; }
+h2 { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.15; font-weight: 600; margin-bottom: 10px; }
+h3 { font-size: clamp(18px, 2vw, 22px); line-height: 1.25; font-weight: 600; }
+h4 { font-size: 15px; font-weight: 600; }
+p { font-size: 15.5px; color: var(--text-soft); }
+.lede { font-size: 18px; line-height: 1.55; color: var(--text); max-width: 64ch; }
+.section-intro { max-width: 72ch; margin-bottom: 32px; }
+.section-intro p { font-size: 16px; }
+
+/* ---------------- Hero ---------------- */
+.hero {
+  padding: 96px 0 64px;
+  background:
+    linear-gradient(180deg, transparent 0, rgba(230,195,107,.05) 100%),
+    repeating-linear-gradient(135deg, transparent 0, transparent 24px, rgba(183,137,44,.025) 24px, rgba(183,137,44,.025) 25px);
+}
+.hero h1 .gilt {
+  background: linear-gradient(90deg, var(--gold-700) 0, var(--gold-400) 50%, var(--gold-700) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero .lede { margin-top: 22px; }
+.hero-meta { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 32px 48px; }
+.hero-meta .stat { }
+.hero-meta .stat-num {
+  font-family: var(--serif); font-size: clamp(28px, 3.8vw, 40px);
+  font-weight: 600; color: var(--gold-700); line-height: 1;
+}
+.hero-meta .stat-lab {
+  font-size: 12px; color: var(--text-mute); text-transform: uppercase;
+  letter-spacing: 1px; margin-top: 6px;
+}
+
+/* ---------------- Cards / grids ---------------- */
+.grid { display: grid; gap: 18px; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 880px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  section { padding: 48px 0; }
+  .hero { padding: 64px 0 40px; }
+}
+.card {
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: 10px; padding: 22px; box-shadow: var(--shadow-sm);
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.card:hover { box-shadow: var(--shadow-md); }
+.card h3 { margin-bottom: 6px; }
+.card .meta { font-size: 12px; color: var(--text-mute); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.card p { font-size: 14.5px; }
+.card p + p { margin-top: 8px; }
+
+/* Verdict pill */
+.verdict {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px;
+  text-transform: uppercase; letter-spacing: .8px; margin-bottom: 6px;
+}
+.verdict.good { background: rgba(47,107,82,.10); color: var(--good); }
+.verdict.bad { background: rgba(122,27,27,.10); color: var(--bad); }
+.verdict.mixed { background: rgba(142,100,24,.13); color: var(--mixed); }
+.verdict::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+/* ---------------- Comparison ---------------- */
+.compare {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1px solid var(--card-border); border-radius: 12px;
+  overflow: hidden; background: var(--card);
+}
+.compare > div { padding: 26px 24px; }
+.compare > div + div { border-left: 1px solid var(--card-border); }
+.compare h3 { margin-bottom: 14px; }
+.compare h3 .ic {
+  display: inline-block; width: 26px; height: 26px; border-radius: 6px;
+  margin-right: 8px; vertical-align: -6px;
+}
+.compare .sov h3 .ic { background: linear-gradient(135deg, var(--gold-400), var(--gold-700)); }
+.compare .cur h3 .ic { background: linear-gradient(135deg, var(--silver-300), var(--silver-500)); }
+.compare ul { list-style: none; }
+.compare li {
+  padding: 8px 0; font-size: 14.5px; color: var(--text-soft);
+  border-bottom: 1px dashed var(--rule-soft);
+  display: grid; grid-template-columns: 110px 1fr; gap: 12px;
+}
+.compare li:last-child { border-bottom: none; }
+.compare li b { color: var(--ink-800); font-weight: 600; font-size: 13px; }
+@media (max-width: 700px) {
+  .compare { grid-template-columns: 1fr; }
+  .compare > div + div { border-left: none; border-top: 1px solid var(--card-border); }
+  .compare li { grid-template-columns: 1fr; gap: 2px; }
+}
+
+.tension {
+  margin-top: 22px; padding: 20px 22px; border-radius: 10px;
+  background: linear-gradient(180deg, rgba(230,195,107,.10), rgba(230,195,107,.04));
+  border: 1px solid var(--rule-soft);
+}
+.tension b { color: var(--gold-900); }
+
+/* ---------------- Tree (civilizational branches) ---------------- */
+.tree-frame {
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: 12px; padding: 18px; overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+}
+.tree-svg-wrap { min-width: 980px; }
+.tree-svg { width: 100%; height: auto; display: block; }
+.tree-legend { display: flex; flex-wrap: wrap; gap: 14px 20px; margin-top: 14px; font-size: 12.5px; color: var(--text-soft); }
+.tree-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.tree-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
+
+/* ---------------- Civilization sections ---------------- */
+.civ {
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: 14px; padding: 26px; box-shadow: var(--shadow-sm);
+}
+.civ + .civ { margin-top: 18px; }
+.civ-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 14px; margin-bottom: 4px; }
+.civ-head h3 { font-size: 22px; }
+.civ-head .span {
+  font-size: 12px; color: var(--text-mute); text-transform: uppercase;
+  letter-spacing: 1.2px; font-weight: 500;
+}
+.civ-tagline { color: var(--text-soft); font-size: 15px; margin-bottom: 18px; }
+.civ-grid { display: grid; gap: 14px; grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 700px) { .civ-grid { grid-template-columns: 1fr; } }
+.asset {
+  border: 1px solid var(--rule-soft); border-radius: 10px;
+  padding: 16px; background: var(--parchment);
+}
+.asset h4 { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.asset .span2 { font-size: 11px; color: var(--text-mute); margin-bottom: 8px; letter-spacing: .8px; }
+.asset p { font-size: 14px; color: var(--text-soft); }
+.asset p + p { margin-top: 6px; }
+.asset b { color: var(--ink-800); font-weight: 600; }
+.asset .why { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--rule); }
+.asset .why-h {
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--gold-700); margin-bottom: 4px;
+}
+.asset .why p { font-size: 13.5px; }
+
+/* ---------------- Failure modes ---------------- */
+.fail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 880px) { .fail-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .fail-grid { grid-template-columns: 1fr; } }
+.fail {
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: 10px; padding: 20px; box-shadow: var(--shadow-sm);
+  position: relative;
+}
+.fail .num {
+  font-family: var(--serif); font-size: 36px; line-height: 1; font-weight: 600;
+  color: var(--gold-400); position: absolute; top: 14px; right: 18px;
+}
+.fail h4 { font-size: 16px; margin-bottom: 6px; padding-right: 30px; }
+.fail .examples {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px;
+}
+.fail .ex {
+  font-size: 11.5px; padding: 3px 8px; border-radius: 999px;
+  background: var(--parchment-2); color: var(--text-soft);
+  border: 1px solid var(--rule-soft);
+}
+
+/* ---------------- Charts ---------------- */
+.chart-card {
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: 12px; padding: 22px; box-shadow: var(--shadow-sm);
+}
+.chart-card h3 { margin-bottom: 6px; }
+.chart-card .sub { font-size: 13px; color: var(--text-mute); margin-bottom: 18px; }
+.chart-host { position: relative; height: 380px; }
+.chart-host.tall { height: 460px; }
+.chart-host.short { height: 280px; }
+@media (max-width: 560px) { .chart-host { height: 320px; } .chart-host.tall { height: 380px; } }
+
+/* ---------------- Gold endurance ---------------- */
+.gold-anchors {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  margin-top: 18px;
+}
+@media (max-width: 880px) { .gold-anchors { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 480px) { .gold-anchors { grid-template-columns: 1fr; } }
+.anchor {
+  border: 1px solid var(--rule-soft); border-radius: 10px;
+  padding: 16px; background: var(--parchment);
+}
+.anchor .num { font-family: var(--serif); font-size: 24px; color: var(--gold-700); font-weight: 600; }
+.anchor h4 { margin: 4px 0 6px; }
+.anchor p { font-size: 13.5px; }
+
+/* ---------------- Footer ---------------- */
+footer { padding: 36px 20px 60px; text-align: center; color: var(--text-mute); font-size: 13px; }
+footer a { color: var(--gold-700); text-decoration: none; }
+
+/* Decorative rule */
+.rule {
+  height: 1px; background: linear-gradient(90deg, transparent, var(--rule) 40%, var(--rule) 60%, transparent);
+  margin: 28px 0;
+}
+
+/* Pull quote */
+.pull {
+  font-family: var(--serif); font-size: 20px; line-height: 1.45;
+  color: var(--ink-800); border-left: 3px solid var(--gold-400);
+  padding: 6px 0 6px 18px; margin: 22px 0;
+  font-style: italic;
+}
+@media (max-width: 560px) { .pull { font-size: 17px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">Stores of <span class="gilt">Value</span></div>
+  <div class="nav-links">
+    <a href="#definitions">Definitions</a>
+    <a href="#branches">Branches</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#civilizations">Civilizations</a>
+    <a href="#failure">Failure Modes</a>
+    <a href="#longevity">Longevity</a>
+    <a href="#gold">Why Gold</a>
+    <a href="#modern">Modern</a>
+  </div>
+</nav>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">A research dashboard · 5,000 years of monetary history</div>
+    <h1>What humans have used to <span class="gilt">store value</span> — and exactly why each one failed or endured.</h1>
+    <p class="lede">
+      Almost every civilization independently invented something to hold wealth across time. Most of those things are now worthless.
+      This is a research dashboard tracing those choices — by civilization, branch by branch — and forensic about the specific mechanism
+      that broke each one. The textbook triad (scarcity, durability, divisibility) is the start of the answer, not the end.
+    </p>
+    <div class="hero-meta">
+      <div class="stat"><div class="stat-num">5,000+ yrs</div><div class="stat-lab">Continuous monetary use of gold</div></div>
+      <div class="stat"><div class="stat-num">~210k tonnes</div><div class="stat-lab">Above-ground gold stock (2024)</div></div>
+      <div class="stat"><div class="stat-num">~1.5%</div><div class="stat-lab">Annual gold supply growth</div></div>
+      <div class="stat"><div class="stat-num">≈30+</div><div class="stat-lab">Documented hyperinflations since 1900</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ DEFINITIONS ============================ -->
+<section id="definitions">
+  <div class="wrap">
+    <div class="eyebrow">First principles</div>
+    <h2>Store of value vs. currency — the same thing, until they aren't.</h2>
+    <div class="section-intro">
+      <p>
+        Money does three jobs: <b>medium of exchange</b>, <b>unit of account</b>, and <b>store of value</b>. The same object usually serves all three —
+        until pressure forces a choice. The forces that make a good currency (elasticity, velocity, broad acceptance) are in
+        direct tension with what makes a good store of value (inelasticity, low velocity, defensible scarcity). When that tension breaks,
+        people separate the two: they spend the bad money and hoard the good one. That's <b>Gresham's law</b>, and it shows up in every
+        civilization on this page.
+      </p>
+    </div>
+
+    <div class="compare">
+      <div class="sov">
+        <h3><span class="ic"></span>Store of value</h3>
+        <ul>
+          <li><b>Time horizon</b><span>Years to centuries. Velocity near zero.</span></li>
+          <li><b>Critical property</b><span>Defensible scarcity — supply cannot be increased cheaply.</span></li>
+          <li><b>Failure mode</b><span>A new technology, mine, or fraud collapses scarcity overnight.</span></li>
+          <li><b>Issuer</b><span>Often none. Bearer asset, no counterparty.</span></li>
+          <li><b>Wants to be</b><span>Inelastic, durable, verifiable, portable enough.</span></li>
+          <li><b>Examples</b><span>Gold, land, gemstones, fine art, equities, Bitcoin.</span></li>
+        </ul>
+      </div>
+      <div class="cur">
+        <h3><span class="ic"></span>Currency</h3>
+        <ul>
+          <li><b>Time horizon</b><span>Days to weeks. High velocity is a feature.</span></li>
+          <li><b>Critical property</b><span>Universal acceptance and frictionless settlement.</span></li>
+          <li><b>Failure mode</b><span>Loss of confidence in issuer; debasement under fiscal pressure.</span></li>
+          <li><b>Issuer</b><span>Almost always a state or chartered bank.</span></li>
+          <li><b>Wants to be</b><span>Elastic with trade, divisible, cheap to produce.</span></li>
+          <li><b>Examples</b><span>USD, EUR, denarius, Continental, jiaozi, fen.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tension">
+      <p><b>The recurring failure pattern.</b> A state needs more currency to pay armies or service debt, so it expands the supply. The same money, now plentiful, is no longer a store of value — citizens hoard the older "good" coin and pay taxes in the new one. The state collects depreciated currency, doubles down on debasement, and the system blows up. Rome, Yuan China, Tudor England, Bourbon France, Weimar Germany, Zimbabwe, Argentina, Venezuela. Same script, 17 centuries.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BRANCHES (TREE) ============================ -->
+<section id="branches">
+  <div class="wrap">
+    <div class="eyebrow">Civilizational branches</div>
+    <h2>Money was invented many times, in parallel, with shockingly similar shapes.</h2>
+    <div class="section-intro">
+      <p>
+        The remarkable fact about monetary history is that civilizations with no contact with each other — Mesopotamia, China, the Andes, Mesoamerica — independently
+        evolved similar instruments: weighed metal, grain receipts, shells, beads. Convergence is evidence the underlying problem is universal.
+        Where the branches diverge is in <i>which constraint dominated</i>: institutional trust (Egypt), state monopoly (China), religious mandate (Islamic), or
+        no money at all (Inca). The tree below sketches those independent lineages and which descendants survived to today.
+      </p>
+    </div>
+
+    <div class="tree-frame">
+      <div class="tree-svg-wrap">
+        <svg class="tree-svg" viewBox="0 0 980 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Branching tree of civilizational money traditions">
+          <!-- Background grid markers (era columns) -->
+          <g font-family="DM Sans, sans-serif" font-size="11" fill="#8B7E66">
+            <text x="60"  y="22" text-anchor="middle">~3000 BCE</text>
+            <text x="245" y="22" text-anchor="middle">~600 BCE</text>
+            <text x="430" y="22" text-anchor="middle">~1 CE</text>
+            <text x="615" y="22" text-anchor="middle">~1000 CE</text>
+            <text x="800" y="22" text-anchor="middle">~1700 CE</text>
+            <text x="940" y="22" text-anchor="middle">Today</text>
+          </g>
+          <g stroke="#DCCDA7" stroke-dasharray="2 4">
+            <line x1="60" y1="32" x2="60" y2="540"/>
+            <line x1="245" y1="32" x2="245" y2="540"/>
+            <line x1="430" y1="32" x2="430" y2="540"/>
+            <line x1="615" y1="32" x2="615" y2="540"/>
+            <line x1="800" y1="32" x2="800" y2="540"/>
+            <line x1="940" y1="32" x2="940" y2="540"/>
+          </g>
+
+          <!-- Root: Pre-monetary commodity money -->
+          <g font-family="Source Serif 4, serif" font-size="13" fill="#1A140C">
+            <rect x="10" y="265" width="100" height="36" rx="6" fill="#F2EAD8" stroke="#C9B98F"/>
+            <text x="60" y="282" text-anchor="middle" font-weight="600">Commodity</text>
+            <text x="60" y="296" text-anchor="middle" font-size="11" fill="#5A4F3E">money origins</text>
+          </g>
+
+          <!-- Branches — Mesopotamia / Mediterranean / China / India / Americas / Africa-Pacific -->
+          <g font-family="DM Sans, sans-serif" font-size="12">
+
+            <!-- MESOPOTAMIA -> ROME -> EUROPE -->
+            <path d="M110 283 C 170 110, 200 90, 245 90" stroke="#8E6418" stroke-width="2" fill="none"/>
+            <rect x="155" y="68" width="180" height="44" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="245" y="86" text-anchor="middle" font-weight="600" fill="#1A140C">Mesopotamia · Egypt</text>
+            <text x="245" y="102" text-anchor="middle" fill="#5A4F3E">silver shekels · grain receipts</text>
+
+            <path d="M335 90 L 430 90" stroke="#8E6418" stroke-width="2" fill="none"/>
+            <rect x="345" y="68" width="170" height="44" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="430" y="86" text-anchor="middle" font-weight="600" fill="#1A140C">Lydia · Greece · Rome</text>
+            <text x="430" y="102" text-anchor="middle" fill="#5A4F3E">stamped coinage · denarius</text>
+
+            <path d="M515 90 L 615 110" stroke="#8E6418" stroke-width="2" fill="none"/>
+            <rect x="535" y="92" width="160" height="44" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="615" y="110" text-anchor="middle" font-weight="600" fill="#1A140C">Byzantium → Italy</text>
+            <text x="615" y="126" text-anchor="middle" fill="#5A4F3E">solidus · florin · ducat</text>
+
+            <path d="M695 118 L 800 130" stroke="#8E6418" stroke-width="2" fill="none"/>
+            <rect x="715" y="112" width="170" height="44" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="800" y="130" text-anchor="middle" font-weight="600" fill="#1A140C">European banks</text>
+            <text x="800" y="146" text-anchor="middle" fill="#5A4F3E">notes · gold standard</text>
+
+            <path d="M885 134 L 940 150" stroke="#2F6B52" stroke-width="2.5" fill="none"/>
+            <rect x="900" y="132" width="76" height="36" rx="6" fill="#E6F0EA" stroke="#2F6B52"/>
+            <text x="938" y="155" text-anchor="middle" font-weight="600" fill="#2F6B52">USD · €</text>
+
+            <!-- CHINA branch -->
+            <path d="M110 285 C 170 230, 200 220, 245 220" stroke="#7A1B1B" stroke-width="2" fill="none"/>
+            <rect x="170" y="200" width="150" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="245" y="217" text-anchor="middle" font-weight="600" fill="#1A140C">Shang · Zhou China</text>
+            <text x="245" y="232" text-anchor="middle" fill="#5A4F3E">cowries · spade coin</text>
+
+            <path d="M320 220 L 430 215" stroke="#7A1B1B" stroke-width="2" fill="none"/>
+            <rect x="345" y="195" width="170" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="430" y="212" text-anchor="middle" font-weight="600" fill="#1A140C">Qin · Han cash coins</text>
+            <text x="430" y="227" text-anchor="middle" fill="#5A4F3E">round, square hole</text>
+
+            <path d="M515 215 L 615 220" stroke="#7A1B1B" stroke-width="2" fill="none"/>
+            <rect x="535" y="200" width="160" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="615" y="217" text-anchor="middle" font-weight="600" fill="#1A140C">Tang · Song · Yuan</text>
+            <text x="615" y="232" text-anchor="middle" fill="#5A4F3E">first paper money</text>
+
+            <path d="M695 222 L 800 220" stroke="#7A1B1B" stroke-width="2" fill="none"/>
+            <rect x="715" y="200" width="170" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="800" y="217" text-anchor="middle" font-weight="600" fill="#1A140C">Ming · Qing silver sycee</text>
+            <text x="800" y="232" text-anchor="middle" fill="#5A4F3E">paper repeatedly fails</text>
+
+            <path d="M885 222 L 940 220" stroke="#7A1B1B" stroke-width="2.5" fill="none"/>
+            <rect x="900" y="202" width="76" height="36" rx="6" fill="#F4E2E2" stroke="#7A1B1B"/>
+            <text x="938" y="225" text-anchor="middle" font-weight="600" fill="#7A1B1B">CNY · gold</text>
+
+            <!-- INDIA branch -->
+            <path d="M110 285 C 170 290, 200 295, 245 305" stroke="#B7892C" stroke-width="2" fill="none"/>
+            <rect x="170" y="290" width="150" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="245" y="307" text-anchor="middle" font-weight="600" fill="#1A140C">Indus · Vedic India</text>
+            <text x="245" y="322" text-anchor="middle" fill="#5A4F3E">cowries · grain · cattle</text>
+
+            <path d="M320 305 L 430 305" stroke="#B7892C" stroke-width="2" fill="none"/>
+            <rect x="345" y="285" width="170" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="430" y="302" text-anchor="middle" font-weight="600" fill="#1A140C">Karshapana · gold pagoda</text>
+            <text x="430" y="317" text-anchor="middle" fill="#5A4F3E">temple gold accumulation</text>
+
+            <path d="M515 305 L 615 310" stroke="#B7892C" stroke-width="2" fill="none"/>
+            <rect x="535" y="290" width="160" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="615" y="307" text-anchor="middle" font-weight="600" fill="#1A140C">Sultanate · Mughal mohur</text>
+            <text x="615" y="322" text-anchor="middle" fill="#5A4F3E">household gold tradition</text>
+
+            <path d="M695 310 L 800 310" stroke="#B7892C" stroke-width="2" fill="none"/>
+            <rect x="715" y="290" width="170" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="800" y="307" text-anchor="middle" font-weight="600" fill="#1A140C">British Raj rupee</text>
+            <text x="800" y="322" text-anchor="middle" fill="#5A4F3E">gold sink intensifies</text>
+
+            <path d="M885 310 L 940 305" stroke="#8E6418" stroke-width="2.5" fill="none"/>
+            <rect x="900" y="287" width="76" height="36" rx="6" fill="#FBF1D6" stroke="#8E6418"/>
+            <text x="938" y="310" text-anchor="middle" font-weight="600" fill="#8E6418">INR · gold</text>
+
+            <!-- ISLAMIC branch (joins from Mediterranean root) -->
+            <path d="M430 105 C 460 200, 480 350, 615 395" stroke="#2F6B52" stroke-width="2" fill="none" stroke-dasharray="0"/>
+            <rect x="535" y="378" width="160" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="615" y="395" text-anchor="middle" font-weight="600" fill="#1A140C">Caliphate dinar/dirham</text>
+            <text x="615" y="410" text-anchor="middle" fill="#5A4F3E">religiously fixed weight</text>
+            <path d="M695 395 L 800 400" stroke="#2F6B52" stroke-width="2" fill="none"/>
+            <rect x="715" y="380" width="170" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="800" y="397" text-anchor="middle" font-weight="600" fill="#1A140C">Ottoman akçe debased</text>
+            <text x="800" y="412" text-anchor="middle" fill="#5A4F3E">silver crisis</text>
+
+            <!-- AMERICAS branch -->
+            <path d="M110 285 C 170 380, 200 410, 245 430" stroke="#B86639" stroke-width="2" fill="none"/>
+            <rect x="170" y="412" width="150" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="245" y="429" text-anchor="middle" font-weight="600" fill="#1A140C">Olmec · proto-Maya</text>
+            <text x="245" y="444" text-anchor="middle" fill="#5A4F3E">cacao · jade · obsidian</text>
+
+            <path d="M320 432 L 430 432" stroke="#B86639" stroke-width="2" fill="none"/>
+            <rect x="345" y="412" width="170" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="430" y="429" text-anchor="middle" font-weight="600" fill="#1A140C">Maya · Aztec · Inca</text>
+            <text x="430" y="444" text-anchor="middle" fill="#5A4F3E">cacao · cloth · NO money (Inca)</text>
+
+            <path d="M515 432 L 615 470" stroke="#B86639" stroke-width="2" fill="none"/>
+            <rect x="535" y="455" width="160" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="615" y="472" text-anchor="middle" font-weight="600" fill="#1A140C">Wampum (Iroquois)</text>
+            <text x="615" y="487" text-anchor="middle" fill="#5A4F3E">colonial NE legal tender</text>
+
+            <path d="M695 472 L 800 470" stroke="#7A1B1B" stroke-width="2" fill="none"/>
+            <rect x="715" y="450" width="170" height="40" rx="6" fill="#F4E2E2" stroke="#7A1B1B"/>
+            <text x="800" y="467" text-anchor="middle" font-weight="600" fill="#7A1B1B">Production-tech collapse</text>
+            <text x="800" y="482" text-anchor="middle" fill="#7A1B1B">scarcity destroyed</text>
+
+            <!-- AFRICA / PACIFIC branch -->
+            <path d="M110 285 C 170 460, 200 500, 245 510" stroke="#495E9E" stroke-width="2" fill="none"/>
+            <rect x="170" y="492" width="150" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="245" y="509" text-anchor="middle" font-weight="600" fill="#1A140C">W. Africa · Pacific</text>
+            <text x="245" y="524" text-anchor="middle" fill="#5A4F3E">cowries · rai stones · beads</text>
+
+            <path d="M320 510 L 430 512" stroke="#495E9E" stroke-width="2" fill="none"/>
+            <rect x="345" y="492" width="170" height="40" rx="6" fill="#FFFCF5" stroke="#C9B98F"/>
+            <text x="430" y="509" text-anchor="middle" font-weight="600" fill="#1A140C">Yap rai · Aggry beads</text>
+            <text x="430" y="524" text-anchor="middle" fill="#5A4F3E">labor-cost moats</text>
+
+            <path d="M515 512 L 615 530" stroke="#495E9E" stroke-width="2" fill="none"/>
+            <rect x="535" y="510" width="160" height="40" rx="6" fill="#F4E2E2" stroke="#7A1B1B"/>
+            <text x="615" y="527" text-anchor="middle" font-weight="600" fill="#7A1B1B">Industrial era flooding</text>
+            <text x="615" y="542" text-anchor="middle" fill="#7A1B1B">all collapsed by 1900</text>
+          </g>
+        </svg>
+      </div>
+      <div class="tree-legend">
+        <span><i style="background:#8E6418"></i> Mediterranean / European lineage</span>
+        <span><i style="background:#7A1B1B"></i> Chinese lineage</span>
+        <span><i style="background:#B7892C"></i> Indian lineage</span>
+        <span><i style="background:#2F6B52"></i> Islamic lineage</span>
+        <span><i style="background:#B86639"></i> American lineage</span>
+        <span><i style="background:#495E9E"></i> Africa &amp; Pacific lineage</span>
+        <span><i style="background:#F4E2E2; border:1px solid #7A1B1B"></i> Tradition collapsed</span>
+        <span><i style="background:#E6F0EA; border:1px solid #2F6B52"></i> Survives today</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TIMELINE CHART ============================ -->
+<section id="timeline">
+  <div class="wrap">
+    <div class="eyebrow">Visual history</div>
+    <h2>The lifespans of major stores of value, drawn to scale.</h2>
+    <div class="section-intro">
+      <p>
+        Each bar shows the period during which an asset was a meaningful store of value (not merely a curio).
+        The horizontal scale is logarithmic-ish in feel: gold's 5,000 years dwarfs everything else, and almost every alternative
+        had a clear end-of-life event — usually a specific technology shift or institutional collapse, not a slow fade.
+      </p>
+    </div>
+    <div class="chart-card">
+      <h3>Stores of value through history</h3>
+      <p class="sub">Bars span the period of meaningful monetary use. Color encodes outcome.</p>
+      <div class="chart-host tall"><canvas id="timelineChart"></canvas></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CIVILIZATIONS ============================ -->
+<section id="civilizations">
+  <div class="wrap">
+    <div class="eyebrow">Branch by branch</div>
+    <h2>What each civilization actually used — and the specific reason it broke.</h2>
+    <div class="section-intro">
+      <p>
+        For each civilization the question is not "did they have money?" but <i>what did they hold</i> when they wanted to preserve wealth across decades?
+        That is a different and stricter test, and it isolates real causal differences between cultures.
+      </p>
+    </div>
+
+    <!-- ----- MESOPOTAMIA ----- -->
+    <article class="civ">
+      <div class="civ-head"><h3>Mesopotamia &amp; Sumer</h3><span class="span">~3000 BCE — 539 BCE</span></div>
+      <p class="civ-tagline">The world's first written contracts were denominated in silver and barley. Money was institutional before it was metal.</p>
+      <div class="civ-grid">
+        <div class="asset">
+          <span class="verdict mixed">Mixed outcome</span>
+          <h4>Silver shekel (by weight)</h4>
+          <div class="span2">Sumer · Akkad · Babylon</div>
+          <p>The Code of Hammurabi (~1750 BCE) prices everything in silver shekels — a ~8.3-gram unit of weight, not a coin. Silver was imported from Anatolian mines, weighed at temples, and used for large transactions and dowries.</p>
+          <div class="why">
+            <div class="why-h">Why it endured / failed</div>
+            <p><b>Endured</b> because Mesopotamian temples and palaces enforced strict weight standards under penalty of death (Hammurabi §108). <b>Failed</b> when those institutions did — every conquest (Hittite, Kassite, Persian) reset standards, and silver had to be re-weighed for each transaction, never reaching the abstraction of coined money.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict good">Worked for centuries</span>
+          <h4>Grain receipts (proto-credit)</h4>
+          <div class="span2">Temple-issued tablets · ~2500 BCE</div>
+          <p>Cuneiform tablets recorded grain on deposit at temple granaries. The tablets themselves circulated. This is the earliest known <b>fiduciary money</b> — value backed by claim on a stockpile, not by the substance of the token.</p>
+          <div class="why">
+            <div class="why-h">Why it worked / didn't scale</div>
+            <p>The system worked for ~2,000 years inside the institutional trust radius of a single temple complex. It never crossed political boundaries — a Sumerian receipt was worthless in Hatti — because credit money requires institutional continuity, which interstate trade lacked.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ----- EGYPT ----- -->
+    <article class="civ">
+      <div class="civ-head"><h3>Ancient Egypt</h3><span class="span">~3000 BCE — 30 BCE</span></div>
+      <p class="civ-tagline">An almost-coinless civilization that ran on grain accounting for two millennia, then reluctantly imported coinage from the Greeks.</p>
+      <div class="civ-grid">
+        <div class="asset">
+          <span class="verdict good">Worked for ~2000 years</span>
+          <h4>Grain banking (Ptolemaic)</h4>
+          <div class="span2">Royal granaries · ~300 BCE — 30 BCE</div>
+          <p>Under the Ptolemies, Egypt operated a giro banking system using grain. Farmers deposited grain in state silos and could transfer claims by written order between accounts — without physical movement. Effectively the first national clearing system.</p>
+          <div class="why">
+            <div class="why-h">Why it endured / collapsed</div>
+            <p><b>Endured</b> because the Nile flood gave Egypt the most predictable agricultural surplus in the ancient world — the underlying asset was reliable. <b>Collapsed</b> not because grain failed, but because <i>Roman annexation in 30 BCE</i> redirected Egyptian grain to feed Rome, draining the float that backed the system.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict mixed">Hoarded, not circulated</span>
+          <h4>Gold &amp; copper deben</h4>
+          <div class="span2">Weight unit, ~91g · all dynasties</div>
+          <p>Egyptians had abundant Nubian gold and used the deben as a unit of account, but coinage didn't appear until Greek mercenaries demanded payment in coin during the Late Period. Pharaohs hoarded gold as temple and tomb wealth — a store of value <i>par excellence</i>, but explicitly not currency.</p>
+          <div class="why">
+            <div class="why-h">Why it worked as SoV</div>
+            <p>Egypt is the proof case that a culture can have a working store of value (gold) without a working currency. The two functions are separable when institutions handle exchange (grain accounts).</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ----- LYDIA / GREECE / ROME ----- -->
+    <article class="civ">
+      <div class="civ-head"><h3>Lydia · Greece · Rome</h3><span class="span">~600 BCE — 476 CE (West)</span></div>
+      <p class="civ-tagline">Coinage was invented here. So was its first catastrophic debasement.</p>
+      <div class="civ-grid">
+        <div class="asset">
+          <span class="verdict good">Founded the technology</span>
+          <h4>Lydian electrum &amp; Athenian owl</h4>
+          <div class="span2">~600 BCE — ~300 BCE</div>
+          <p>King Alyattes of Lydia minted the first standardized stamped coins from electrum (~600 BCE). Athens improved on it: the Laurion silver mines funded the silver tetradrachm ("owl"), 17.2g of nearly pure silver, which became the Mediterranean reserve currency for over two centuries.</p>
+          <div class="why">
+            <div class="why-h">Why it endured</div>
+            <p>Athens did not debase. Even during the Peloponnesian War, when Athens melted the Acropolis gold reserves, the silver coinage standard held. Reputation accumulated like compound interest.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict bad">Catastrophic debasement</span>
+          <h4>Roman denarius</h4>
+          <div class="span2">211 BCE — ~270 CE</div>
+          <p>The denarius began as ~4.5g of nearly pure silver under the Republic. By Nero (64 CE) it was ~93% silver. By Caracalla (215 CE) ~50%. By Gallienus (260s CE) ~5% — essentially copper with a silver wash that flaked off in circulation. Aurelian's reform of 274 CE failed; Diocletian's price edict of 301 CE failed.</p>
+          <div class="why">
+            <div class="why-h">Why it failed — the actual mechanism</div>
+            <p>The standard answer ("they ran out of silver") is wrong. The mines kept producing. The mechanism was <b>fiscal</b>: emperors had to pay a standing army of ~400,000 in coin, and frontier wars made the army's price elastic. Each succession crisis (the 3rd century had ~26 emperors in 50 years) forced new bonus payments. Debasement was the only fiscal lever short of taxation, which required institutional capacity Rome had hollowed out. Once trust broke, Gresham's law completed the destruction — good coins disappeared into hoards (we still find them today).</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict good">700-year run</span>
+          <h4>Byzantine solidus / bezant</h4>
+          <div class="span2">312 CE — ~1090 CE</div>
+          <p>Constantine introduced the solidus at 4.5g of 24-karat gold. It held that weight and purity for nearly seven centuries — the longest-lived gold coin in history — and circulated from Ireland to Sri Lanka. Arab merchants called it the bezant and used it as the trade reference even inside the Caliphate.</p>
+          <div class="why">
+            <div class="why-h">Why it endured</div>
+            <p>Three reasons, in order: (1) Byzantium retained Egyptian gold output until the Arab conquest of 641 CE, and Nubian gold thereafter; (2) the imperial bureaucracy was professionally staffed, not auctioned; (3) the solidus was a <i>gold</i> coin, and gold debasement is harder to hide than silver — citizens could weigh and bite. The solidus only failed when Alexios I debased it in 1092 to fight the Seljuks. Same fiscal mechanism as Rome, 800 years later.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict bad">Local SoVs that lost</span>
+          <h4>Aes signatum &amp; bronze</h4>
+          <div class="span2">Early Republic Rome</div>
+          <p>Before the denarius, Rome used cast bronze ingots (aes signatum) by weight. They weighed several pounds each and were impossible to transport in quantity.</p>
+          <div class="why">
+            <div class="why-h">Why it lost</div>
+            <p>Pure portability problem. As Roman trade scaled past the Italian peninsula, bronze couldn't follow. Silver's value-density (~70× bronze by weight) made the switch inevitable.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ----- CHINA ----- -->
+    <article class="civ">
+      <div class="civ-head"><h3>China</h3><span class="span">~1500 BCE — present</span></div>
+      <p class="civ-tagline">Invented paper money 700 years before Europe — and hyper-inflated it three separate times before Europe issued its first banknote.</p>
+      <div class="civ-grid">
+        <div class="asset">
+          <span class="verdict good">Longest-running coin design</span>
+          <h4>Cash coins (round, square hole)</h4>
+          <div class="span2">~221 BCE — 1912 CE</div>
+          <p>Qin Shi Huang standardized the bronze cash coin in 221 BCE. The basic design — round, with a central square hole for stringing — survived <b>2,133 years</b>, through 13 dynasties, until the fall of the Qing.</p>
+          <div class="why">
+            <div class="why-h">Why it endured</div>
+            <p>It wasn't a store of value — it was a daily currency, the fen of its day. It endured because it was deliberately low-value: a string of 1,000 coins (a "guan") weighed several pounds, so large transactions had to use silver or paper. Cash coins occupied a niche where debasement didn't matter much.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict bad">Failed three times</span>
+          <h4>Paper money: jiaozi · huizi · chao</h4>
+          <div class="span2">~1024 CE Song · 1170s · 1260s Yuan</div>
+          <p>Sichuan merchants issued private "jiaozi" promissory notes in the early 1000s. The Song state monopolized them in 1024 — the world's first government paper money. Initially backed by iron cash deposits, then gradually by nothing. Hyperinflation by 1160s. Yuan dynasty under Kublai Khan re-introduced paper "chao" with no backing; collapsed by 1356.</p>
+          <div class="why">
+            <div class="why-h">Why it kept failing</div>
+            <p>The actual mechanism: Chinese state finance was structurally underweighted in tax revenue (most was in-kind grain). When Mongol or Jurchen wars demanded cash, the only marginal lever was the printing press. Each dynasty learned the lesson, then forgot it within two generations because the underlying tax problem was never fixed. <i>This is why "China invented paper money" is misleading — they invented it, and then they invented its failure mode, and the failure mode kept winning.</i></p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict good">2,000-year SoV</span>
+          <h4>Silver sycee (yuanbao)</h4>
+          <div class="span2">~Han to 1933 CE</div>
+          <p>Boat-shaped silver ingots, typically 50 taels (~1.9 kg). Used for bulk payments, dowries, and savings. Ming and Qing China ran a de facto silver standard, sucking in roughly 1/3 of all New World silver mined between 1500 and 1800.</p>
+          <div class="why">
+            <div class="why-h">Why it worked</div>
+            <p>Sycee was held by households, not the state. Even when paper collapsed, the silver under the floorboards survived. China's silver sink behavior is the macro consequence of recurring paper failure: a culture that's been burned three times will rationally hold metal.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict mixed">Pre-coin</span>
+          <h4>Cowries · spade · knife coins</h4>
+          <div class="span2">Shang &amp; Zhou, ~1500–221 BCE</div>
+          <p>Cowrie shells (real and bronze imitations) were the early Shang medium. Zhou-era bronze coins were shaped like miniature spades and knives — recognizably descended from actual barter tools.</p>
+          <div class="why">
+            <div class="why-h">Why they were displaced</div>
+            <p>Awkward shapes broke when stacked or strung. Qin standardization wasn't an aesthetic choice — round coins with central holes are storable, transportable, and countable. Form followed monetary function.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ----- INDIA ----- -->
+    <article class="civ">
+      <div class="civ-head"><h3>Indian subcontinent</h3><span class="span">~600 BCE — present</span></div>
+      <p class="civ-tagline">The largest household gold hoard on earth (~25,000 tonnes, ~12% of all gold ever mined). The reasons are not mystical.</p>
+      <div class="civ-grid">
+        <div class="asset">
+          <span class="verdict good">Among earliest coins</span>
+          <h4>Punch-marked karshapana</h4>
+          <div class="span2">~600 BCE — ~200 CE</div>
+          <p>Silver pieces stamped with multiple punch-marks (often by successive verifying merchants). Among the oldest coined money in the world, contemporaneous with Lydian electrum. Used across the Mahajanapadas and Maurya empire.</p>
+          <div class="why">
+            <div class="why-h">Why it worked</div>
+            <p>The multi-punch system was a primitive form of <b>multi-signature verification</b>: each merchant's mark vouched for weight and purity. Trust was distributed across the trade network rather than concentrated in a state mint. This is also why it was hard to standardize and eventually displaced by imperial coinage.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict good">Worked for 700 years</span>
+          <h4>Gupta &amp; Mughal gold (mohur, pagoda)</h4>
+          <div class="span2">~320 CE — 1858</div>
+          <p>The Gupta dinara (~7.7g gold) and the Mughal mohur (~11g gold) were stable, high-purity gold coins. The Mughal mohur held its weight for ~250 years, comparable to the ducat or florin.</p>
+          <div class="why">
+            <div class="why-h">Why it worked</div>
+            <p>Mughal fiscal capacity was unusually strong for a pre-modern empire (Akbar's mansabdari system collected land tax efficiently), so the rulers were not chronically forced to debase. When fiscal capacity collapsed under Aurangzeb's wars, debasement followed — same script as Rome.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict good">Survives today</span>
+          <h4>Household gold</h4>
+          <div class="span2">~1500 BCE — present</div>
+          <p>Indian households are estimated to hold 25,000+ tonnes of gold, mostly as jewelry. This is more than all central bank reserves combined.</p>
+          <div class="why">
+            <div class="why-h">Why — beyond cliché</div>
+            <p>Five compounding reasons, none of them mystical: (1) <b>Inheritance law and dowry</b> made gold the legal property of women, when land typically wasn't — gold became the female balance sheet. (2) <b>Monsoon agriculture</b> means farmer income is concentrated in a few months a year and must be stored — gold is the rural savings account. (3) <b>Repeated currency failures</b> (Mughal collapse, British rupee silver crisis 1873, Indian partition, 1991 BoP crisis) trained intergenerational distrust. (4) <b>Religious sanction</b> — gold is auspicious; this is correlation, not cause: the cause is the rational economics, the religion encoded the lesson. (5) <b>No effective alternative</b> — equity markets reach &lt;5% of households; bank deposits earn negative real rates much of the time.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict bad">Counter-example</span>
+          <h4>Bengal cowries</h4>
+          <div class="span2">~Mauryan to ~1840s</div>
+          <p>Bengal used cowrie shells for small transactions until the East India Company's industrial-scale shell imports collapsed their value in the early 19th century.</p>
+          <div class="why">
+            <div class="why-h">Why it ended</div>
+            <p>Same mechanism as wampum: industrial shipping from the Maldives in EIC bottoms increased the cowrie supply by orders of magnitude. The labor-cost moat (collecting and stringing) was destroyed. Cowries persisted in remote areas precisely because shipping costs there remained high.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ----- ISLAMIC ----- -->
+    <article class="civ">
+      <div class="civ-head"><h3>Islamic Caliphate &amp; successors</h3><span class="span">~696 CE — ~1700 CE</span></div>
+      <p class="civ-tagline">The first religiously-fixed monetary standard. It worked — until silver supplies broke.</p>
+      <div class="civ-grid">
+        <div class="asset">
+          <span class="verdict good">~600-year run</span>
+          <h4>Gold dinar &amp; silver dirham</h4>
+          <div class="span2">Abd al-Malik reform, 696–697 CE</div>
+          <p>The Umayyad caliph Abd al-Malik fixed the dinar at 4.25g gold and the dirham at ~2.97g silver, with a religiously-mandated bimetallic ratio. These weights persisted across the Abbasid, Fatimid, and even into the Mamluk period.</p>
+          <div class="why">
+            <div class="why-h">Why it endured</div>
+            <p>Two unusual features: weights were embedded in <i>shariah</i> rulings on zakat (alms-tax), so debasement had a religious cost on top of the economic one — and the Caliphate sat astride the largest concentration of gold (West African) and silver (Central Asian) supply lines in the world.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict bad">Ottoman collapse</span>
+          <h4>Akçe / asper</h4>
+          <div class="span2">Ottoman silver coin, 1326–1687</div>
+          <p>The Ottoman akçe began at ~1.15g silver under Orhan I. By 1690 it was 0.13g — a ~90% debasement. Soldiers called it "the white" but by the late 17th century it was indistinguishable from copper.</p>
+          <div class="why">
+            <div class="why-h">Why it failed</div>
+            <p>Three converging shocks: (1) Spanish silver from Potosí flooding into the Mediterranean made Ottoman silver mines uneconomic; (2) standing army payroll growing faster than tax base (jannisary count went from ~12k in 1500 to ~50k in 1670); (3) loss of timar (land-grant) military model forced cash payment. Same fiscal mechanism as Rome and Yuan China.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ----- MEDIEVAL EUROPE / ITALIAN CITY-STATES ----- -->
+    <article class="civ">
+      <div class="civ-head"><h3>Medieval &amp; Renaissance Europe</h3><span class="span">~1000 — 1700 CE</span></div>
+      <p class="civ-tagline">City-state merchants invented the modern reserve currency: a coin so reliable that everyone else benchmarked to it.</p>
+      <div class="civ-grid">
+        <div class="asset">
+          <span class="verdict good">~300-year run, unchanged</span>
+          <h4>Florin (Florence) &amp; ducat (Venice)</h4>
+          <div class="span2">1252 / 1284 — ~1530s</div>
+          <p>Florence struck the florin at 3.54g of 24-karat gold in 1252. Venice followed with the ducat in 1284 at near-identical specification. Both held weight and purity for ~300 years and were the international reserve coins of medieval Europe.</p>
+          <div class="why">
+            <div class="why-h">Why they endured</div>
+            <p>The issuers were merchant republics, not monarchies. The Signoria of Florence and the Council of Ten in Venice represented the people <i>most harmed</i> by debasement (long-distance traders), and the cities' tax bases (customs and trade duties) actually grew with strong currency. Incentive alignment, not virtue.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict bad">Sequential debasements</span>
+          <h4>English &amp; French silver pennies</h4>
+          <div class="span2">~1000 — 1601</div>
+          <p>The English silver penny (~1.5g of sterling silver under William I) was repeatedly debased: by Edward III for the Hundred Years' War, by Henry VIII in the "Great Debasement" of 1542–51 (silver content fell from 92.5% to 25%), partially restored by Elizabeth I.</p>
+          <div class="why">
+            <div class="why-h">Why it failed</div>
+            <p>Henry VIII's debasement is the textbook case: he needed cash for war with France and Scotland and to fund the Royal Navy after the Dissolution of the Monasteries had given a one-time windfall but no recurring revenue. The Crown captured ~£1.27 million in seigniorage at the cost of breaking confidence for a generation. Gresham's "Law" was named for the merchant who explained this <i>to Elizabeth I</i>.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ----- PRE-COLUMBIAN ----- -->
+    <article class="civ">
+      <div class="civ-head"><h3>Pre-Columbian Americas</h3><span class="span">~1500 BCE — 1521 CE</span></div>
+      <p class="civ-tagline">Three civilizations that arrived at three different answers — including one that decided money wasn't necessary.</p>
+      <div class="civ-grid">
+        <div class="asset">
+          <span class="verdict mixed">Worked for ~2000 years</span>
+          <h4>Maya &amp; Aztec cacao beans</h4>
+          <div class="span2">~600 BCE — 1600s CE</div>
+          <p>Cacao beans were used for small daily transactions across Mesoamerica. A turkey hen cost about 100 beans (1545); a tomato, one bean. Multi-tier system: cacao for daily, woven cotton cloaks (quachtli, ~100 beans each) for medium value, copper axe-money (tajaderas) for larger.</p>
+          <div class="why">
+            <div class="why-h">Why it ultimately failed</div>
+            <p>Three mechanisms compounded after Spanish contact: (1) <b>Counterfeiting</b> — hollowed beans refilled with mud were a known problem documented by Spanish friars; (2) <b>Disease collapse</b> — the population of central Mexico fell ~80% between 1519 and 1620, destroying the demand side of the cacao economy; (3) <b>Spanish silver substitution</b> — colonial mints in Mexico City and Potosí provided an obviously-superior medium with infinite production capacity. Cacao didn't die so much as get out-competed by a coin with better properties on every dimension.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict good">Worked uniquely</span>
+          <h4>Inca: NO money</h4>
+          <div class="span2">~1438 — 1533 CE</div>
+          <p>Tawantinsuyu — the Inca empire — had no medium of exchange, no markets in the sense the Aztecs had them, and no concept of currency. The economy was redistributive: the state collected labor (mit'a), stored grain and textiles in qollqa warehouses, and redistributed by rationing.</p>
+          <div class="why">
+            <div class="why-h">Why this is interesting</div>
+            <p>The Inca had gold and silver in abundance — they used it for art and ritual, not exchange. They demonstrate that "money" is not a universal civilizational stage but a response to specific conditions (long-distance trade between strangers). Andean conditions — vertical ecology, state-directed corvée, no merchant class — selected against currency. The system collapsed not because it was inefficient but because Pizarro arrived with smallpox and Toledo silver coinage. It had no defense against integration with a money economy.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict bad">Killed by industry</span>
+          <h4>Wampum (NE North America)</h4>
+          <div class="span2">~1500 — ~1700 CE</div>
+          <p>Purple and white shell beads (from quahog and whelk), drilled and strung. Used by Iroquois and Algonquin peoples for diplomacy, treaties, and store of value. Adopted by Massachusetts and New York colonies as <b>legal tender</b> from 1637 to 1661.</p>
+          <div class="why">
+            <div class="why-h">The real failure mode (not "they were beads")</div>
+            <p>Wampum's monetary value rested on a labor-cost floor: drilling a single bead by hand with stone tools took ~30 minutes. Around 1660, Dutch settlers in New Netherland industrialized production using metal drills powered by spring lathes. By 1700, a Long Island wampum factory could produce in a day what once took months. Counterfeit wampum from porcelain and dyed bone added supply pressure. Massachusetts demonetized it in 1661. <b>The lesson is not that "shells are bad money" — it is that any monetary asset whose scarcity rests on labor cost is vulnerable to a productivity shock.</b> The same pattern killed cowries in Bengal and rai stones in Yap.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict bad">Famous edge case</span>
+          <h4>Yap rai stones</h4>
+          <div class="span2">~1000 — ~1900 CE</div>
+          <p>Massive limestone disks (up to 4m diameter) quarried on Palau and shipped 250 miles to Yap. Each stone had a name and provenance; ownership transferred orally without the stone moving. One famously sat at the bottom of the ocean and continued to be transacted.</p>
+          <div class="why">
+            <div class="why-h">Not "they were stones"</div>
+            <p>Rai had genuinely good monetary properties: immovability prevented theft, oral consensus on ownership was a working distributed ledger, and unique markings made counterfeit detectable. They failed for the same reason as wampum: the Irish-American trader David O'Keefe (1870s) used iron tools and a sailing ship to mass-produce rai. He flooded the supply. German colonial administration finished it off in 1903 by refusing to recognize unregistered stones. The textbook lesson "rai stones show money is just consensus" is partly right and partly a glib dismissal — the stones worked for ~900 years, longer than the US dollar has existed.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ----- AFRICA / PACIFIC GENERAL ----- -->
+    <article class="civ">
+      <div class="civ-head"><h3>Africa &amp; the Pacific</h3><span class="span">Pre-colonial — 19th century</span></div>
+      <p class="civ-tagline">Cowries were arguably the most successful pre-modern currency on earth. Industrial shipping killed them in 60 years.</p>
+      <div class="civ-grid">
+        <div class="asset">
+          <span class="verdict bad">Globally collapsed</span>
+          <h4>Cowrie shells (West Africa)</h4>
+          <div class="span2">~1000 CE — 1900 CE</div>
+          <p>Cypraea moneta shells, harvested almost entirely in the Maldives, were currency across West Africa, Bengal, and parts of China. Whole kingdoms (Dahomey, Ashanti) ran fiscally on cowries. A ton of shells could be transported as ballast.</p>
+          <div class="why">
+            <div class="why-h">The collapse was a single technology shock</div>
+            <p>For ~700 years, cowries were stable because the Maldives–West Africa supply chain was difficult: lateen-rigged dhows could carry only so many, and the journey took months. Between 1845 and 1880, European steam shipping increased annual cowrie imports into West Africa from ~40 tonnes to ~10,000+ tonnes. This was hyperinflation by import. Local prices in cowries rose ~30× in a generation. Colonial currencies replaced them by 1900. <b>Cowries did not fail because they were "primitive"; they failed because the ocean got smaller.</b></p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict mixed">Trade-zone currencies</span>
+          <h4>Aggry beads · manillas · salt bars</h4>
+          <div class="span2">Trans-Saharan, West African, Ethiopian</div>
+          <p>Glass aggry beads from Venice and the Netherlands; copper or brass C-shaped manillas from Birmingham; salt bars (amole tchew) in Ethiopia until the 20th century.</p>
+          <div class="why">
+            <div class="why-h">Why each failed</div>
+            <p>Manillas and beads: same industrial-shipping shock as cowries — Birmingham factories produced 200 million manillas in the 18th century alone. Salt: only worked in regions where humidity wasn't catastrophic; perished in storage. Each shows how a SoV's failure mode is geographically specific.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ----- SPANISH GLOBAL ----- -->
+    <article class="civ">
+      <div class="civ-head"><h3>Spanish global silver</h3><span class="span">1535 — 1857</span></div>
+      <p class="civ-tagline">The first truly global currency — and a textbook case of how an SoV can succeed for its users while ruining its issuer.</p>
+      <div class="civ-grid">
+        <div class="asset">
+          <span class="verdict good">First global currency</span>
+          <h4>Real de a Ocho ("piece of eight")</h4>
+          <div class="span2">1535 — 1857</div>
+          <p>The Spanish silver dollar, struck in Mexico City, Potosí, and Lima at 27.07g of ~93% silver. Legal tender in the United States until 1857. Circulated in Manila, Calcutta, Canton, Salem, and Cape Coast. The "$" sign descends from it.</p>
+          <div class="why">
+            <div class="why-h">Why it was a successful SoV</div>
+            <p>Two reasons usually missed: (1) <b>physically standardized</b> — Spanish colonial mints achieved tight tolerances on weight and fineness for 300 years, an extraordinary institutional achievement; (2) <b>chopped, not melted</b> — Chinese merchants applied "chop marks" to verify pieces, just as Indian merchants had done with karshapana 2,000 years earlier. The chop system distributed verification, making the coin <i>more</i> trustworthy with use.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict bad">Resource curse</span>
+          <h4>Spain itself</h4>
+          <div class="span2">1545 — 1700</div>
+          <p>Silver from Potosí (which alone produced an estimated 60% of all silver mined globally in the 16th century) flowed through Seville. Spanish prices rose ~6× between 1500 and 1650 (Hamilton's "price revolution"). Spain defaulted on sovereign debt nine times between 1557 and 1666.</p>
+          <div class="why">
+            <div class="why-h">Why an SoV abundance bankrupted its sovereign</div>
+            <p>This is the critical lesson and the inverse of all other cases on this page: a state that <i>controls</i> a store of value still cannot debase if the SoV is intrinsically scarce. So Spain's monarchy did the only other thing available — borrowed against future silver flows. When silver receipts disappointed (mining costs at Potosí rose as easy ore was depleted, exactly as in modern gold mining), default followed. <b>An SoV that flows into your treasury can still wreck your finances if you treat the flow as permanent.</b></p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ----- BANKNOTES & EARLY MODERN ----- -->
+    <article class="civ">
+      <div class="civ-head"><h3>The banknote era</h3><span class="span">1661 — 1971</span></div>
+      <p class="civ-tagline">Three centuries of trying to build paper money that doesn't fail. Two patterns worked.</p>
+      <div class="civ-grid">
+        <div class="asset">
+          <span class="verdict bad">Failed in 6 years</span>
+          <h4>Stockholms Banco notes (1661)</h4>
+          <div class="span2">First European banknotes</div>
+          <p>Johan Palmstruch's Stockholms Banco issued the first modern banknotes in 1661. Initial backing was copper plates, but Palmstruch over-issued; the bank collapsed in 1668.</p>
+          <div class="why">
+            <div class="why-h">Why it failed</div>
+            <p>No reserve discipline and no separation between the issuing bank and the lender. Same governance failure as Yuan China, 400 years later, on a smaller scale.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict good">~300-year run</span>
+          <h4>Bank of England notes (1694)</h4>
+          <div class="span2">Convertibility 1694–1797, 1821–1914, 1925–1931</div>
+          <p>Founded to fund a war loan to William III. Notes were redeemable in gold. Despite three suspensions, BoE notes held a real-purchasing-power floor for centuries.</p>
+          <div class="why">
+            <div class="why-h">Why this one worked</div>
+            <p>Two structural choices: (1) the bank was funded by Parliament, not the Crown — so debasement had political cost; (2) the bank held gold reserves and was contractually bound to redeem. The convertibility constraint did the work that no monarchy's promise had ever done.</p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict bad">Hyperinflation</span>
+          <h4>French assignats &amp; Continentals</h4>
+          <div class="span2">1775–1796</div>
+          <p>The Continental Congress issued $241 million in paper to fund the American Revolution. By 1781 it took $167 in Continentals to buy $1 in specie — "not worth a Continental." The French assignat (1789–1796) followed: backed by confiscated church land, then over-issued ~40×.</p>
+          <div class="why">
+            <div class="why-h">Why both failed</div>
+            <p>Both currencies funded wars without functioning tax authority. The assignat case is especially instructive: the "backing" (church land) was genuine but illiquid, so notes could not actually be redeemed at face. <b>Backing without convertibility is theatrical, not structural.</b></p>
+          </div>
+        </div>
+        <div class="asset">
+          <span class="verdict good">Worked for ~40 years</span>
+          <h4>Classical gold standard</h4>
+          <div class="span2">~1873 — 1914</div>
+          <p>Major economies fixed currencies to gold at known ratios. Trade boomed; price levels were extraordinarily stable across the period (UK CPI in 1914 was almost identical to 1873).</p>
+          <div class="why">
+            <div class="why-h">Why it ended</div>
+            <p>WWI suspended convertibility because financing the war was impossible at gold-standard rates. The interwar restoration (1925–1931) failed because returning to pre-war parities forced deflation and unemployment. Bretton Woods (1944–1971) was a partial gold standard via the dollar — Nixon ended it when US gold reserves were exhausted relative to outstanding dollars (the Triffin dilemma).</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================ FAILURE MODES ============================ -->
+<section id="failure">
+  <div class="wrap">
+    <div class="eyebrow">Pattern recognition</div>
+    <h2>Six ways a store of value dies. Every failure on this page fits one of them.</h2>
+    <div class="section-intro">
+      <p>
+        Across 5,000 years and a dozen civilizations, the failure modes are surprisingly few. Once you can name them, you can also test
+        any candidate SoV (gold, real estate, equities, Bitcoin) against the list.
+      </p>
+    </div>
+
+    <div class="fail-grid">
+      <div class="fail">
+        <div class="num">1</div>
+        <h4>Production-tech arbitrage</h4>
+        <p>A new technology drops the cost of producing the asset by orders of magnitude. The labor-cost moat collapses overnight.</p>
+        <div class="examples"><span class="ex">Wampum 1660s</span><span class="ex">Cowries 1850s</span><span class="ex">Rai stones 1870s</span><span class="ex">Aluminum 1886</span></div>
+      </div>
+      <div class="fail">
+        <div class="num">2</div>
+        <h4>Fiscal debasement</h4>
+        <p>The issuing state needs more revenue than it can tax, and the marginal lever is the currency. Compounds across successions.</p>
+        <div class="examples"><span class="ex">Roman denarius</span><span class="ex">Yuan chao</span><span class="ex">Ottoman akçe</span><span class="ex">Henry VIII</span><span class="ex">Weimar 1923</span></div>
+      </div>
+      <div class="fail">
+        <div class="num">3</div>
+        <h4>Institutional collapse</h4>
+        <p>Credit money depends on continuity of an issuing institution. Conquest, succession, or political revolution voids the claim.</p>
+        <div class="examples"><span class="ex">Sumerian temple receipts</span><span class="ex">Ptolemaic grain bank</span><span class="ex">Continentals</span><span class="ex">Confederate dollars</span></div>
+      </div>
+      <div class="fail">
+        <div class="num">4</div>
+        <h4>Resource discovery shock</h4>
+        <p>A new mine, deposit, or trade route floods the market. Same as #1 but caused by geography rather than technology.</p>
+        <div class="examples"><span class="ex">Potosí silver 1545</span><span class="ex">Klondike 1896</span><span class="ex">Spanish price revolution</span></div>
+      </div>
+      <div class="fail">
+        <div class="num">5</div>
+        <h4>Loss of consumer demand</h4>
+        <p>The asset's monetary use was supported by a non-monetary use that disappears. Demonetization follows.</p>
+        <div class="examples"><span class="ex">Silver 1873 (industrial)</span><span class="ex">Salt (preservation)</span><span class="ex">Cattle (mechanization)</span></div>
+      </div>
+      <div class="fail">
+        <div class="num">6</div>
+        <h4>Counterfeit / verification failure</h4>
+        <p>The ability to fake the asset outpaces the ability to detect fakes. Often a precursor to one of the other modes.</p>
+        <div class="examples"><span class="ex">Hollow cacao beans</span><span class="ex">Glass &amp; bone wampum</span><span class="ex">Plated denarii</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ LONGEVITY ============================ -->
+<section id="longevity">
+  <div class="wrap">
+    <div class="eyebrow">Track record</div>
+    <h2>Lifespan as a meaningful store of value, in years.</h2>
+    <div class="section-intro">
+      <p>
+        Longevity is not a guarantee of future performance, but it is the single most informative prior we have. A monetary asset with a 5,000-year track record
+        has been tested against more shocks than any 50-year-old asset can have been.
+      </p>
+    </div>
+    <div class="chart-card">
+      <h3>How long did each store of value actually last?</h3>
+      <p class="sub">Years of meaningful monetary or store-of-value use. Bitcoin shown for scale; its track record is ~16 years.</p>
+      <div class="chart-host"><canvas id="longevityChart"></canvas></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ WHY GOLD ============================ -->
+<section id="gold">
+  <div class="wrap">
+    <div class="eyebrow">The endurance case</div>
+    <h2>Why gold actually won — and what could break it.</h2>
+    <div class="section-intro">
+      <p>
+        The textbook answer ("scarce, durable, divisible, fungible, portable") is correct but incomplete. Many of the failed assets on this page also satisfied
+        most of those properties. The distinguishing features of gold are subtler, and they are testable.
+      </p>
+    </div>
+
+    <div class="gold-anchors">
+      <div class="anchor">
+        <div class="num">i</div>
+        <h4>Stock-to-flow asymmetry</h4>
+        <p>Above-ground gold (~210,000 t) divided by annual mining (~3,000 t) gives a stock-to-flow of ~67. New supply cannot meaningfully dilute the float in a single human lifetime.</p>
+      </div>
+      <div class="anchor">
+        <div class="num">ii</div>
+        <h4>No industrial bid</h4>
+        <p>Unlike silver (~50% of which is consumed industrially) or copper (~95%), gold is essentially never consumed. The above-ground stock keeps growing, but only at the rate of new mining. This is what de-monetized silver in 1873.</p>
+      </div>
+      <div class="anchor">
+        <div class="num">iii</div>
+        <h4>Independent civilizational adoption</h4>
+        <p>Egypt, China, India, the Andes, and West Africa all valued gold without contact. This convergence reduces the risk that gold's monetary status is a contingent cultural accident — it is closer to a Schelling point.</p>
+      </div>
+      <div class="anchor">
+        <div class="num">iv</div>
+        <h4>Survived assault tests</h4>
+        <p>Roosevelt's 1933 confiscation (Executive Order 6102), the 1971 Nixon shock, the 1980s–90s central-bank gold sales, and a 1999 commitment by European central banks to dump reserves — all designed or threatened to demonetize gold. None succeeded.</p>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="chart-card">
+      <h3>Gold's purchasing power against the US dollar, 1900–2024</h3>
+      <p class="sub">Index, log-style display. The dollar has lost ~98% of its purchasing power since the founding of the Fed; gold has roughly tracked CPI plus a real return.</p>
+      <div class="chart-host"><canvas id="goldChart"></canvas></div>
+    </div>
+
+    <div class="pull">
+      Gold did not win because it is mystically perfect. It won because it is the only candidate that has survived all six failure modes for five millennia in a row. That is an empirical claim, not an aesthetic one.
+    </div>
+
+    <h3 style="margin-top: 12px;">What could actually break gold?</h3>
+    <div class="grid grid-3" style="margin-top: 14px;">
+      <div class="card">
+        <span class="verdict mixed">Plausible</span>
+        <h4>Asteroid / seabed mining</h4>
+        <p>Either source could increase annual supply 10–100× and trigger failure mode #4 (resource discovery shock). Cost curves currently make this 30+ years off; engineering risk and terrestrial gold's lobby make it longer.</p>
+      </div>
+      <div class="card">
+        <span class="verdict mixed">Slow-burning</span>
+        <h4>Loss of central-bank holding</h4>
+        <p>Central banks hold ~17% of above-ground gold (~36,000 t). A coordinated demonetization (the EU tried, weakly, 1999) would matter — but in 2022–24 central banks were net <i>buyers</i> at the highest rate since 1967.</p>
+      </div>
+      <div class="card">
+        <span class="verdict mixed">Generational</span>
+        <h4>Better digital scarce asset</h4>
+        <p>Bitcoin's 21-million cap is harder than gold's stock-to-flow if the protocol holds. Whether the protocol holds for 50 years is the open empirical question. Gold has 5,000 years on it. The bar is high.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ MODERN ============================ -->
+<section id="modern">
+  <div class="wrap">
+    <div class="eyebrow">After Bretton Woods</div>
+    <h2>The post-1971 menu of stores of value.</h2>
+    <div class="section-intro">
+      <p>
+        Since the closing of the gold window in 1971, every major currency has been a fully fiat instrument with no convertibility floor. This is a genuinely new
+        regime — never before in history have all major monies floated freely against each other and against gold simultaneously. The store-of-value menu has expanded
+        accordingly, mostly toward financial assets.
+      </p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="verdict good">Best long-run real return</span>
+        <h4>Equities</h4>
+        <div class="meta">Dutch East India 1602 → present</div>
+        <p>Stocks of productive companies have produced ~6.5–7% real returns over the long run (Jeremy Siegel; Dimson-Marsh-Staunton). Better than gold's near-zero real return — but with severe drawdowns and total losses in individual names.</p>
+        <p><b>Failure modes:</b> #2 (when held in a debasing currency), #3 (revolution / nationalization).</p>
+      </div>
+      <div class="card">
+        <span class="verdict good">Universally held</span>
+        <h4>Real estate / land</h4>
+        <div class="meta">Sumer → present</div>
+        <p>Land was the original SoV before metal coinage and has remained one. Real returns roughly track productivity. Largely immune to production-tech arbitrage (failure mode #1) — they aren't making more land.</p>
+        <p><b>Failure modes:</b> #2 (property-tax debasement), #3 (revolution, expropriation), #5 (depopulation).</p>
+      </div>
+      <div class="card">
+        <span class="verdict good">5,000 years</span>
+        <h4>Gold</h4>
+        <div class="meta">~3000 BCE → present</div>
+        <p>Real return ~0–1% per year over very long periods. Holds purchasing power but does not grow it. Best understood as an insurance asset against currency failure rather than a wealth-builder.</p>
+        <p><b>Failure modes:</b> Has not yet experienced any.</p>
+      </div>
+      <div class="card">
+        <span class="verdict mixed">16-year track record</span>
+        <h4>Bitcoin</h4>
+        <div class="meta">2009 → present</div>
+        <p>The first asset whose scarcity is enforced cryptographically rather than physically or institutionally. Hard cap of 21 million. Verifiability is mathematical. Genuinely novel — the first new monetary technology since paper.</p>
+        <p><b>Open questions:</b> Whether the protocol holds for 50+ years; whether energy / regulatory / quantum risk materializes; whether network effects entrench it before a competitor does. Track record is short — a single 75-year period would be more informative than all data we have.</p>
+      </div>
+      <div class="card">
+        <span class="verdict bad">Lost monetary status 1873</span>
+        <h4>Silver</h4>
+        <div class="meta">SoV ~3000 BCE → 1873</div>
+        <p>Demonetized over a 30-year window after Germany's switch to gold (1873) cascaded through Europe and the US (Coinage Act of 1873, "the Crime of '73"). Now ~50% industrial demand, which dominates price.</p>
+        <p><b>Failure mode:</b> #5 (loss of monetary demand) accelerated by #4 (Comstock Lode and Mexican silver of the 1860s–70s).</p>
+      </div>
+      <div class="card">
+        <span class="verdict mixed">Niche</span>
+        <h4>Fine art, collectibles, gems</h4>
+        <div class="meta">Always</div>
+        <p>Real returns roughly track equities or worse, with much lower liquidity and high frictional costs. Useful as a wealth-disguising mechanism more than a wealth-preservation one. Verification is the dominant failure mode.</p>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="chart-card">
+      <h3>Major hyperinflations since 1900 (selected, peak monthly inflation)</h3>
+      <p class="sub">Each one a near-textbook reproduction of failure mode #2: fiscal debasement under unsustainable obligations.</p>
+      <div class="chart-host short"><canvas id="hyperChart"></canvas></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TAKEAWAYS ============================ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Synthesis</div>
+    <h2>Five things this history actually teaches.</h2>
+    <div class="grid grid-2" style="margin-top: 22px;">
+      <div class="card">
+        <h4>1. Scarcity must be defensible, not just present.</h4>
+        <p>Cowries, wampum, and rai stones were all scarce when adopted. They failed because their scarcity was not defensible against a productivity shock. The right question of any candidate SoV is not "is it scarce?" but "by what mechanism does that scarcity hold up against a 100× change in production technology?"</p>
+      </div>
+      <div class="card">
+        <h4>2. Institutional money is borrowed scarcity.</h4>
+        <p>Paper money, bank deposits, bonds — all derive scarcity from the discipline of an institution. That discipline has a half-life. Of every paper currency issued before 1900 that is not still in use, the median lifespan was under 50 years. The few survivors (BoE, US dollar) share institutional traits absent from the failures.</p>
+      </div>
+      <div class="card">
+        <h4>3. The failure mechanism is usually fiscal, not monetary.</h4>
+        <p>"Why did the denarius fail?" is not really a monetary question. It is a question about Roman tax capacity in the 3rd century. Currencies fail downstream of fiscal failure. This is why gold wins under fiat instability — it is the asset that does not require its issuer to remain solvent, because it has no issuer.</p>
+      </div>
+      <div class="card">
+        <h4>4. Convergent independent adoption is strong evidence.</h4>
+        <p>The fact that civilizations with no contact independently selected similar monetary substances (metals, shells, beads, grain) tells us those properties are real, not cultural. Gold's simultaneous adoption by Egypt, China, India, Mesoamerica, and West Africa is the closest thing in monetary history to an independent replication.</p>
+      </div>
+      <div class="card">
+        <h4>5. "It worked for 1,000 years" is not a guarantee.</h4>
+        <p>Bronze cash coins ran for 2,100 years, then stopped. Cowries ran for 700 years, then collapsed in 50. Lifespan is the strongest available prior, but every monetary asset eventually meets a shock it can't absorb. The honest position on gold is that it has not yet met one — not that it cannot.</p>
+      </div>
+      <div class="card">
+        <h4>6. Stores of value and currencies want different things.</h4>
+        <p>The state's interest is in elastic, controllable currency. The household's interest, when in doubt, is in inelastic, uncontrollable store of value. The two converge when institutions are healthy and diverge when they are not. Watching that gap widen — the gold-vs-fiat spread, or the bitcoin-vs-fiat spread — is one of the few real-time indicators of fiscal stress that markets price honestly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Sources include: Glyn Davies, <i>A History of Money</i>; Niall Ferguson, <i>The Ascent of Money</i>; David Graeber, <i>Debt: The First 5,000 Years</i>; Peter Bernstein, <i>The Power of Gold</i>; Hamilton's <i>American Treasure and the Price Revolution in Spain</i>; Dimson, Marsh &amp; Staunton, <i>Triumph of the Optimists</i>; World Gold Council historical data; Earl J. Hamilton; Jastram, <i>The Golden Constant</i>; primary records (Hammurabi, Diocletian's Edict).<br><br>
+  Built as a research dashboard. Not investment advice.
+</footer>
+
+<script>
+// ----- Chart.js global defaults -----
+Chart.defaults.font.family = "'DM Sans', -apple-system, sans-serif";
+Chart.defaults.color = "#5A4F3E";
+Chart.defaults.borderColor = "rgba(201,185,143,.4)";
+
+const COLOR = {
+  good: "#2F6B52", goodSoft: "rgba(47,107,82,.18)",
+  mixed: "#8E6418", mixedSoft: "rgba(142,100,24,.18)",
+  bad: "#7A1B1B", badSoft: "rgba(122,27,27,.18)",
+  gold: "#B7892C", goldSoft: "rgba(183,137,44,.20)",
+  silver: "#8C9099", silverSoft: "rgba(140,144,153,.18)",
+  ink: "#1A140C", rule: "rgba(201,185,143,.5)"
+};
+
+// ----- TIMELINE: floating bars showing each SoV's active period -----
+(function(){
+  const data = [
+    // [name, start (negative=BCE), end, color, outcome]
+    ["Cattle / livestock",        -8000,  1900, COLOR.mixed, "Displaced"],
+    ["Grain receipts (Mesop.)",   -2500,   -30, COLOR.mixed, "Institutional"],
+    ["Cowrie shells",             -1500,  1900, COLOR.bad,   "Industrial flood"],
+    ["Silver (by weight)",        -3000,  1873, COLOR.bad,   "Demonetized"],
+    ["Gold",                      -3000,  2024, COLOR.good,  "Endured"],
+    ["Cacao beans (Mesoamerica)",  -600,  1700, COLOR.bad,   "Out-competed"],
+    ["Greek/Athenian silver",      -600,  -100, COLOR.mixed, "Mine depletion"],
+    ["Roman denarius",             -211,   270, COLOR.bad,   "Debased"],
+    ["Chinese cash coins",         -221,  1912, COLOR.mixed, "Daily currency"],
+    ["Byzantine solidus",           312,  1090, COLOR.good,  "Inst. discipline"],
+    ["Arab dinar/dirham",           696,  1500, COLOR.good,  "Religious anchor"],
+    ["Wampum",                     1500,  1700, COLOR.bad,   "Industrial drill"],
+    ["Yap rai stones",             1000,  1900, COLOR.bad,   "Iron-tool flood"],
+    ["Florin / ducat",             1252,  1530, COLOR.good,  "Republic disc."],
+    ["Spanish piece of eight",     1535,  1857, COLOR.good,  "Industrial era"],
+    ["Bank of England note",       1694,  2024, COLOR.good,  "Convertibility"],
+    ["Continentals / assignats",   1775,  1796, COLOR.bad,   "War financing"],
+    ["Classical gold standard",    1873,  1914, COLOR.good,  "WWI suspended"],
+    ["Bretton Woods $",            1944,  1971, COLOR.mixed, "Triffin dilemma"],
+    ["Fiat USD",                   1971,  2024, COLOR.mixed, "Ongoing"],
+    ["Bitcoin",                    2009,  2024, COLOR.mixed, "Too young"]
+  ];
+  const ctx = document.getElementById('timelineChart');
+  const labels = data.map(d=>d[0]);
+  const ranges = data.map(d=>[d[1], d[2]]);
+  const colors = data.map(d=>d[3]);
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Period of monetary use',
+        data: ranges,
+        backgroundColor: colors,
+        borderColor: colors,
+        borderWidth: 1,
+        borderRadius: 3,
+        barThickness: 14
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1A140C',
+          padding: 10,
+          callbacks: {
+            label: (ctx) => {
+              const [s,e] = ctx.raw;
+              const fmt = y => y < 0 ? `${-y} BCE` : `${y} CE`;
+              const dur = e - s;
+              return `${fmt(s)} → ${fmt(e)}  (${dur.toLocaleString()} yrs)`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          min: -3200, max: 2080,
+          grid: { color: COLOR.rule },
+          ticks: {
+            stepSize: 500,
+            callback: (v) => v < 0 ? `${-v} BCE` : (v === 0 ? '0' : `${v}`)
+          }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { font: { size: 11.5 } }
+        }
+      }
+    }
+  });
+})();
+
+// ----- LONGEVITY: simple bar chart of years of use -----
+(function(){
+  const items = [
+    ["Gold",                              5000, COLOR.good],
+    ["Silver (by weight or coin)",        4870, COLOR.bad],
+    ["Cowrie shells",                     3400, COLOR.bad],
+    ["Chinese cash coin (one design)",    2133, COLOR.mixed],
+    ["Egyptian grain banking",            2000, COLOR.good],
+    ["Roman/Byzantine solidus",            778, COLOR.good],
+    ["Arab dinar standard",                800, COLOR.good],
+    ["Yap rai stones",                     900, COLOR.bad],
+    ["Spanish piece of eight",             322, COLOR.good],
+    ["Florin / ducat (unchanged)",         300, COLOR.good],
+    ["Wampum (legal tender, NE)",           24, COLOR.bad],
+    ["Roman denarius (silver phase)",      481, COLOR.bad],
+    ["Yuan paper chao",                     90, COLOR.bad],
+    ["Continental dollar",                   6, COLOR.bad],
+    ["Classical gold standard",             41, COLOR.good],
+    ["Bretton Woods system",                27, COLOR.mixed],
+    ["Bitcoin (so far)",                    16, COLOR.mixed]
+  ].sort((a,b) => b[1] - a[1]);
+  const ctx = document.getElementById('longevityChart');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: items.map(i=>i[0]),
+      datasets: [{
+        data: items.map(i=>i[1]),
+        backgroundColor: items.map(i=>i[2]),
+        borderRadius: 3,
+        barThickness: 13
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1A140C',
+          callbacks: { label: (c) => `${c.parsed.x.toLocaleString()} years` }
+        }
+      },
+      scales: {
+        x: {
+          type: 'logarithmic',
+          min: 1, max: 10000,
+          grid: { color: COLOR.rule },
+          ticks: {
+            callback: (v) => [1,3,10,30,100,300,1000,3000,10000].includes(v) ? v.toLocaleString() : null
+          }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { font: { size: 11.5 } }
+        }
+      }
+    }
+  });
+})();
+
+// ----- GOLD purchasing power 1900-2024 (USD per oz, log) -----
+(function(){
+  // approximate annual gold price (USD/oz) and US CPI index (1900=100)
+  const years = [1900,1910,1920,1930,1933,1940,1950,1960,1971,1975,1980,1985,1990,2000,2008,2011,2015,2020,2024];
+  const goldUsd = [20.67,20.67,20.67,20.67,26.33,33.85,34.72,35.27,40.62,160.86,615.0,317.0,383.5,279.0,872,1571,1160,1770,2350];
+  const cpiIndex = [100,114,200,167,151,140,240,300,400,540,820,1100,1330,1730,2200,2350,2470,2650,2900]; // index 1900=100, illustrative
+  const ctx = document.getElementById('goldChart');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [
+        {
+          label: 'Gold price (USD/oz, log)',
+          data: goldUsd,
+          borderColor: COLOR.gold,
+          backgroundColor: COLOR.goldSoft,
+          fill: true,
+          tension: 0.25,
+          pointRadius: 3, pointHoverRadius: 5,
+          borderWidth: 2.5,
+          yAxisID: 'y'
+        },
+        {
+          label: 'US CPI index (1900 = 100, log)',
+          data: cpiIndex,
+          borderColor: COLOR.silver,
+          backgroundColor: 'transparent',
+          tension: 0.2,
+          borderDash: [5,5],
+          pointRadius: 0, pointHoverRadius: 4,
+          borderWidth: 1.8,
+          yAxisID: 'y2'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom', labels: { padding: 16, boxWidth: 14 } },
+        tooltip: { backgroundColor: '#1A140C' }
+      },
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        y: { type: 'logarithmic', position: 'left',
+             grid: { color: COLOR.rule },
+             ticks: { callback: v => '$' + v },
+             title: { display: true, text: 'Gold (USD/oz)' } },
+        y2: { type: 'logarithmic', position: 'right',
+              grid: { display: false },
+              title: { display: true, text: 'CPI index (1900=100)' } },
+        x: { grid: { color: COLOR.rule } }
+      }
+    }
+  });
+})();
+
+// ----- HYPERINFLATIONS chart -----
+(function(){
+  // Peak monthly inflation rate, %, log scale
+  const items = [
+    ["Hungary 1946", 4.19e16],
+    ["Zimbabwe 2008", 7.96e10],
+    ["Yugoslavia 1994", 313e6],
+    ["Germany 1923", 29500],
+    ["Greece 1944", 13800],
+    ["Venezuela 2018", 2688],
+    ["China 1949", 5070],
+    ["Argentina 1989", 197],
+    ["Lebanon 2023", 200],
+    ["Turkey 2022", 85],
+    ["Weimar (peak)", 29500]
+  ];
+  // dedupe Weimar/Germany — keep one
+  const dedup = items.filter((it,i) => !(it[0]==='Weimar (peak)'));
+  dedup.sort((a,b) => b[1]-a[1]);
+  const ctx = document.getElementById('hyperChart');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: dedup.map(i=>i[0]),
+      datasets: [{
+        data: dedup.map(i=>i[1]),
+        backgroundColor: COLOR.bad,
+        borderRadius: 3,
+        barThickness: 18
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1A140C',
+          callbacks: {
+            label: c => `Peak monthly inflation: ${c.parsed.x.toLocaleString()}%`
+          }
+        }
+      },
+      scales: {
+        x: {
+          type: 'logarithmic',
+          grid: { color: COLOR.rule },
+          ticks: { callback: v => {
+            if (v >= 1e9) return (v/1e9).toFixed(0)+'B%';
+            if (v >= 1e6) return (v/1e6).toFixed(0)+'M%';
+            if (v >= 1e3) return (v/1e3).toFixed(0)+'k%';
+            return v + '%';
+          } }
+        },
+        y: { grid: { display: false }, ticks: { font: { size: 12 } } }
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
