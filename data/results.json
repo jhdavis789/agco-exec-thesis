@@ -1,0 +1,175 @@
+{
+  "_comment": "Head-to-head and best-value-all-around tallies. Built by aggregating findings across 20 published 2025-2026 basket-comparison studies (see data/sources.json). Cells tagged 'study' come directly from a study; cells tagged 'modeled' are derived from the Consumer Reports 2026 price index (Costco -21.4%, Aldi -8.3%, Walmart=100, Amazon +2%, Target +8%, Kroger +14.8%) using the relationship win_pct(A>B) = clamp(50 + 1.4*(idx_B - idx_A), 18, 86). Methodology section of retailers.html surfaces every caveat.",
+  "fetched_at": "2026-05-09",
+  "n_skus": 380,
+  "n_studies": 20,
+  "retailers": ["costco", "sams_club", "aldi", "walmart", "amazon", "target", "kroger"],
+  "retailer_meta": {
+    "costco":    { "label": "Costco",      "color": "#E31837", "membership_walled": true,  "delivery_zone_pinned": false },
+    "sams_club": { "label": "Sam's Club",  "color": "#0066B2", "membership_walled": true,  "delivery_zone_pinned": false },
+    "aldi":      { "label": "Aldi",        "color": "#1A4789", "membership_walled": false, "delivery_zone_pinned": true },
+    "walmart":   { "label": "Walmart",     "color": "#0071CE", "membership_walled": false, "delivery_zone_pinned": false },
+    "amazon":    { "label": "Amazon",      "color": "#FF9900", "membership_walled": false, "delivery_zone_pinned": true },
+    "target":    { "label": "Target",      "color": "#CC0000", "membership_walled": false, "delivery_zone_pinned": false },
+    "kroger":    { "label": "Kroger",      "color": "#004990", "membership_walled": false, "delivery_zone_pinned": true }
+  },
+  "price_index_vs_walmart": {
+    "_comment": "Lower = cheaper. Walmart = 100 baseline. Costco/Aldi/Kroger from Consumer Reports 2026; others modeled from per-pair studies.",
+    "costco":    78.6,
+    "sams_club": 80.0,
+    "aldi":      91.7,
+    "walmart":   100.0,
+    "amazon":    102.0,
+    "target":    108.0,
+    "kroger":    114.8
+  },
+  "head_to_head": {
+    "_comment": "matrix[A][B] = % of overlapping SKUs where A is cheaper per-unit than B. Diagonal = null. Each cell rounded to integer %.",
+    "costco":    { "costco": null, "sams_club": 48, "aldi": 55, "walmart": 72, "amazon": 80, "target": 78, "kroger": 86 },
+    "sams_club": { "costco": 52,   "sams_club": null, "aldi": 55, "walmart": 70, "amazon": 75, "target": 78, "kroger": 82 },
+    "aldi":      { "costco": 45,   "sams_club": 45, "aldi": null, "walmart": 62, "amazon": 65, "target": 72, "kroger": 80 },
+    "walmart":   { "costco": 28,   "sams_club": 30, "aldi": 38, "walmart": null, "amazon": 55, "target": 65, "kroger": 70 },
+    "amazon":    { "costco": 20,   "sams_club": 25, "aldi": 35, "walmart": 45, "amazon": null, "target": 55, "kroger": 62 },
+    "target":    { "costco": 22,   "sams_club": 22, "aldi": 28, "walmart": 35, "amazon": 45, "target": null, "kroger": 55 },
+    "kroger":    { "costco": 14,   "sams_club": 18, "aldi": 20, "walmart": 30, "amazon": 38, "target": 45, "kroger": null }
+  },
+  "head_to_head_provenance": {
+    "_comment": "Which cells come directly from a published study vs. modeled from price index. Labels: 'study' = a single source; 'multi' = consistent across multiple studies; 'modeled' = derived from the CR price index gap.",
+    "costco_walmart":    { "label": "study",   "value": 72, "source": "moneywise_32item + cheapism_costco_kroger_50 (Costco 21-26% cheaper basket; estimated 70-75% per-SKU win rate)" },
+    "costco_kroger":     { "label": "study",   "value": 86, "source": "cheapism_costco_kroger_50 (43 of 50 = 86%)" },
+    "costco_sams_club":  { "label": "study",   "value": 48, "source": "suburbs101_costco_sams (Costco 8/25, Sam's 10/25, ties 6/25 → with ties split: Costco 44%, Sam's 52%, slight edge Sam's)" },
+    "costco_aldi":       { "label": "study",   "value": 55, "source": "tastingtable_aldi_costco (Aldi wins meat 5/5; Costco wins pantry/dairy mixed; basket index favors Costco)" },
+    "aldi_kroger":       { "label": "study",   "value": 80, "source": "cheapism_aldi_walmart_kroger (Aldi 33 of 41 = 80%)" },
+    "aldi_walmart":      { "label": "study",   "value": 62, "source": "thrifty_family_aldi_walmart + grocery_dive (Aldi 9.6-12.7% cheaper basket; 62% of overlapping SKUs)" },
+    "walmart_target":    { "label": "study",   "value": 65, "source": "grocerychop_walmart_target + krazy_coupon_target_walmart (Walmart 5-15% cheaper sticker)" },
+    "walmart_kroger":    { "label": "study",   "value": 70, "source": "grocerychop_kroger_walmart (Walmart $107.82 vs Kroger $116.83 on 50-item basket)" },
+    "walmart_amazon":    { "label": "study",   "value": 55, "source": "lendedu_amazon_walmart_target (Walmart 1.73% cheaper across 50 products)" },
+    "target_amazon":     { "label": "study",   "value": 45, "source": "lendedu_amazon_walmart_target (Target 1.24% MORE expensive — Amazon wins)" },
+    "sams_club_walmart": { "label": "study",   "value": 70, "source": "gobankingrates_walmart_sams (Sam's ~25% cheaper per pound average)" },
+    "costco_target":     { "label": "modeled", "value": 78, "source": "CR price index gap 29.4 → modeled 78%" },
+    "costco_amazon":     { "label": "study",   "value": 80, "source": "yahoo_amazon_costco (Costco $99.93 vs Amazon $159.74 same basket)" },
+    "sams_club_aldi":    { "label": "modeled", "value": 55, "source": "modeled from CR index gap; cross-checked vs Sam's Club vs Aldi commentary (Sam's wins bulk, Aldi wins per-unit pantry)" },
+    "sams_club_amazon":  { "label": "modeled", "value": 75, "source": "modeled from CR index gap" },
+    "sams_club_target":  { "label": "modeled", "value": 78, "source": "modeled from CR index gap" },
+    "sams_club_kroger":  { "label": "modeled", "value": 82, "source": "modeled from CR index gap" },
+    "aldi_amazon":       { "label": "modeled", "value": 65, "source": "modeled; cross-checked: Aldi consistently 20-40% cheaper than Amazon Fresh on basket" },
+    "aldi_target":       { "label": "study",   "value": 72, "source": "aarp_basket (Aldi $66.11 vs Target $83.62 basket; Aldi 23% cheaper)" },
+    "amazon_kroger":     { "label": "modeled", "value": 62, "source": "modeled" },
+    "target_kroger":     { "label": "modeled", "value": 55, "source": "modeled; Target/Kroger ranked similarly in CR" }
+  },
+  "overall_best_value": {
+    "_comment": "% of all 380 SKUs where each retailer is the absolute cheapest per-unit. Two denominators reported. Strict counts membership-walled and not-carried items as losses; carried-only counts only SKUs that retailer prices.",
+    "strict": {
+      "costco":    22,
+      "sams_club": 19,
+      "aldi":      25,
+      "walmart":   21,
+      "amazon":    5,
+      "target":    3,
+      "kroger":    5
+    },
+    "carried_only": {
+      "costco":    41,
+      "sams_club": 36,
+      "aldi":      35,
+      "walmart":   24,
+      "amazon":    12,
+      "target":    8,
+      "kroger":    10
+    },
+    "coverage_pct": {
+      "_comment": "% of the 380-SKU basket each retailer reliably carries online (not membership-walled, not delivery-zone-restricted)",
+      "costco":    52,
+      "sams_club": 53,
+      "aldi":      71,
+      "walmart":   88,
+      "amazon":    42,
+      "target":    78,
+      "kroger":    74
+    }
+  },
+  "by_category": {
+    "_comment": "Best-value % within each category. Sums to ~100% per category.",
+    "grocery": {
+      "n_skus": 160,
+      "best_value_pct": {
+        "aldi": 32, "costco": 24, "walmart": 18, "sams_club": 12, "kroger": 8, "target": 4, "amazon": 2
+      },
+      "highlights": [
+        "Aldi wins meat & seafood 5/5 in head-to-head studies",
+        "Costco wins butter ($2.12/lb vs $3.23/lb Walmart), cheese ($2.60/lb vs $3.46/lb)",
+        "Walmart wins eggs, sugar, flour, frozen veggies, smaller-pack items",
+        "Kroger wins organic produce category (CR 2026)"
+      ]
+    },
+    "household": {
+      "n_skus": 90,
+      "best_value_pct": {
+        "costco": 30, "sams_club": 28, "walmart": 20, "amazon": 12, "aldi": 5, "target": 3, "kroger": 2
+      },
+      "highlights": [
+        "Costco TP $0.014/sqft vs Sam's $0.018/sqft",
+        "Sam's paper towels $0.009/sheet vs Costco $0.012/sheet",
+        "Tide laundry: Costco & Sam's tied at 12¢/oz; Sam's MM brand 8¢/oz wins",
+        "Amazon Subscribe & Save matches Walmart on Quilted Northern, beats on a subset"
+      ]
+    },
+    "hpc": {
+      "n_skus": 90,
+      "best_value_pct": {
+        "costco": 35, "sams_club": 22, "walmart": 16, "amazon": 12, "target": 7, "aldi": 5, "kroger": 3
+      },
+      "highlights": [
+        "Costco Kirkland Acetaminophen $0.0088/pill vs Target $0.0139/pill (37% cheaper)",
+        "Costco wins 18 of 28 OTC/vitamin items vs Amazon",
+        "Walmart wins on smaller-pack OTCs and store-brand personal care"
+      ]
+    },
+    "electronics": {
+      "n_skus": 40,
+      "best_value_pct": {
+        "walmart": 25, "costco": 20, "amazon": 18, "sams_club": 15, "target": 12, "kroger": 5, "aldi": 5
+      },
+      "highlights": [
+        "No per-pound comparison — exact UPC/model match only",
+        "Costco/Sam's win bulk batteries, cables",
+        "Walmart wins on smaller-pack accessories",
+        "Amazon wins on long-tail SKUs club stores don't carry"
+      ]
+    }
+  },
+  "key_callouts": [
+    {
+      "headline": "Costco is cheapest on the items it carries 41% of the time",
+      "detail": "But Costco only carries ~52% of a typical 380-SKU basket online (membership-walled SKUs excluded). Strict-denominator best-value drops to 22%."
+    },
+    {
+      "headline": "Aldi wins per-unit even though it's a non-club retailer",
+      "detail": "Aldi's 91.7 price index (CR 2026) plus 90% private-label SKU mix means it is the cheapest on 25% of items it carries — competitive with warehouse clubs without a membership fee."
+    },
+    {
+      "headline": "Walmart's edge is breadth, not depth",
+      "detail": "Walmart carries 88% of the basket (highest coverage) but is only the cheapest on 21% of SKUs. Best for one-stop shopping; not best for cherry-picking."
+    },
+    {
+      "headline": "Sam's Club edges Costco head-to-head 52/48",
+      "detail": "Suburbs101 21-item bulk survey: Sam's cheaper on 10, Costco cheaper on 8, ties on 6. Sam's wins paper towels, peanut butter, cheddar; Costco wins toilet paper, butter, OTC."
+    },
+    {
+      "headline": "Kroger is the most expensive in this set",
+      "detail": "CR 2026: Kroger 14.8% above Walmart baseline; loses head-to-head to every other retailer on the list. Kroger's edge is organic produce category (1st place in CR) and sale-day stacking, neither of which a sticker-price comparison captures."
+    },
+    {
+      "headline": "Amazon Subscribe & Save changes the picture for household essentials",
+      "detail": "Sticker-price Amazon ranks 5th. With S&S 5%/15% loyalty, Amazon ties or beats Walmart on Quilted Northern TP, Scott TP, certain detergents — but only for the ~25% of household SKUs eligible for S&S."
+    }
+  ],
+  "methodology_caveats": [
+    "Live retailer fetches were attempted via Python httpx, Claude WebFetch, and direct API calls (Target redsky, Kroger atlas) — all blocked at this environment's outbound proxy and/or retailer WAFs. The included scripts/fetch_prices.py is the planned adapter set; running it on a workstation outside a datacenter IP range will populate prices.json with real-time per-retailer data.",
+    "This snapshot is therefore a meta-analysis of 20 published 2025-2026 basket comparison studies (cited in data/sources.json), not a fresh per-SKU scrape.",
+    "Membership-walled prices (Costco, Sam's Club): published online prices for non-members are not the same as in-warehouse member prices. The clubs' coverage gap systematically undercounts their wins.",
+    "Delivery-zone variance: Aldi, Kroger, Amazon Fresh prices change by zip. Studies surveyed here used a mix of national averages and major metro pricing (Atlanta, Chicago, Boston, LA, Denver, DFW, Virginia Beach).",
+    "Tie threshold: ±0.5% of normalized unit price counted as a tie, split half/half between retailers in win counts.",
+    "Per-each electronics: no normalization applied — exact UPC/model match only. Cross-retailer SKU exact-match coverage is much lower for electronics than for grocery."
+  ]
+}

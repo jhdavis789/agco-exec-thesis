@@ -1,0 +1,249 @@
+{
+  "_comment": "Citations for every aggregated comparison data point. Each entry references which study or article the finding came from. Live retailer fetches were attempted but blocked at every layer (sandbox proxy + retailer WAFs); this dataset was compiled by aggregating published 2025-2026 basket comparison studies via WebSearch.",
+  "sources": [
+    {
+      "id": "consumer_reports_2026",
+      "name": "Consumer Reports — Most and Least Expensive Supermarkets",
+      "url": "https://www.consumerreports.org/money/prices-price-comparison/most-and-least-expensive-supermarkets-a3157951568/",
+      "year": 2026,
+      "method": "Strategic Resource Group basket survey, 30+ retailers, 6 metro areas (Boston, Chicago, DFW, Denver, Virginia Beach, LA/SoCal)",
+      "key_findings": [
+        "Costco 21.4% below Walmart baseline",
+        "BJ's 21.0% below Walmart",
+        "Lidl 8.5% below Walmart",
+        "Aldi 8.3% below Walmart",
+        "WinCo 3.3% below Walmart",
+        "Kroger 14.8% above Walmart",
+        "Trader Joe's 24.6% above Walmart"
+      ]
+    },
+    {
+      "id": "moneywise_32item",
+      "name": "Moneywise / Yahoo Finance — 32-item Walmart vs Costco showdown",
+      "url": "https://moneywise.com/managing-money/budgeting/walmart-costco-grocery-price-comparison",
+      "year": 2026,
+      "method": "Single-shopper 32-item basket comparison",
+      "key_findings": [
+        "Costco basket 26% cheaper overall",
+        "Walmart wins chicken (-$0.42/lb), sugar, flour, eggs (-$0.15/dozen)",
+        "Costco wins cheese ($2.60 vs $3.46/lb), butter ($2.12 vs $3.23/lb), popcorn, crackers"
+      ]
+    },
+    {
+      "id": "cheapism_costco_kroger_50",
+      "name": "Cheapism — 50 staples Costco vs Kroger",
+      "url": "https://www.cheapism.com/costco-grocery-prices-14667/",
+      "year": 2026,
+      "method": "50 staple SKU per-unit comparison",
+      "key_findings": [
+        "Costco cheaper on 43 of 50 items (86%)",
+        "Kroger cheaper on 4 items even with loyalty card",
+        "Costco savings exceeded 40% on 10 items"
+      ]
+    },
+    {
+      "id": "aarp_basket",
+      "name": "AARP — Aldi/Walmart/Target 30+ item basket",
+      "url": "https://www.aarp.org/money/personal-finance/cheapest-groceries-walmart-aldi-target/",
+      "year": 2025,
+      "method": "30+ item identical basket priced at all three",
+      "key_findings": [
+        "Aldi $66.11, Walmart $67.63, Target $83.62",
+        "Aldi 23% cheaper than Target on the basket"
+      ]
+    },
+    {
+      "id": "cheapism_aldi_walmart_kroger",
+      "name": "Cheapism — Aldi vs Walmart vs Kroger",
+      "url": "https://www.cheapism.com/cheapest-groceries-walmart-vs-kroger-vs-aldi/",
+      "year": 2026,
+      "method": "41-item private-label basket",
+      "key_findings": [
+        "Aldi $67.34, Walmart $78.23, Kroger $90.82",
+        "Aldi 14% cheaper than Walmart, 24% cheaper than Kroger",
+        "Aldi cheapest on 33 of 41 items (80%)"
+      ]
+    },
+    {
+      "id": "gobankingrates_walmart_sams",
+      "name": "GoBankingRates — Walmart vs Sam's Club 2026",
+      "url": "https://www.gobankingrates.com/saving-money/shopping/walmart-or-sams-club-2026-where-will-groceries-be-cheaper/",
+      "year": 2026,
+      "method": "Per-unit comparison across grocery and household categories",
+      "key_findings": [
+        "Sam's Club ~25% cheaper per pound on average",
+        "Sam's wins detergent pods, peanut butter, $4.98 rotisserie chicken",
+        "Sam's 10lb sugar $6.58 vs Walmart $8",
+        "Walmart wins frozen veggies, 2% milk, diapers, smaller pack sizes",
+        "Cheddar ~30% cheaper at Sam's; milk ~20% cheaper at Walmart"
+      ]
+    },
+    {
+      "id": "suburbs101_costco_sams",
+      "name": "Suburbs101 — Costco vs Sam's Club 21 bulk items",
+      "url": "https://suburbs101.com/costco-vs-sams-club-price-checked-21-bulk-items/",
+      "year": 2026,
+      "method": "21-item bulk comparison",
+      "key_findings": [
+        "Sam's cheaper on 10 of 25 items, Costco 8 of 25, ties on 6 of 25",
+        "Sam's MM paper towels $0.009/sheet vs Costco Kirkland $0.012/sheet",
+        "Costco TP 1.4¢/sqft vs Sam's 1.8¢/sqft",
+        "Tide laundry tied at 12¢/oz both clubs"
+      ]
+    },
+    {
+      "id": "lendedu_amazon_walmart_target",
+      "name": "LendEDU — Amazon vs Walmart vs Target 50-product basket",
+      "url": "https://lendedu.com/blog/amazon-walmart-target-price-comparison/",
+      "year": 2025,
+      "method": "50-product cross-retailer basket",
+      "key_findings": [
+        "Walmart 1.73% cheaper than Amazon overall",
+        "Target 1.24% more expensive than Amazon",
+        "Walmart and Target both beat Amazon on Food & Beverage (4.61% and 7.30%)"
+      ]
+    },
+    {
+      "id": "grocerychop_walmart_target",
+      "name": "GroceryChop — Walmart vs Target 2026",
+      "url": "https://grocerychop.com/blog/walmart-vs-target-groceries",
+      "year": 2026,
+      "method": "Apples-to-apples sticker price comparison",
+      "key_findings": [
+        "Walmart 5-15% cheaper than Target without discounts",
+        "As of Dec 2025, Walmart $1+ cheaper than Target on whole cart",
+        "Target Circle + RedCard closes the gap"
+      ]
+    },
+    {
+      "id": "grocerychop_kroger_walmart",
+      "name": "GroceryChop — Kroger vs Walmart",
+      "url": "https://grocerychop.com/blog/kroger-vs-walmart",
+      "year": 2026,
+      "method": "50-item store-brand basket",
+      "key_findings": [
+        "Walmart $107.82 vs Kroger $116.83 — Walmart 7.7% cheaper",
+        "Great Value cereal ~15-20% cheaper than Kroger Brand"
+      ]
+    },
+    {
+      "id": "tastingtable_aldi_costco",
+      "name": "Tasting Table — Aldi vs Costco 8 foods",
+      "url": "https://www.tastingtable.com/2019194/aldi-food-deals-beat-costco/",
+      "year": 2026,
+      "method": "8-food per-pound comparison",
+      "key_findings": [
+        "Aldi wins all 5 meat/seafood: ground beef ($6.89 vs $6.99), chicken breast ($2.49 vs $3.69), chicken thighs ($1.55 vs $2.19), bacon ($4.49 vs $6.24/lb), shrimp ($6.99 vs $9.49/lb)",
+        "Costco flour $0.35/lb vs Aldi $0.47/lb",
+        "Aldi rice $0.66/lb vs Costco $0.99/lb",
+        "Aldi butter $3.49 vs Costco $4.24/lb"
+      ]
+    },
+    {
+      "id": "krazy_coupon_target_walmart",
+      "name": "Krazy Coupon Lady — Target vs Walmart 65+ items",
+      "url": "https://thekrazycouponlady.com/tips/couponing/targets-everyday-low-price-promise-vs-walmart",
+      "year": 2025,
+      "method": "65+ SKU price audit",
+      "key_findings": [
+        "Chicken breast: Target $2.56/lb vs Walmart $2.57/lb (tie)",
+        "Olive oil 17oz: Walmart Great Value $5.97 vs Target Good & Gather $6.39",
+        "AP flour 5lb: Walmart Great Value $1.97 vs Target $2.19"
+      ]
+    },
+    {
+      "id": "thrifty_family_aldi_walmart",
+      "name": "Thrifty Family — 11-item Aldi vs Walmart",
+      "url": "https://thethriftyfamily.com/aldi-vs-walmart-price-comparison/",
+      "year": 2026,
+      "method": "11-item basket",
+      "key_findings": [
+        "Aldi delivered 12.7% lower average cost across 127-item basket vs Walmart",
+        "Aldi 9.6% cheaper national average ($78.42 vs $85.97)",
+        "Aldi 12.3% cheaper in Portland and Denver",
+        "Aldi 15-30% cheaper than Walmart on overlapping items"
+      ]
+    },
+    {
+      "id": "yahoo_amazon_costco",
+      "name": "Yahoo / GoBankingRates — Amazon vs Costco grocery basket",
+      "url": "https://www.gobankingrates.com/saving-money/food/what-100-dollars-groceries-costco-cost-amazon/",
+      "year": 2026,
+      "method": "Same-list price comparison",
+      "key_findings": [
+        "Costco $99.93 basket = $159.74 on Amazon (60% premium on Amazon)",
+        "Amazon Food & Beverage 120% more expensive than Costco on average",
+        "Costco 25% cheaper on household essentials vs Amazon"
+      ]
+    },
+    {
+      "id": "thetakeout_essentials",
+      "name": "The Takeout — Walmart/Aldi/Target/Costco 2026 essentials",
+      "url": "https://www.thetakeout.com/2146793/how-much-essentials-cost-walmart-aldi-target-costco/",
+      "year": 2026,
+      "method": "Everyday essentials per-unit",
+      "key_findings": [
+        "Walmart Great Value eggs $1.67/dozen, Aldi Goldhen $1.85/dozen, Costco $4.53/2dz ($2.27/dozen)",
+        "Walmart whole milk $2.66/gal; Costco $0.03 cheaper",
+        "Costco butter 16 sticks $12.47 ($0.78/stick); Aldi $0.75/stick",
+        "Bread: Aldi L'oven $1.25, Walmart Great Value $1.48, Target Market Pantry $1.59"
+      ]
+    },
+    {
+      "id": "fortune_amazon_pricecuts",
+      "name": "Fortune — Amazon Fresh / Walmart / Target price cuts",
+      "url": "https://fortune.com/2024/05/28/amazon-walmart-target-price-cuts-inflation/",
+      "year": 2024,
+      "method": "Inflation-era pricing review",
+      "key_findings": [
+        "Amazon Fresh cut prices on 4,000 items in May 2024 to match Walmart/Target"
+      ]
+    },
+    {
+      "id": "hip2save_paper",
+      "name": "Hip2Save — paper towel buying guide",
+      "url": "https://hip2save.com/deals/paper-towels-buying-guide/",
+      "year": 2026,
+      "method": "Per-sheet bulk price audit",
+      "key_findings": [
+        "Costco Kirkland $0.0135/sheet vs Bounty $0.0208/sheet (35% premium for name brand)",
+        "Walmart Great Value Choose-a-Size single roll $0.005/sheet (cheapest store brand)",
+        "Sam's 12-pack Bounty Select-a-Size $19.98"
+      ]
+    },
+    {
+      "id": "krazy_coupon_tp",
+      "name": "Krazy Coupon Lady — toilet paper deals",
+      "url": "https://thekrazycouponlady.com/tips/couponing/how-to-never-pay-full-price-for-toilet-paper-again",
+      "year": 2026,
+      "method": "Per-100-sheet audit",
+      "key_findings": [
+        "Scott TP via Amazon S&S as low as 5.8¢ per 100 sheets",
+        "Quilted Northern Amazon S&S $0.027/sqft vs Walmart everyday $0.032/sqft"
+      ]
+    },
+    {
+      "id": "southern_savers_costco_amazon_otc",
+      "name": "Southern Savers — Costco vs Amazon OTC/vitamins",
+      "url": "https://www.southernsavers.com/costco-vs-amazon/",
+      "year": 2026,
+      "method": "OTC and pharmacy basket",
+      "key_findings": [
+        "Costco Kirkland Ibuprofen 200mg $8.79 for 1000ct ($0.0087/pill)",
+        "Target up&up Ibuprofen 200mg $13.90/1000ct ($0.0139/pill)",
+        "Costco wins 18 of 28 items vs Amazon",
+        "Kirkland Aller-Tec (cetirizine) 365ct $14.49 ($0.04/pill)"
+      ]
+    },
+    {
+      "id": "checkbook_aldi_30_40",
+      "name": "Consumer Checkbook 2025 supermarket survey",
+      "url": "https://www.checkbook.org/national/supermarkets/articles/Which-Grocery-Stores-Offer-the-Best-Prices-7139",
+      "year": 2025,
+      "method": "National supermarket price index",
+      "key_findings": [
+        "Aldi 30-40% lower than the average grocery store"
+      ]
+    }
+  ]
+}

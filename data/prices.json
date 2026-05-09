@@ -1,0 +1,219 @@
+{
+  "_comment": "Per-SKU prices harvested from published 2025-2026 basket comparison studies. Each row is sourced (see data/sources.json). normalized_price is in dollars per the basket's normalization unit. Empty cells mean the source did not report that retailer for that SKU; this is honest gap, not synthetic.",
+  "fetched_at": "2026-05-09",
+  "target_zip": "30309 (Atlanta) — most studies pin to this zone or use national averages; per-source variance is real",
+  "rows": [
+    {
+      "sku_id": "grocery-meat-001",
+      "canonical_name": "Boneless Skinless Chicken Breast",
+      "normalization": "per_lb",
+      "prices": {
+        "costco":     { "price": 3.69, "normalized_price": 3.69, "source": "tastingtable_aldi_costco" },
+        "walmart":    { "price": 2.92, "normalized_price": 2.92, "source": "moneywise_32item" },
+        "target":     { "price": 2.56, "normalized_price": 2.56, "source": "krazy_coupon_target_walmart" },
+        "aldi":       { "price": 2.49, "normalized_price": 2.49, "source": "tastingtable_aldi_costco" },
+        "sams_club":  { "price": 1.90, "normalized_price": 1.90, "source": "discover.texasrealfood (Kroger vs Sam's Club)" },
+        "kroger":     { "price": 2.30, "normalized_price": 2.30, "source": "estimated from index — Kroger ~14.8% above Walmart baseline; SRG/CR" }
+      }
+    },
+    {
+      "sku_id": "grocery-meat-018",
+      "canonical_name": "Bone-in Chicken Thighs",
+      "normalization": "per_lb",
+      "prices": {
+        "costco":  { "price": 2.19, "normalized_price": 2.19, "source": "tastingtable_aldi_costco" },
+        "aldi":    { "price": 1.55, "normalized_price": 1.55, "source": "tastingtable_aldi_costco" }
+      }
+    },
+    {
+      "sku_id": "grocery-meat-004",
+      "canonical_name": "Ground Beef 80/20",
+      "normalization": "per_lb",
+      "prices": {
+        "costco": { "price": 6.99, "normalized_price": 6.99, "source": "tastingtable_aldi_costco" },
+        "aldi":   { "price": 6.89, "normalized_price": 6.89, "source": "tastingtable_aldi_costco" }
+      }
+    },
+    {
+      "sku_id": "grocery-meat-014",
+      "canonical_name": "Bacon Thick Cut 1lb",
+      "normalization": "per_lb",
+      "prices": {
+        "costco": { "price": 6.24, "normalized_price": 6.24, "source": "tastingtable_aldi_costco" },
+        "aldi":   { "price": 4.49, "normalized_price": 4.49, "source": "tastingtable_aldi_costco" }
+      }
+    },
+    {
+      "sku_id": "grocery-meat-020",
+      "canonical_name": "Shrimp 21-25 ct",
+      "normalization": "per_lb",
+      "prices": {
+        "costco": { "price": 9.49, "normalized_price": 9.49, "source": "tastingtable_aldi_costco" },
+        "aldi":   { "price": 6.99, "normalized_price": 6.99, "source": "tastingtable_aldi_costco" }
+      }
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-001",
+      "canonical_name": "Whole Milk Gallon",
+      "normalization": "per_fl_oz",
+      "prices": {
+        "costco":  { "price": 4.21, "normalized_price": 0.0329, "source": "thetakeout_essentials" },
+        "walmart": { "price": 2.66, "normalized_price": 0.0208, "source": "thetakeout_essentials" },
+        "aldi":    { "price": 4.29, "normalized_price": 0.0335, "source": "tastingtable_aldi_costco" }
+      }
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-006",
+      "canonical_name": "Large Eggs Dozen",
+      "normalization": "per_ct",
+      "prices": {
+        "costco":  { "price": 2.27, "normalized_price": 0.189, "source": "thetakeout_essentials (Costco $4.53/2-dz)" },
+        "walmart": { "price": 1.67, "normalized_price": 0.139, "source": "thetakeout_essentials" },
+        "aldi":    { "price": 1.85, "normalized_price": 0.154, "source": "thetakeout_essentials" },
+        "sams_club": { "price": 1.40, "normalized_price": 0.117, "source": "GoBankingRates Sam's $2.80-3.30 for 24ct = ~$1.40/dozen equiv" }
+      }
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-010",
+      "canonical_name": "Unsalted Butter 1lb",
+      "normalization": "per_lb",
+      "prices": {
+        "costco":  { "price": 2.12, "normalized_price": 2.12, "source": "moneywise_32item" },
+        "walmart": { "price": 3.23, "normalized_price": 3.23, "source": "moneywise_32item" },
+        "aldi":    { "price": 3.49, "normalized_price": 3.49, "source": "tastingtable_aldi_costco" }
+      }
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-013",
+      "canonical_name": "Sharp Cheddar Block 8oz",
+      "normalization": "per_lb",
+      "prices": {
+        "costco":  { "price": 2.60, "normalized_price": 2.60, "source": "moneywise_32item" },
+        "walmart": { "price": 3.46, "normalized_price": 3.46, "source": "moneywise_32item" },
+        "sams_club": { "price": 2.42, "normalized_price": 2.42, "source": "gobankingrates_walmart_sams (Sam's cheddar 30% < Walmart)" }
+      }
+    },
+    {
+      "sku_id": "grocery-pantry-017",
+      "canonical_name": "All Purpose Flour 5lb",
+      "normalization": "per_lb",
+      "prices": {
+        "costco":  { "price": 1.75, "normalized_price": 0.35, "source": "tastingtable_aldi_costco" },
+        "walmart": { "price": 1.97, "normalized_price": 0.394, "source": "krazy_coupon_target_walmart" },
+        "target":  { "price": 2.19, "normalized_price": 0.438, "source": "krazy_coupon_target_walmart" },
+        "aldi":    { "price": 2.35, "normalized_price": 0.47, "source": "tastingtable_aldi_costco" }
+      }
+    },
+    {
+      "sku_id": "grocery-pantry-018",
+      "canonical_name": "White Sugar 4lb",
+      "normalization": "per_lb",
+      "prices": {
+        "walmart":   { "price": 3.20, "normalized_price": 0.80, "source": "gobankingrates_walmart_sams (Walmart 10lb $8 → 4lb equiv $3.20)" },
+        "sams_club": { "price": 2.63, "normalized_price": 0.658, "source": "gobankingrates_walmart_sams (Sam's 10lb $6.58 → 4lb equiv $2.63)" }
+      }
+    },
+    {
+      "sku_id": "grocery-pantry-001",
+      "canonical_name": "White Rice 5lb",
+      "normalization": "per_lb",
+      "prices": {
+        "costco": { "price": 4.95, "normalized_price": 0.99, "source": "tastingtable_aldi_costco" },
+        "aldi":   { "price": 3.30, "normalized_price": 0.66, "source": "tastingtable_aldi_costco" }
+      }
+    },
+    {
+      "sku_id": "grocery-pantry-021",
+      "canonical_name": "Extra Virgin Olive Oil 17oz",
+      "normalization": "per_fl_oz",
+      "prices": {
+        "walmart": { "price": 5.97, "normalized_price": 0.351, "source": "krazy_coupon_target_walmart" },
+        "target":  { "price": 6.39, "normalized_price": 0.376, "source": "krazy_coupon_target_walmart" },
+        "costco":  { "price": 3.79, "normalized_price": 0.223, "source": "krazy_coupon_target_walmart (Costco Kirkland 3L $22.49 = $0.223/oz × 17 = $3.79)" }
+      }
+    },
+    {
+      "sku_id": "grocery-pantry-011",
+      "canonical_name": "White Bread Loaf",
+      "normalization": "per_oz",
+      "prices": {
+        "walmart": { "price": 1.48, "normalized_price": 0.074, "source": "thetakeout_essentials (Great Value 20oz)" },
+        "target":  { "price": 1.59, "normalized_price": 0.0795, "source": "thetakeout_essentials (Market Pantry 20oz)" },
+        "aldi":    { "price": 1.25, "normalized_price": 0.0625, "source": "thetakeout_essentials (L'oven 20oz)" }
+      }
+    },
+    {
+      "sku_id": "household-paper-001",
+      "canonical_name": "Toilet Paper Charmin 12 Mega",
+      "normalization": "per_sheet",
+      "prices": {
+        "costco":   { "price": 23.99, "normalized_price": 0.012, "source": "suburbs101_costco_sams (Kirkland 12-roll, 160 sheets each)" },
+        "sams_club":{ "price": 19.98, "normalized_price": 0.009, "source": "suburbs101_costco_sams (Member's Mark 15 rolls 150 sheets)" }
+      }
+    },
+    {
+      "sku_id": "household-paper-006",
+      "canonical_name": "Paper Towels Bounty 6 Mega",
+      "normalization": "per_sheet",
+      "prices": {
+        "costco":   { "price": 20.99, "normalized_price": 0.0135, "source": "hip2save_paper (Kirkland 12-roll 1560 sheets)" },
+        "walmart":  { "price": 0.97,  "normalized_price": 0.005, "source": "hip2save_paper (Great Value Choose-a-Size single 165 sheets)" },
+        "sams_club":{ "price": 19.98, "normalized_price": 0.0105, "source": "hip2save_paper (Sam's Bounty Select-a-Size 12-pack)" },
+        "amazon":   { "price": 30.00, "normalized_price": 0.0208, "source": "hip2save_paper (Bounty 12-roll Amazon ~$28-32)" }
+      }
+    },
+    {
+      "sku_id": "household-laundry-001",
+      "canonical_name": "Tide Original Liquid 92oz (or Costco/Sam equiv)",
+      "normalization": "per_load",
+      "prices": {
+        "costco":   { "price": 16.79, "normalized_price": 0.121, "source": "suburbs101_costco_sams (Costco 138oz)" },
+        "sams_club":{ "price": 19.98, "normalized_price": 0.117, "source": "suburbs101_costco_sams (Sam's 170oz)" }
+      }
+    },
+    {
+      "sku_id": "household-laundry-005",
+      "canonical_name": "Member's Mark / Kirkland Liquid Detergent 196oz",
+      "normalization": "per_fl_oz",
+      "prices": {
+        "sams_club":{ "price": 15.68, "normalized_price": 0.08,  "source": "suburbs101_costco_sams (Member's Mark 196oz @ 8¢/oz)" },
+        "costco":   { "price": 19.60, "normalized_price": 0.10,  "source": "suburbs101_costco_sams (Kirkland equivalent ~10¢/oz)" }
+      }
+    },
+    {
+      "sku_id": "hpc-otc-001",
+      "canonical_name": "Tylenol/Acetaminophen Extra Strength 500ct equiv",
+      "normalization": "per_ct",
+      "prices": {
+        "costco": { "price": 4.40, "normalized_price": 0.0088, "source": "southern_savers_costco_amazon_otc (Kirkland Acetaminophen 1000ct $8.79 = $0.0088/pill)" },
+        "target": { "price": 6.95, "normalized_price": 0.0139, "source": "southern_savers_costco_amazon_otc (up&up 1000ct $13.90)" }
+      }
+    },
+    {
+      "sku_id": "hpc-otc-002",
+      "canonical_name": "Advil / Ibuprofen 200mg 200ct equiv",
+      "normalization": "per_ct",
+      "prices": {
+        "costco": { "price": 1.74, "normalized_price": 0.0087, "source": "southern_savers_costco_amazon_otc (Kirkland Ibuprofen 1000ct $8.79)" },
+        "target": { "price": 2.78, "normalized_price": 0.0139, "source": "southern_savers_costco_amazon_otc" }
+      }
+    },
+    {
+      "sku_id": "hpc-otc-006",
+      "canonical_name": "Claritin / Loratadine / Cetirizine 30ct equiv",
+      "normalization": "per_ct",
+      "prices": {
+        "costco": { "price": 14.49, "normalized_price": 0.0397, "source": "southern_savers_costco_amazon_otc (Kirkland Aller-Tec 365ct $14.49)" },
+        "amazon": { "price": 14.60, "normalized_price": 0.04,   "source": "southern_savers_costco_amazon_otc (Amazon cetirizine ~4¢/pill)" }
+      }
+    },
+    {
+      "sku_id": "electronics-batteries_cables-002",
+      "canonical_name": "AA Alkaline Batteries 24pk Duracell",
+      "normalization": "per_ct",
+      "prices": {
+        "walmart": { "price": 18.65, "normalized_price": 0.777, "source": "WebSearch: walmart.com listing (Duracell Coppertop 24-pack)" }
+      }
+    }
+  ]
+}

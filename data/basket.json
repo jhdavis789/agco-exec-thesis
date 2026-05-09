@@ -1,0 +1,3047 @@
+{
+  "generated_by": "scripts/build_basket.py",
+  "target_zip": "30309",
+  "n_skus": 380,
+  "skus": [
+    {
+      "sku_id": "grocery-meat-001",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Boneless Skinless Chicken Breast",
+      "normalization": "per_lb",
+      "search_query": "boneless skinless chicken breast"
+    },
+    {
+      "sku_id": "grocery-meat-002",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Bone-in Chicken Thighs",
+      "normalization": "per_lb",
+      "search_query": "bone-in chicken thighs"
+    },
+    {
+      "sku_id": "grocery-meat-003",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Whole Chicken",
+      "normalization": "per_lb",
+      "search_query": "whole roaster chicken"
+    },
+    {
+      "sku_id": "grocery-meat-004",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Ground Beef 80/20",
+      "normalization": "per_lb",
+      "search_query": "ground beef 80/20"
+    },
+    {
+      "sku_id": "grocery-meat-005",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Ground Beef 93/7",
+      "normalization": "per_lb",
+      "search_query": "ground beef 93 7 lean"
+    },
+    {
+      "sku_id": "grocery-meat-006",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Boneless Ribeye Steak",
+      "normalization": "per_lb",
+      "search_query": "boneless ribeye steak"
+    },
+    {
+      "sku_id": "grocery-meat-007",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "NY Strip Steak",
+      "normalization": "per_lb",
+      "search_query": "ny strip steak"
+    },
+    {
+      "sku_id": "grocery-meat-008",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Top Sirloin Steak",
+      "normalization": "per_lb",
+      "search_query": "top sirloin steak"
+    },
+    {
+      "sku_id": "grocery-meat-009",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Beef Tenderloin",
+      "normalization": "per_lb",
+      "search_query": "beef tenderloin"
+    },
+    {
+      "sku_id": "grocery-meat-010",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Beef Brisket",
+      "normalization": "per_lb",
+      "search_query": "beef brisket"
+    },
+    {
+      "sku_id": "grocery-meat-011",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Pork Chops Boneless",
+      "normalization": "per_lb",
+      "search_query": "boneless pork chops"
+    },
+    {
+      "sku_id": "grocery-meat-012",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Pork Tenderloin",
+      "normalization": "per_lb",
+      "search_query": "pork tenderloin"
+    },
+    {
+      "sku_id": "grocery-meat-013",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Pork Shoulder",
+      "normalization": "per_lb",
+      "search_query": "pork shoulder roast"
+    },
+    {
+      "sku_id": "grocery-meat-014",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Bacon Thick Cut 1lb",
+      "normalization": "per_lb",
+      "search_query": "thick cut bacon"
+    },
+    {
+      "sku_id": "grocery-meat-015",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Turkey Breast Boneless",
+      "normalization": "per_lb",
+      "search_query": "boneless turkey breast"
+    },
+    {
+      "sku_id": "grocery-meat-016",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Ground Turkey 93/7",
+      "normalization": "per_lb",
+      "search_query": "ground turkey 93 7"
+    },
+    {
+      "sku_id": "grocery-meat-017",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Atlantic Salmon Fillet",
+      "normalization": "per_lb",
+      "search_query": "atlantic salmon fillet"
+    },
+    {
+      "sku_id": "grocery-meat-018",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Cod Fillet",
+      "normalization": "per_lb",
+      "search_query": "cod fillet"
+    },
+    {
+      "sku_id": "grocery-meat-019",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Tilapia Fillet",
+      "normalization": "per_lb",
+      "search_query": "tilapia fillet frozen"
+    },
+    {
+      "sku_id": "grocery-meat-020",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Shrimp 21-25 ct",
+      "normalization": "per_lb",
+      "search_query": "shrimp 21 25 raw frozen"
+    },
+    {
+      "sku_id": "grocery-meat-021",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Tuna Steak",
+      "normalization": "per_lb",
+      "search_query": "ahi tuna steak"
+    },
+    {
+      "sku_id": "grocery-meat-022",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Hot Dogs Beef 8 ct",
+      "normalization": "per_ct",
+      "search_query": "all beef hot dogs 8 count"
+    },
+    {
+      "sku_id": "grocery-meat-023",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Italian Sausage Mild",
+      "normalization": "per_lb",
+      "search_query": "italian sausage mild"
+    },
+    {
+      "sku_id": "grocery-meat-024",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Breakfast Sausage Links",
+      "normalization": "per_lb",
+      "search_query": "breakfast sausage links"
+    },
+    {
+      "sku_id": "grocery-meat-025",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Sliced Deli Ham",
+      "normalization": "per_lb",
+      "search_query": "sliced deli ham"
+    },
+    {
+      "sku_id": "grocery-meat-026",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Sliced Deli Turkey",
+      "normalization": "per_lb",
+      "search_query": "sliced deli turkey"
+    },
+    {
+      "sku_id": "grocery-meat-027",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Sliced Roast Beef",
+      "normalization": "per_lb",
+      "search_query": "sliced deli roast beef"
+    },
+    {
+      "sku_id": "grocery-meat-028",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Lamb Loin Chops",
+      "normalization": "per_lb",
+      "search_query": "lamb loin chops"
+    },
+    {
+      "sku_id": "grocery-meat-029",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Beef Stew Meat",
+      "normalization": "per_lb",
+      "search_query": "beef stew meat cubed"
+    },
+    {
+      "sku_id": "grocery-meat-030",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Whole Pork Loin",
+      "normalization": "per_lb",
+      "search_query": "whole pork loin"
+    },
+    {
+      "sku_id": "grocery-meat-031",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Boneless Chicken Thighs",
+      "normalization": "per_lb",
+      "search_query": "boneless chicken thighs"
+    },
+    {
+      "sku_id": "grocery-meat-032",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Chicken Wings",
+      "normalization": "per_lb",
+      "search_query": "chicken wings party"
+    },
+    {
+      "sku_id": "grocery-meat-033",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Pork Ribs Baby Back",
+      "normalization": "per_lb",
+      "search_query": "baby back pork ribs"
+    },
+    {
+      "sku_id": "grocery-meat-034",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Beef Chuck Roast",
+      "normalization": "per_lb",
+      "search_query": "beef chuck roast"
+    },
+    {
+      "sku_id": "grocery-meat-035",
+      "category": "grocery",
+      "subcategory": "meat",
+      "canonical_name": "Cornish Game Hen",
+      "normalization": "per_lb",
+      "search_query": "cornish game hen"
+    },
+    {
+      "sku_id": "grocery-produce-001",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Bananas",
+      "normalization": "per_lb",
+      "search_query": "bananas"
+    },
+    {
+      "sku_id": "grocery-produce-002",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Gala Apples",
+      "normalization": "per_lb",
+      "search_query": "gala apples"
+    },
+    {
+      "sku_id": "grocery-produce-003",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Honeycrisp Apples",
+      "normalization": "per_lb",
+      "search_query": "honeycrisp apples"
+    },
+    {
+      "sku_id": "grocery-produce-004",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Granny Smith Apples",
+      "normalization": "per_lb",
+      "search_query": "granny smith apples"
+    },
+    {
+      "sku_id": "grocery-produce-005",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Navel Oranges",
+      "normalization": "per_lb",
+      "search_query": "navel oranges"
+    },
+    {
+      "sku_id": "grocery-produce-006",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Strawberries 1lb",
+      "normalization": "per_lb",
+      "search_query": "fresh strawberries 1 lb"
+    },
+    {
+      "sku_id": "grocery-produce-007",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Blueberries 6oz",
+      "normalization": "per_oz",
+      "search_query": "fresh blueberries 6 oz"
+    },
+    {
+      "sku_id": "grocery-produce-008",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Red Seedless Grapes",
+      "normalization": "per_lb",
+      "search_query": "red seedless grapes"
+    },
+    {
+      "sku_id": "grocery-produce-009",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Romaine Lettuce Hearts",
+      "normalization": "per_ct",
+      "search_query": "romaine lettuce hearts 3 pack"
+    },
+    {
+      "sku_id": "grocery-produce-010",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Baby Spinach 5oz",
+      "normalization": "per_oz",
+      "search_query": "baby spinach 5 oz"
+    },
+    {
+      "sku_id": "grocery-produce-011",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Broccoli Crowns",
+      "normalization": "per_lb",
+      "search_query": "broccoli crowns fresh"
+    },
+    {
+      "sku_id": "grocery-produce-012",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Baby Carrots 1lb",
+      "normalization": "per_lb",
+      "search_query": "baby carrots 1 lb"
+    },
+    {
+      "sku_id": "grocery-produce-013",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Russet Potatoes 5lb",
+      "normalization": "per_lb",
+      "search_query": "russet potatoes 5 lb"
+    },
+    {
+      "sku_id": "grocery-produce-014",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Sweet Potatoes",
+      "normalization": "per_lb",
+      "search_query": "sweet potatoes"
+    },
+    {
+      "sku_id": "grocery-produce-015",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Yellow Onions 3lb",
+      "normalization": "per_lb",
+      "search_query": "yellow onions 3 lb bag"
+    },
+    {
+      "sku_id": "grocery-produce-016",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Roma Tomatoes",
+      "normalization": "per_lb",
+      "search_query": "roma tomatoes"
+    },
+    {
+      "sku_id": "grocery-produce-017",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Tomatoes On the Vine",
+      "normalization": "per_lb",
+      "search_query": "tomatoes on the vine"
+    },
+    {
+      "sku_id": "grocery-produce-018",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "English Cucumbers",
+      "normalization": "per_ct",
+      "search_query": "english cucumber"
+    },
+    {
+      "sku_id": "grocery-produce-019",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Green Bell Peppers",
+      "normalization": "per_ct",
+      "search_query": "green bell pepper"
+    },
+    {
+      "sku_id": "grocery-produce-020",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Hass Avocados",
+      "normalization": "per_ct",
+      "search_query": "hass avocado"
+    },
+    {
+      "sku_id": "grocery-produce-021",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Lemons",
+      "normalization": "per_ct",
+      "search_query": "lemon fresh"
+    },
+    {
+      "sku_id": "grocery-produce-022",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Limes",
+      "normalization": "per_ct",
+      "search_query": "lime fresh"
+    },
+    {
+      "sku_id": "grocery-produce-023",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "White Mushrooms 8oz",
+      "normalization": "per_oz",
+      "search_query": "white mushrooms 8 oz"
+    },
+    {
+      "sku_id": "grocery-produce-024",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Garlic Bulbs",
+      "normalization": "per_ct",
+      "search_query": "garlic bulb"
+    },
+    {
+      "sku_id": "grocery-produce-025",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Ginger Root",
+      "normalization": "per_lb",
+      "search_query": "ginger root"
+    },
+    {
+      "sku_id": "grocery-produce-026",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Celery Hearts",
+      "normalization": "per_ct",
+      "search_query": "celery hearts"
+    },
+    {
+      "sku_id": "grocery-produce-027",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Cauliflower Head",
+      "normalization": "per_ct",
+      "search_query": "cauliflower head fresh"
+    },
+    {
+      "sku_id": "grocery-produce-028",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Zucchini",
+      "normalization": "per_lb",
+      "search_query": "zucchini squash"
+    },
+    {
+      "sku_id": "grocery-produce-029",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Yellow Squash",
+      "normalization": "per_lb",
+      "search_query": "yellow squash"
+    },
+    {
+      "sku_id": "grocery-produce-030",
+      "category": "grocery",
+      "subcategory": "produce",
+      "canonical_name": "Iceberg Lettuce",
+      "normalization": "per_ct",
+      "search_query": "iceberg lettuce head"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-001",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Whole Milk Gallon",
+      "normalization": "per_fl_oz",
+      "search_query": "whole milk 1 gallon"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-002",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "2% Milk Gallon",
+      "normalization": "per_fl_oz",
+      "search_query": "2 percent milk 1 gallon"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-003",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Skim Milk Gallon",
+      "normalization": "per_fl_oz",
+      "search_query": "skim milk 1 gallon"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-004",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Half and Half Quart",
+      "normalization": "per_fl_oz",
+      "search_query": "half and half quart"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-005",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Heavy Cream Pint",
+      "normalization": "per_fl_oz",
+      "search_query": "heavy cream pint"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-006",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Large Eggs Dozen",
+      "normalization": "per_ct",
+      "search_query": "large eggs dozen grade a"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-007",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Extra Large Eggs Dozen",
+      "normalization": "per_ct",
+      "search_query": "extra large eggs dozen"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-008",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Cage Free Eggs Dozen",
+      "normalization": "per_ct",
+      "search_query": "cage free eggs dozen"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-009",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Organic Eggs Dozen",
+      "normalization": "per_ct",
+      "search_query": "organic eggs dozen"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-010",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Unsalted Butter 1lb",
+      "normalization": "per_lb",
+      "search_query": "unsalted butter 1 lb"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-011",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Salted Butter 1lb",
+      "normalization": "per_lb",
+      "search_query": "salted butter 1 lb"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-012",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "American Cheese Singles 24ct",
+      "normalization": "per_ct",
+      "search_query": "american cheese singles 24 count"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-013",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Sharp Cheddar Block 8oz",
+      "normalization": "per_oz",
+      "search_query": "sharp cheddar cheese block 8 oz"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-014",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Mozzarella Shredded 8oz",
+      "normalization": "per_oz",
+      "search_query": "shredded mozzarella 8 oz"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-015",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Parmesan Grated 8oz",
+      "normalization": "per_oz",
+      "search_query": "grated parmesan 8 oz"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-016",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Greek Yogurt Plain 32oz",
+      "normalization": "per_oz",
+      "search_query": "greek yogurt plain 32 oz"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-017",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Greek Yogurt Vanilla 32oz",
+      "normalization": "per_oz",
+      "search_query": "greek yogurt vanilla 32 oz"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-018",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Sour Cream 16oz",
+      "normalization": "per_oz",
+      "search_query": "sour cream 16 oz"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-019",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Cream Cheese 8oz",
+      "normalization": "per_oz",
+      "search_query": "cream cheese block 8 oz philadelphia"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-020",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Cottage Cheese 16oz",
+      "normalization": "per_oz",
+      "search_query": "cottage cheese 16 oz"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-021",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "String Cheese 12ct",
+      "normalization": "per_ct",
+      "search_query": "mozzarella string cheese 12 count"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-022",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Whipped Cream Aerosol 7oz",
+      "normalization": "per_oz",
+      "search_query": "whipped cream aerosol 7 oz"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-023",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Almond Milk Half Gallon",
+      "normalization": "per_fl_oz",
+      "search_query": "almond milk half gallon unsweetened"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-024",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Oat Milk Half Gallon",
+      "normalization": "per_fl_oz",
+      "search_query": "oat milk half gallon"
+    },
+    {
+      "sku_id": "grocery-dairy_eggs-025",
+      "category": "grocery",
+      "subcategory": "dairy_eggs",
+      "canonical_name": "Orange Juice 59oz",
+      "normalization": "per_fl_oz",
+      "search_query": "orange juice 59 oz no pulp"
+    },
+    {
+      "sku_id": "grocery-pantry-001",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "White Rice 5lb",
+      "normalization": "per_lb",
+      "search_query": "long grain white rice 5 lb"
+    },
+    {
+      "sku_id": "grocery-pantry-002",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Brown Rice 5lb",
+      "normalization": "per_lb",
+      "search_query": "brown rice 5 lb"
+    },
+    {
+      "sku_id": "grocery-pantry-003",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Jasmine Rice 5lb",
+      "normalization": "per_lb",
+      "search_query": "jasmine rice 5 lb"
+    },
+    {
+      "sku_id": "grocery-pantry-004",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Spaghetti 1lb",
+      "normalization": "per_lb",
+      "search_query": "spaghetti pasta 1 lb"
+    },
+    {
+      "sku_id": "grocery-pantry-005",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Penne Pasta 1lb",
+      "normalization": "per_lb",
+      "search_query": "penne pasta 1 lb"
+    },
+    {
+      "sku_id": "grocery-pantry-006",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Macaroni 1lb",
+      "normalization": "per_lb",
+      "search_query": "elbow macaroni 1 lb"
+    },
+    {
+      "sku_id": "grocery-pantry-007",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Marinara Sauce 24oz",
+      "normalization": "per_oz",
+      "search_query": "marinara pasta sauce 24 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-008",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Alfredo Sauce 15oz",
+      "normalization": "per_oz",
+      "search_query": "alfredo pasta sauce 15 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-009",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Peanut Butter Creamy 16oz",
+      "normalization": "per_oz",
+      "search_query": "peanut butter creamy 16 oz jif"
+    },
+    {
+      "sku_id": "grocery-pantry-010",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Strawberry Jam 18oz",
+      "normalization": "per_oz",
+      "search_query": "strawberry jam 18 oz smucker"
+    },
+    {
+      "sku_id": "grocery-pantry-011",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "White Bread Loaf",
+      "normalization": "per_oz",
+      "search_query": "white bread loaf 20 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-012",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Whole Wheat Bread Loaf",
+      "normalization": "per_oz",
+      "search_query": "whole wheat bread loaf 24 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-013",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Cheerios Cereal 18oz",
+      "normalization": "per_oz",
+      "search_query": "cheerios cereal 18 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-014",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Frosted Flakes Cereal 24oz",
+      "normalization": "per_oz",
+      "search_query": "frosted flakes cereal 24 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-015",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Honey Nut Cheerios 18oz",
+      "normalization": "per_oz",
+      "search_query": "honey nut cheerios 18 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-016",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Old Fashioned Oats 42oz",
+      "normalization": "per_oz",
+      "search_query": "old fashioned oats 42 oz quaker"
+    },
+    {
+      "sku_id": "grocery-pantry-017",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "All Purpose Flour 5lb",
+      "normalization": "per_lb",
+      "search_query": "all purpose flour 5 lb"
+    },
+    {
+      "sku_id": "grocery-pantry-018",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "White Sugar 4lb",
+      "normalization": "per_lb",
+      "search_query": "white granulated sugar 4 lb"
+    },
+    {
+      "sku_id": "grocery-pantry-019",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Brown Sugar 2lb",
+      "normalization": "per_lb",
+      "search_query": "light brown sugar 2 lb"
+    },
+    {
+      "sku_id": "grocery-pantry-020",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Iodized Salt 26oz",
+      "normalization": "per_oz",
+      "search_query": "iodized table salt 26 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-021",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Extra Virgin Olive Oil 17oz",
+      "normalization": "per_fl_oz",
+      "search_query": "extra virgin olive oil 17 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-022",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Vegetable Oil 48oz",
+      "normalization": "per_fl_oz",
+      "search_query": "vegetable oil 48 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-023",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Canola Oil 48oz",
+      "normalization": "per_fl_oz",
+      "search_query": "canola oil 48 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-024",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Soy Sauce 10oz",
+      "normalization": "per_fl_oz",
+      "search_query": "soy sauce 10 oz kikkoman"
+    },
+    {
+      "sku_id": "grocery-pantry-025",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Ketchup 32oz Heinz",
+      "normalization": "per_oz",
+      "search_query": "heinz ketchup 32 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-026",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Yellow Mustard 20oz",
+      "normalization": "per_oz",
+      "search_query": "french's yellow mustard 20 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-027",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Mayo 30oz Hellmann's",
+      "normalization": "per_oz",
+      "search_query": "hellmann's mayo 30 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-028",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Honey 12oz",
+      "normalization": "per_oz",
+      "search_query": "honey 12 oz bear"
+    },
+    {
+      "sku_id": "grocery-pantry-029",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Maple Syrup 12oz",
+      "normalization": "per_fl_oz",
+      "search_query": "pure maple syrup 12 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-030",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Chicken Broth 32oz",
+      "normalization": "per_fl_oz",
+      "search_query": "chicken broth 32 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-031",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Beef Broth 32oz",
+      "normalization": "per_fl_oz",
+      "search_query": "beef broth 32 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-032",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Diced Tomatoes 14.5oz",
+      "normalization": "per_oz",
+      "search_query": "diced tomatoes 14.5 oz can"
+    },
+    {
+      "sku_id": "grocery-pantry-033",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Tomato Sauce 8oz",
+      "normalization": "per_oz",
+      "search_query": "tomato sauce 8 oz can"
+    },
+    {
+      "sku_id": "grocery-pantry-034",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Black Beans 15oz Can",
+      "normalization": "per_oz",
+      "search_query": "black beans 15 oz can"
+    },
+    {
+      "sku_id": "grocery-pantry-035",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Pinto Beans 15oz Can",
+      "normalization": "per_oz",
+      "search_query": "pinto beans 15 oz can"
+    },
+    {
+      "sku_id": "grocery-pantry-036",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Tuna Chunk Light 5oz Can",
+      "normalization": "per_oz",
+      "search_query": "chunk light tuna 5 oz can"
+    },
+    {
+      "sku_id": "grocery-pantry-037",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Salsa 16oz",
+      "normalization": "per_oz",
+      "search_query": "salsa medium 16 oz pace"
+    },
+    {
+      "sku_id": "grocery-pantry-038",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "BBQ Sauce 18oz",
+      "normalization": "per_oz",
+      "search_query": "bbq sauce 18 oz sweet baby ray"
+    },
+    {
+      "sku_id": "grocery-pantry-039",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Sriracha 17oz",
+      "normalization": "per_oz",
+      "search_query": "sriracha hot sauce 17 oz"
+    },
+    {
+      "sku_id": "grocery-pantry-040",
+      "category": "grocery",
+      "subcategory": "pantry",
+      "canonical_name": "Hot Sauce Frank's 12oz",
+      "normalization": "per_oz",
+      "search_query": "frank's red hot 12 oz"
+    },
+    {
+      "sku_id": "grocery-frozen-001",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Pepperoni Pizza 12in",
+      "normalization": "per_oz",
+      "search_query": "frozen pepperoni pizza 12 inch"
+    },
+    {
+      "sku_id": "grocery-frozen-002",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Cheese Pizza 12in",
+      "normalization": "per_oz",
+      "search_query": "frozen cheese pizza 12 inch"
+    },
+    {
+      "sku_id": "grocery-frozen-003",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Mixed Vegetables 12oz",
+      "normalization": "per_oz",
+      "search_query": "frozen mixed vegetables 12 oz"
+    },
+    {
+      "sku_id": "grocery-frozen-004",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Broccoli 12oz",
+      "normalization": "per_oz",
+      "search_query": "frozen broccoli florets 12 oz"
+    },
+    {
+      "sku_id": "grocery-frozen-005",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Corn 12oz",
+      "normalization": "per_oz",
+      "search_query": "frozen corn 12 oz"
+    },
+    {
+      "sku_id": "grocery-frozen-006",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Peas 12oz",
+      "normalization": "per_oz",
+      "search_query": "frozen peas 12 oz"
+    },
+    {
+      "sku_id": "grocery-frozen-007",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Vanilla Ice Cream 48oz",
+      "normalization": "per_oz",
+      "search_query": "vanilla ice cream 48 oz"
+    },
+    {
+      "sku_id": "grocery-frozen-008",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Chocolate Ice Cream 48oz",
+      "normalization": "per_oz",
+      "search_query": "chocolate ice cream 48 oz"
+    },
+    {
+      "sku_id": "grocery-frozen-009",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Waffles 10ct",
+      "normalization": "per_ct",
+      "search_query": "eggo frozen waffles 10 count"
+    },
+    {
+      "sku_id": "grocery-frozen-010",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen French Fries 32oz",
+      "normalization": "per_oz",
+      "search_query": "frozen french fries 32 oz"
+    },
+    {
+      "sku_id": "grocery-frozen-011",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Tater Tots 32oz",
+      "normalization": "per_oz",
+      "search_query": "frozen tater tots 32 oz"
+    },
+    {
+      "sku_id": "grocery-frozen-012",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Chicken Nuggets 32oz",
+      "normalization": "per_oz",
+      "search_query": "frozen chicken nuggets 32 oz tyson"
+    },
+    {
+      "sku_id": "grocery-frozen-013",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Meatballs 32oz",
+      "normalization": "per_oz",
+      "search_query": "frozen italian meatballs 32 oz"
+    },
+    {
+      "sku_id": "grocery-frozen-014",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Shrimp 1lb",
+      "normalization": "per_lb",
+      "search_query": "frozen raw shrimp 1 lb"
+    },
+    {
+      "sku_id": "grocery-frozen-015",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Salmon Fillets 1lb",
+      "normalization": "per_lb",
+      "search_query": "frozen salmon fillets 1 lb"
+    },
+    {
+      "sku_id": "grocery-frozen-016",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Strawberries 16oz",
+      "normalization": "per_oz",
+      "search_query": "frozen strawberries 16 oz"
+    },
+    {
+      "sku_id": "grocery-frozen-017",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Blueberries 16oz",
+      "normalization": "per_oz",
+      "search_query": "frozen blueberries 16 oz"
+    },
+    {
+      "sku_id": "grocery-frozen-018",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Lasagna 38oz",
+      "normalization": "per_oz",
+      "search_query": "stouffer's frozen lasagna 38 oz"
+    },
+    {
+      "sku_id": "grocery-frozen-019",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Frozen Burritos 8ct",
+      "normalization": "per_ct",
+      "search_query": "frozen bean and cheese burritos 8 count"
+    },
+    {
+      "sku_id": "grocery-frozen-020",
+      "category": "grocery",
+      "subcategory": "frozen",
+      "canonical_name": "Hot Pockets 10ct",
+      "normalization": "per_ct",
+      "search_query": "hot pockets 10 count"
+    },
+    {
+      "sku_id": "grocery-beverages-001",
+      "category": "grocery",
+      "subcategory": "beverages",
+      "canonical_name": "Ground Coffee Folgers 30.5oz",
+      "normalization": "per_oz",
+      "search_query": "folgers classic roast ground coffee 30.5 oz"
+    },
+    {
+      "sku_id": "grocery-beverages-002",
+      "category": "grocery",
+      "subcategory": "beverages",
+      "canonical_name": "Whole Bean Coffee 12oz",
+      "normalization": "per_oz",
+      "search_query": "starbucks whole bean coffee 12 oz pike place"
+    },
+    {
+      "sku_id": "grocery-beverages-003",
+      "category": "grocery",
+      "subcategory": "beverages",
+      "canonical_name": "K-Cup Coffee Pods 24ct",
+      "normalization": "per_ct",
+      "search_query": "keurig k cup coffee pods 24 count"
+    },
+    {
+      "sku_id": "grocery-beverages-004",
+      "category": "grocery",
+      "subcategory": "beverages",
+      "canonical_name": "Black Tea Bags 100ct",
+      "normalization": "per_ct",
+      "search_query": "lipton black tea bags 100 count"
+    },
+    {
+      "sku_id": "grocery-beverages-005",
+      "category": "grocery",
+      "subcategory": "beverages",
+      "canonical_name": "Green Tea Bags 100ct",
+      "normalization": "per_ct",
+      "search_query": "bigelow green tea bags 100 count"
+    },
+    {
+      "sku_id": "grocery-beverages-006",
+      "category": "grocery",
+      "subcategory": "beverages",
+      "canonical_name": "Coke 12pk Cans",
+      "normalization": "per_fl_oz",
+      "search_query": "coca cola 12 pack 12 oz cans"
+    },
+    {
+      "sku_id": "grocery-beverages-007",
+      "category": "grocery",
+      "subcategory": "beverages",
+      "canonical_name": "Pepsi 12pk Cans",
+      "normalization": "per_fl_oz",
+      "search_query": "pepsi 12 pack 12 oz cans"
+    },
+    {
+      "sku_id": "grocery-beverages-008",
+      "category": "grocery",
+      "subcategory": "beverages",
+      "canonical_name": "Bottled Water 24pk",
+      "normalization": "per_fl_oz",
+      "search_query": "bottled water 24 pack 16.9 oz"
+    },
+    {
+      "sku_id": "grocery-beverages-009",
+      "category": "grocery",
+      "subcategory": "beverages",
+      "canonical_name": "Gatorade 8pk 20oz",
+      "normalization": "per_fl_oz",
+      "search_query": "gatorade 8 pack 20 oz"
+    },
+    {
+      "sku_id": "grocery-beverages-010",
+      "category": "grocery",
+      "subcategory": "beverages",
+      "canonical_name": "Apple Juice 64oz",
+      "normalization": "per_fl_oz",
+      "search_query": "apple juice 64 oz mott's"
+    },
+    {
+      "sku_id": "household-paper-001",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Toilet Paper Charmin 12 Mega",
+      "normalization": "per_sheet",
+      "search_query": "charmin ultra soft 12 mega rolls"
+    },
+    {
+      "sku_id": "household-paper-002",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Toilet Paper Charmin 24 Mega",
+      "normalization": "per_sheet",
+      "search_query": "charmin ultra soft 24 mega rolls"
+    },
+    {
+      "sku_id": "household-paper-003",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Toilet Paper Cottonelle 12pk",
+      "normalization": "per_sheet",
+      "search_query": "cottonelle ultra clean 12 mega rolls"
+    },
+    {
+      "sku_id": "household-paper-004",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Toilet Paper Scott 1000 12pk",
+      "normalization": "per_sheet",
+      "search_query": "scott 1000 12 rolls"
+    },
+    {
+      "sku_id": "household-paper-005",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Bath Tissue Quilted Northern",
+      "normalization": "per_sheet",
+      "search_query": "quilted northern ultra plush 12 mega rolls"
+    },
+    {
+      "sku_id": "household-paper-006",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Paper Towels Bounty 6 Mega",
+      "normalization": "per_sheet",
+      "search_query": "bounty paper towels 6 mega rolls"
+    },
+    {
+      "sku_id": "household-paper-007",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Paper Towels Bounty 12 Mega",
+      "normalization": "per_sheet",
+      "search_query": "bounty paper towels 12 mega rolls"
+    },
+    {
+      "sku_id": "household-paper-008",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Paper Towels Brawny 8 Lg",
+      "normalization": "per_sheet",
+      "search_query": "brawny paper towels 8 large rolls"
+    },
+    {
+      "sku_id": "household-paper-009",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Paper Towels Sparkle 6 Lg",
+      "normalization": "per_sheet",
+      "search_query": "sparkle paper towels 6 large rolls"
+    },
+    {
+      "sku_id": "household-paper-010",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Paper Towels Viva 6 Lg",
+      "normalization": "per_sheet",
+      "search_query": "viva paper towels 6 large rolls"
+    },
+    {
+      "sku_id": "household-paper-011",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Facial Tissue Kleenex 3pk",
+      "normalization": "per_ct",
+      "search_query": "kleenex facial tissue 3 pack 230 count"
+    },
+    {
+      "sku_id": "household-paper-012",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Facial Tissue Puffs 8pk",
+      "normalization": "per_ct",
+      "search_query": "puffs plus lotion 8 pack"
+    },
+    {
+      "sku_id": "household-paper-013",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Napkins Dinner 200ct",
+      "normalization": "per_ct",
+      "search_query": "vanity fair dinner napkins 200 count"
+    },
+    {
+      "sku_id": "household-paper-014",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Paper Plates 100ct",
+      "normalization": "per_ct",
+      "search_query": "dixie paper plates 10 inch 100 count"
+    },
+    {
+      "sku_id": "household-paper-015",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Paper Bowls 100ct",
+      "normalization": "per_ct",
+      "search_query": "dixie paper bowls 100 count"
+    },
+    {
+      "sku_id": "household-paper-016",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Plastic Cups 16oz 100ct",
+      "normalization": "per_ct",
+      "search_query": "solo red plastic cups 16 oz 100 count"
+    },
+    {
+      "sku_id": "household-paper-017",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Plastic Forks 100ct",
+      "normalization": "per_ct",
+      "search_query": "solo plastic forks 100 count"
+    },
+    {
+      "sku_id": "household-paper-018",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Plastic Spoons 100ct",
+      "normalization": "per_ct",
+      "search_query": "plastic spoons 100 count"
+    },
+    {
+      "sku_id": "household-paper-019",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Disposable Wipes 75ct",
+      "normalization": "per_ct",
+      "search_query": "disposable cleaning wipes 75 count"
+    },
+    {
+      "sku_id": "household-paper-020",
+      "category": "household",
+      "subcategory": "paper",
+      "canonical_name": "Lunch Bags 50ct Brown",
+      "normalization": "per_ct",
+      "search_query": "brown paper lunch bags 50 count"
+    },
+    {
+      "sku_id": "household-laundry-001",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "Tide Original Liquid 92oz",
+      "normalization": "per_load",
+      "search_query": "tide original liquid laundry detergent 92 oz"
+    },
+    {
+      "sku_id": "household-laundry-002",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "Tide Pods 81ct",
+      "normalization": "per_load",
+      "search_query": "tide pods original 81 count"
+    },
+    {
+      "sku_id": "household-laundry-003",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "Gain Liquid 100oz",
+      "normalization": "per_load",
+      "search_query": "gain original liquid detergent 100 oz"
+    },
+    {
+      "sku_id": "household-laundry-004",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "Persil Liquid 100oz",
+      "normalization": "per_load",
+      "search_query": "persil pro clean liquid 100 oz"
+    },
+    {
+      "sku_id": "household-laundry-005",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "Arm and Hammer Liquid 144oz",
+      "normalization": "per_load",
+      "search_query": "arm and hammer liquid detergent 144 oz"
+    },
+    {
+      "sku_id": "household-laundry-006",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "All Free Clear Liquid 88oz",
+      "normalization": "per_load",
+      "search_query": "all free and clear liquid 88 oz"
+    },
+    {
+      "sku_id": "household-laundry-007",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "Downy Fabric Softener 103oz",
+      "normalization": "per_load",
+      "search_query": "downy fabric softener 103 oz"
+    },
+    {
+      "sku_id": "household-laundry-008",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "Bounce Dryer Sheets 240ct",
+      "normalization": "per_ct",
+      "search_query": "bounce dryer sheets 240 count"
+    },
+    {
+      "sku_id": "household-laundry-009",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "Snuggle Dryer Sheets 200ct",
+      "normalization": "per_ct",
+      "search_query": "snuggle blue sparkle dryer sheets 200 count"
+    },
+    {
+      "sku_id": "household-laundry-010",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "Clorox Bleach 121oz",
+      "normalization": "per_fl_oz",
+      "search_query": "clorox regular bleach 121 oz"
+    },
+    {
+      "sku_id": "household-laundry-011",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "OxiClean 7.22lb",
+      "normalization": "per_lb",
+      "search_query": "oxiclean versatile stain remover 7.22 lb"
+    },
+    {
+      "sku_id": "household-laundry-012",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "Shout Stain Remover 22oz",
+      "normalization": "per_fl_oz",
+      "search_query": "shout stain remover 22 oz"
+    },
+    {
+      "sku_id": "household-laundry-013",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "Color Catcher Sheets 72ct",
+      "normalization": "per_ct",
+      "search_query": "shout color catcher 72 count"
+    },
+    {
+      "sku_id": "household-laundry-014",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "Wool Dryer Balls 6ct",
+      "normalization": "per_ct",
+      "search_query": "wool dryer balls 6 pack"
+    },
+    {
+      "sku_id": "household-laundry-015",
+      "category": "household",
+      "subcategory": "laundry",
+      "canonical_name": "Stain Stick Tide 2.9oz",
+      "normalization": "per_oz",
+      "search_query": "tide to go stain stick"
+    },
+    {
+      "sku_id": "household-cleaning-001",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Clorox Wipes 75ct",
+      "normalization": "per_ct",
+      "search_query": "clorox disinfecting wipes 75 count"
+    },
+    {
+      "sku_id": "household-cleaning-002",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Lysol Wipes 80ct",
+      "normalization": "per_ct",
+      "search_query": "lysol disinfecting wipes 80 count"
+    },
+    {
+      "sku_id": "household-cleaning-003",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Lysol Spray 19oz",
+      "normalization": "per_fl_oz",
+      "search_query": "lysol disinfectant spray 19 oz"
+    },
+    {
+      "sku_id": "household-cleaning-004",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Dawn Dish Soap 28oz",
+      "normalization": "per_fl_oz",
+      "search_query": "dawn ultra dish soap 28 oz"
+    },
+    {
+      "sku_id": "household-cleaning-005",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Palmolive Dish Soap 32oz",
+      "normalization": "per_fl_oz",
+      "search_query": "palmolive dish soap 32 oz"
+    },
+    {
+      "sku_id": "household-cleaning-006",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Cascade Dishwasher Pods 60ct",
+      "normalization": "per_ct",
+      "search_query": "cascade complete dishwasher pods 60 count"
+    },
+    {
+      "sku_id": "household-cleaning-007",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Finish Dishwasher Pods 60ct",
+      "normalization": "per_ct",
+      "search_query": "finish quantum dishwasher pods 60 count"
+    },
+    {
+      "sku_id": "household-cleaning-008",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Glass Cleaner Windex 26oz",
+      "normalization": "per_fl_oz",
+      "search_query": "windex glass cleaner 26 oz"
+    },
+    {
+      "sku_id": "household-cleaning-009",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Mr Clean Multi Surface 40oz",
+      "normalization": "per_fl_oz",
+      "search_query": "mr clean multi surface cleaner 40 oz"
+    },
+    {
+      "sku_id": "household-cleaning-010",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Pine Sol 60oz",
+      "normalization": "per_fl_oz",
+      "search_query": "pine sol multi surface 60 oz"
+    },
+    {
+      "sku_id": "household-cleaning-011",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Toilet Bowl Cleaner Lysol 24oz",
+      "normalization": "per_fl_oz",
+      "search_query": "lysol toilet bowl cleaner 24 oz"
+    },
+    {
+      "sku_id": "household-cleaning-012",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Bathroom Cleaner Scrubbing Bubbles",
+      "normalization": "per_fl_oz",
+      "search_query": "scrubbing bubbles bathroom cleaner 32 oz"
+    },
+    {
+      "sku_id": "household-cleaning-013",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Magic Eraser 8ct",
+      "normalization": "per_ct",
+      "search_query": "mr clean magic eraser 8 count"
+    },
+    {
+      "sku_id": "household-cleaning-014",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Sponges Scotch-Brite 9ct",
+      "normalization": "per_ct",
+      "search_query": "scotch brite scrub sponges 9 count"
+    },
+    {
+      "sku_id": "household-cleaning-015",
+      "category": "household",
+      "subcategory": "cleaning",
+      "canonical_name": "Microfiber Cloths 24ct",
+      "normalization": "per_ct",
+      "search_query": "microfiber cleaning cloths 24 pack"
+    },
+    {
+      "sku_id": "household-trash-001",
+      "category": "household",
+      "subcategory": "trash",
+      "canonical_name": "Trash Bags 13gal Glad 110ct",
+      "normalization": "per_ct",
+      "search_query": "glad forceflex 13 gallon 110 count"
+    },
+    {
+      "sku_id": "household-trash-002",
+      "category": "household",
+      "subcategory": "trash",
+      "canonical_name": "Trash Bags 13gal Hefty 90ct",
+      "normalization": "per_ct",
+      "search_query": "hefty 13 gallon 90 count"
+    },
+    {
+      "sku_id": "household-trash-003",
+      "category": "household",
+      "subcategory": "trash",
+      "canonical_name": "Trash Bags 13gal Kirkland",
+      "normalization": "per_ct",
+      "search_query": "kirkland signature 13 gallon"
+    },
+    {
+      "sku_id": "household-trash-004",
+      "category": "household",
+      "subcategory": "trash",
+      "canonical_name": "Trash Bags 30gal 50ct",
+      "normalization": "per_ct",
+      "search_query": "outdoor trash bags 30 gallon 50 count"
+    },
+    {
+      "sku_id": "household-trash-005",
+      "category": "household",
+      "subcategory": "trash",
+      "canonical_name": "Trash Bags 33gal 50ct",
+      "normalization": "per_ct",
+      "search_query": "trash bags 33 gallon 50 count"
+    },
+    {
+      "sku_id": "household-trash-006",
+      "category": "household",
+      "subcategory": "trash",
+      "canonical_name": "Trash Bags 39gal Hefty 40ct",
+      "normalization": "per_ct",
+      "search_query": "hefty strong 39 gallon 40 count"
+    },
+    {
+      "sku_id": "household-trash-007",
+      "category": "household",
+      "subcategory": "trash",
+      "canonical_name": "Small Trash Bags 4gal 200ct",
+      "normalization": "per_ct",
+      "search_query": "small trash bags 4 gallon 200 count"
+    },
+    {
+      "sku_id": "household-trash-008",
+      "category": "household",
+      "subcategory": "trash",
+      "canonical_name": "Tall Kitchen Bags Drawstring",
+      "normalization": "per_ct",
+      "search_query": "tall kitchen drawstring trash bags 80 count"
+    },
+    {
+      "sku_id": "household-trash-009",
+      "category": "household",
+      "subcategory": "trash",
+      "canonical_name": "Compactor Bags 18gal 40ct",
+      "normalization": "per_ct",
+      "search_query": "trash compactor bags 18 gallon 40 count"
+    },
+    {
+      "sku_id": "household-trash-010",
+      "category": "household",
+      "subcategory": "trash",
+      "canonical_name": "Yard Waste Bags 30gal 5ct",
+      "normalization": "per_ct",
+      "search_query": "yard waste paper bags 30 gallon 5 count"
+    },
+    {
+      "sku_id": "household-kitchen-001",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Ziploc Gallon 38ct",
+      "normalization": "per_ct",
+      "search_query": "ziploc gallon freezer bags 38 count"
+    },
+    {
+      "sku_id": "household-kitchen-002",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Ziploc Quart 75ct",
+      "normalization": "per_ct",
+      "search_query": "ziploc quart freezer bags 75 count"
+    },
+    {
+      "sku_id": "household-kitchen-003",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Ziploc Sandwich 145ct",
+      "normalization": "per_ct",
+      "search_query": "ziploc sandwich bags 145 count"
+    },
+    {
+      "sku_id": "household-kitchen-004",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Glad Cling Wrap 200sqft",
+      "normalization": "per_sheet",
+      "search_query": "glad cling wrap 200 sq ft"
+    },
+    {
+      "sku_id": "household-kitchen-005",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Reynolds Aluminum Foil 200ft",
+      "normalization": "per_sheet",
+      "search_query": "reynolds wrap aluminum foil 200 sq ft"
+    },
+    {
+      "sku_id": "household-kitchen-006",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Heavy Duty Foil 75sqft",
+      "normalization": "per_sheet",
+      "search_query": "reynolds heavy duty foil 75 sq ft"
+    },
+    {
+      "sku_id": "household-kitchen-007",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Parchment Paper 90sqft",
+      "normalization": "per_sheet",
+      "search_query": "parchment paper 90 sq ft"
+    },
+    {
+      "sku_id": "household-kitchen-008",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Wax Paper 75sqft",
+      "normalization": "per_sheet",
+      "search_query": "wax paper 75 sq ft"
+    },
+    {
+      "sku_id": "household-kitchen-009",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Disposable Containers 50ct",
+      "normalization": "per_ct",
+      "search_query": "disposable food containers 50 count"
+    },
+    {
+      "sku_id": "household-kitchen-010",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Coffee Filters 200ct",
+      "normalization": "per_ct",
+      "search_query": "basket coffee filters 200 count"
+    },
+    {
+      "sku_id": "household-kitchen-011",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Brita Filter 3pk",
+      "normalization": "per_ct",
+      "search_query": "brita standard replacement filters 3 pack"
+    },
+    {
+      "sku_id": "household-kitchen-012",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Dish Towels 8pk",
+      "normalization": "per_ct",
+      "search_query": "kitchen dish towels 8 pack"
+    },
+    {
+      "sku_id": "household-kitchen-013",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Oven Mitts 2pk",
+      "normalization": "per_ct",
+      "search_query": "silicone oven mitts 2 pack"
+    },
+    {
+      "sku_id": "household-kitchen-014",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Storage Containers 24pc",
+      "normalization": "per_ct",
+      "search_query": "rubbermaid food storage 24 piece set"
+    },
+    {
+      "sku_id": "household-kitchen-015",
+      "category": "household",
+      "subcategory": "kitchen",
+      "canonical_name": "Cookie Sheet Aluminum",
+      "normalization": "per_each",
+      "search_query": "aluminum cookie baking sheet half"
+    },
+    {
+      "sku_id": "household-pet-001",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Purina Dog Chow 32lb",
+      "normalization": "per_lb",
+      "search_query": "purina dog chow 32 lb"
+    },
+    {
+      "sku_id": "household-pet-002",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Pedigree Dog Food 50lb",
+      "normalization": "per_lb",
+      "search_query": "pedigree dog food 50 lb"
+    },
+    {
+      "sku_id": "household-pet-003",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Blue Buffalo Dog Food 30lb",
+      "normalization": "per_lb",
+      "search_query": "blue buffalo life protection dog 30 lb"
+    },
+    {
+      "sku_id": "household-pet-004",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Iams Cat Food 16lb",
+      "normalization": "per_lb",
+      "search_query": "iams proactive health cat 16 lb"
+    },
+    {
+      "sku_id": "household-pet-005",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Friskies Cat Food 16lb",
+      "normalization": "per_lb",
+      "search_query": "friskies surfin' turfin' cat 16 lb"
+    },
+    {
+      "sku_id": "household-pet-006",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Tidy Cats Litter 35lb",
+      "normalization": "per_lb",
+      "search_query": "tidy cats clumping litter 35 lb"
+    },
+    {
+      "sku_id": "household-pet-007",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Fresh Step Cat Litter 25lb",
+      "normalization": "per_lb",
+      "search_query": "fresh step clumping cat litter 25 lb"
+    },
+    {
+      "sku_id": "household-pet-008",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Milkbone Dog Treats 24oz",
+      "normalization": "per_oz",
+      "search_query": "milk bone dog treats 24 oz"
+    },
+    {
+      "sku_id": "household-pet-009",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Greenies Dental Treats 27oz",
+      "normalization": "per_oz",
+      "search_query": "greenies dental dog treats 27 oz"
+    },
+    {
+      "sku_id": "household-pet-010",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Pup-peroni Dog Treats 22.5oz",
+      "normalization": "per_oz",
+      "search_query": "pup peroni dog treats 22.5 oz"
+    },
+    {
+      "sku_id": "household-pet-011",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Temptations Cat Treats 16oz",
+      "normalization": "per_oz",
+      "search_query": "temptations cat treats 16 oz"
+    },
+    {
+      "sku_id": "household-pet-012",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Wee Wee Pads 100ct",
+      "normalization": "per_ct",
+      "search_query": "wee wee pads 100 count"
+    },
+    {
+      "sku_id": "household-pet-013",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Dog Poop Bags 270ct",
+      "normalization": "per_ct",
+      "search_query": "amazon basics dog waste bags 270 count"
+    },
+    {
+      "sku_id": "household-pet-014",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Cat Food Cans 24pk",
+      "normalization": "per_ct",
+      "search_query": "fancy feast cat food 24 pack 3 oz"
+    },
+    {
+      "sku_id": "household-pet-015",
+      "category": "household",
+      "subcategory": "pet",
+      "canonical_name": "Wet Dog Food 12pk",
+      "normalization": "per_ct",
+      "search_query": "pedigree wet dog food 12 pack"
+    },
+    {
+      "sku_id": "hpc-otc-001",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Tylenol Extra Strength 100ct",
+      "normalization": "per_ct",
+      "search_query": "tylenol extra strength 500 mg 100 count"
+    },
+    {
+      "sku_id": "hpc-otc-002",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Advil 200ct",
+      "normalization": "per_ct",
+      "search_query": "advil ibuprofen 200 mg 200 count"
+    },
+    {
+      "sku_id": "hpc-otc-003",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Motrin IB 100ct",
+      "normalization": "per_ct",
+      "search_query": "motrin ib ibuprofen 100 count"
+    },
+    {
+      "sku_id": "hpc-otc-004",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Aleve 100ct",
+      "normalization": "per_ct",
+      "search_query": "aleve naproxen 220 mg 100 count"
+    },
+    {
+      "sku_id": "hpc-otc-005",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Bayer Aspirin 200ct",
+      "normalization": "per_ct",
+      "search_query": "bayer aspirin 325 mg 200 count"
+    },
+    {
+      "sku_id": "hpc-otc-006",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Claritin 30ct",
+      "normalization": "per_ct",
+      "search_query": "claritin loratadine 10 mg 30 count"
+    },
+    {
+      "sku_id": "hpc-otc-007",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Zyrtec 45ct",
+      "normalization": "per_ct",
+      "search_query": "zyrtec cetirizine 10 mg 45 count"
+    },
+    {
+      "sku_id": "hpc-otc-008",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Allegra 70ct",
+      "normalization": "per_ct",
+      "search_query": "allegra fexofenadine 180 mg 70 count"
+    },
+    {
+      "sku_id": "hpc-otc-009",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Benadryl 100ct",
+      "normalization": "per_ct",
+      "search_query": "benadryl diphenhydramine 25 mg 100 count"
+    },
+    {
+      "sku_id": "hpc-otc-010",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "DayQuil Severe 24ct",
+      "normalization": "per_ct",
+      "search_query": "dayquil severe 24 count"
+    },
+    {
+      "sku_id": "hpc-otc-011",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "NyQuil Severe 24ct",
+      "normalization": "per_ct",
+      "search_query": "nyquil severe 24 count"
+    },
+    {
+      "sku_id": "hpc-otc-012",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Mucinex 12-Hour 40ct",
+      "normalization": "per_ct",
+      "search_query": "mucinex 12 hour 40 count"
+    },
+    {
+      "sku_id": "hpc-otc-013",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Robitussin DM 8oz",
+      "normalization": "per_fl_oz",
+      "search_query": "robitussin dm 8 oz"
+    },
+    {
+      "sku_id": "hpc-otc-014",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Pepto Bismol 16oz",
+      "normalization": "per_fl_oz",
+      "search_query": "pepto bismol original 16 oz"
+    },
+    {
+      "sku_id": "hpc-otc-015",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Tums Extra 96ct",
+      "normalization": "per_ct",
+      "search_query": "tums extra strength 96 count"
+    },
+    {
+      "sku_id": "hpc-otc-016",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Imodium 12ct",
+      "normalization": "per_ct",
+      "search_query": "imodium ad 12 count"
+    },
+    {
+      "sku_id": "hpc-otc-017",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Prilosec OTC 42ct",
+      "normalization": "per_ct",
+      "search_query": "prilosec otc 42 count"
+    },
+    {
+      "sku_id": "hpc-otc-018",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Pepcid AC 50ct",
+      "normalization": "per_ct",
+      "search_query": "pepcid ac 50 count"
+    },
+    {
+      "sku_id": "hpc-otc-019",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Sudafed 24ct",
+      "normalization": "per_ct",
+      "search_query": "sudafed pe 24 count"
+    },
+    {
+      "sku_id": "hpc-otc-020",
+      "category": "hpc",
+      "subcategory": "otc",
+      "canonical_name": "Halls Cough Drops 80ct",
+      "normalization": "per_ct",
+      "search_query": "halls mentho lyptus 80 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-001",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Centrum Adult 200ct",
+      "normalization": "per_ct",
+      "search_query": "centrum adult multivitamin 200 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-002",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "One A Day Men 200ct",
+      "normalization": "per_ct",
+      "search_query": "one a day men's 200 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-003",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "One A Day Women 200ct",
+      "normalization": "per_ct",
+      "search_query": "one a day women's 200 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-004",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Vitamin C 1000mg 250ct",
+      "normalization": "per_ct",
+      "search_query": "vitamin c 1000 mg 250 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-005",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Vitamin D3 5000IU 360ct",
+      "normalization": "per_ct",
+      "search_query": "vitamin d3 5000 iu 360 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-006",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Fish Oil 1200mg 300ct",
+      "normalization": "per_ct",
+      "search_query": "fish oil 1200 mg 300 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-007",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Melatonin 5mg 240ct",
+      "normalization": "per_ct",
+      "search_query": "melatonin 5 mg 240 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-008",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Magnesium 500mg 250ct",
+      "normalization": "per_ct",
+      "search_query": "magnesium 500 mg 250 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-009",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "B12 1000mcg 200ct",
+      "normalization": "per_ct",
+      "search_query": "vitamin b12 1000 mcg 200 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-010",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Biotin 5000mcg 200ct",
+      "normalization": "per_ct",
+      "search_query": "biotin 5000 mcg 200 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-011",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Calcium 600mg 250ct",
+      "normalization": "per_ct",
+      "search_query": "calcium 600 mg vitamin d 250 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-012",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Probiotics 60ct",
+      "normalization": "per_ct",
+      "search_query": "probiotics 60 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-013",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Multivitamin Gummies 220ct",
+      "normalization": "per_ct",
+      "search_query": "vitafusion multivitamin gummies 220 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-014",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Glucosamine Chondroitin 220ct",
+      "normalization": "per_ct",
+      "search_query": "glucosamine chondroitin 220 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-015",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Turmeric Curcumin 180ct",
+      "normalization": "per_ct",
+      "search_query": "turmeric curcumin 180 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-016",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Apple Cider Vinegar Caps 90ct",
+      "normalization": "per_ct",
+      "search_query": "apple cider vinegar capsules 90 count"
+    },
+    {
+      "sku_id": "hpc-vitamins-017",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Collagen Peptides 20oz",
+      "normalization": "per_oz",
+      "search_query": "collagen peptides powder 20 oz"
+    },
+    {
+      "sku_id": "hpc-vitamins-018",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Whey Protein 5lb",
+      "normalization": "per_lb",
+      "search_query": "whey protein powder 5 lb"
+    },
+    {
+      "sku_id": "hpc-vitamins-019",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Pre-Workout 30 servings",
+      "normalization": "per_ct",
+      "search_query": "pre workout 30 servings"
+    },
+    {
+      "sku_id": "hpc-vitamins-020",
+      "category": "hpc",
+      "subcategory": "vitamins",
+      "canonical_name": "Greens Powder 30 servings",
+      "normalization": "per_ct",
+      "search_query": "greens powder 30 servings"
+    },
+    {
+      "sku_id": "hpc-personal_care-001",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Head Shoulders Shampoo 23.7oz",
+      "normalization": "per_fl_oz",
+      "search_query": "head and shoulders classic clean 23.7 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-002",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Pantene Shampoo 25.4oz",
+      "normalization": "per_fl_oz",
+      "search_query": "pantene pro v classic clean 25.4 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-003",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Dove Conditioner 25.4oz",
+      "normalization": "per_fl_oz",
+      "search_query": "dove daily moisture conditioner 25.4 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-004",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Suave Conditioner 28oz",
+      "normalization": "per_fl_oz",
+      "search_query": "suave conditioner 28 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-005",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Dove Body Wash 22oz",
+      "normalization": "per_fl_oz",
+      "search_query": "dove deep moisture body wash 22 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-006",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Olay Body Wash 22oz",
+      "normalization": "per_fl_oz",
+      "search_query": "olay ultra moisture body wash 22 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-007",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Old Spice Body Wash 24oz",
+      "normalization": "per_fl_oz",
+      "search_query": "old spice swagger body wash 24 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-008",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Dial Bar Soap 8pk",
+      "normalization": "per_ct",
+      "search_query": "dial gold bar soap 8 pack"
+    },
+    {
+      "sku_id": "hpc-personal_care-009",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Irish Spring Bar Soap 8pk",
+      "normalization": "per_ct",
+      "search_query": "irish spring original bar soap 8 pack"
+    },
+    {
+      "sku_id": "hpc-personal_care-010",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Secret Deodorant 2.6oz",
+      "normalization": "per_oz",
+      "search_query": "secret outlast deodorant 2.6 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-011",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Old Spice Deodorant 3oz",
+      "normalization": "per_oz",
+      "search_query": "old spice high endurance deodorant 3 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-012",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Degree Deodorant 2.7oz",
+      "normalization": "per_oz",
+      "search_query": "degree men's deodorant 2.7 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-013",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Native Deodorant 2.65oz",
+      "normalization": "per_oz",
+      "search_query": "native deodorant coconut vanilla 2.65 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-014",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Colgate Toothpaste 6oz",
+      "normalization": "per_oz",
+      "search_query": "colgate total whitening 6 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-015",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Crest Toothpaste 5.7oz",
+      "normalization": "per_oz",
+      "search_query": "crest 3d white toothpaste 5.7 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-016",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Sensodyne Toothpaste 4oz",
+      "normalization": "per_oz",
+      "search_query": "sensodyne pronamel 4 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-017",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Listerine Mouthwash 1L",
+      "normalization": "per_fl_oz",
+      "search_query": "listerine cool mint 1 liter"
+    },
+    {
+      "sku_id": "hpc-personal_care-018",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Crest Mouthwash 1L",
+      "normalization": "per_fl_oz",
+      "search_query": "crest pro health mouthwash 1 liter"
+    },
+    {
+      "sku_id": "hpc-personal_care-019",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Oral-B Floss 3pk",
+      "normalization": "per_ct",
+      "search_query": "oral b glide floss 3 pack"
+    },
+    {
+      "sku_id": "hpc-personal_care-020",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Oral-B Toothbrushes 4pk",
+      "normalization": "per_ct",
+      "search_query": "oral b crossaction toothbrush 4 pack"
+    },
+    {
+      "sku_id": "hpc-personal_care-021",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Colgate Toothbrushes 6pk",
+      "normalization": "per_ct",
+      "search_query": "colgate 360 toothbrush 6 pack"
+    },
+    {
+      "sku_id": "hpc-personal_care-022",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Gillette Mach3 12pk",
+      "normalization": "per_ct",
+      "search_query": "gillette mach 3 cartridges 12 pack"
+    },
+    {
+      "sku_id": "hpc-personal_care-023",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Gillette Fusion 12pk",
+      "normalization": "per_ct",
+      "search_query": "gillette fusion 5 cartridges 12 pack"
+    },
+    {
+      "sku_id": "hpc-personal_care-024",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Schick Hydro Razors 12pk",
+      "normalization": "per_ct",
+      "search_query": "schick hydro 5 cartridges 12 pack"
+    },
+    {
+      "sku_id": "hpc-personal_care-025",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Shaving Cream Barbasol 10oz",
+      "normalization": "per_oz",
+      "search_query": "barbasol shaving cream 10 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-026",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Shaving Cream Gillette 11oz",
+      "normalization": "per_oz",
+      "search_query": "gillette foamy shave cream 11 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-027",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Cetaphil Lotion 20oz",
+      "normalization": "per_fl_oz",
+      "search_query": "cetaphil moisturizing lotion 20 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-028",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Aveeno Lotion 18oz",
+      "normalization": "per_fl_oz",
+      "search_query": "aveeno daily moisturizing lotion 18 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-029",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Vaseline 13oz",
+      "normalization": "per_fl_oz",
+      "search_query": "vaseline original 13 oz"
+    },
+    {
+      "sku_id": "hpc-personal_care-030",
+      "category": "hpc",
+      "subcategory": "personal_care",
+      "canonical_name": "Q-Tips 750ct",
+      "normalization": "per_ct",
+      "search_query": "q tips cotton swabs 750 count"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-001",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Tampons Playtex Sport 36ct",
+      "normalization": "per_ct",
+      "search_query": "playtex sport tampons 36 count"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-002",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Tampons Tampax Pearl 50ct",
+      "normalization": "per_ct",
+      "search_query": "tampax pearl tampons 50 count"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-003",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Pads Always Ultra Thin 36ct",
+      "normalization": "per_ct",
+      "search_query": "always ultra thin pads 36 count"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-004",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Pads Always Maxi 60ct",
+      "normalization": "per_ct",
+      "search_query": "always maxi pads 60 count"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-005",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Liners Carefree 120ct",
+      "normalization": "per_ct",
+      "search_query": "carefree pantiliners 120 count"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-006",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Diapers Huggies Sz 3 222ct",
+      "normalization": "per_ct",
+      "search_query": "huggies little snugglers size 3 222 count"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-007",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Diapers Pampers Sz 3 168ct",
+      "normalization": "per_ct",
+      "search_query": "pampers swaddlers size 3 168 count"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-008",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Diapers Luvs Sz 3 252ct",
+      "normalization": "per_ct",
+      "search_query": "luvs size 3 252 count"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-009",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Diapers Huggies Sz 4 200ct",
+      "normalization": "per_ct",
+      "search_query": "huggies snug and dry size 4 200 count"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-010",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Pull-Ups 4T-5T 56ct",
+      "normalization": "per_ct",
+      "search_query": "pull ups training pants 4t 5t 56 count"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-011",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Baby Wipes Huggies 768ct",
+      "normalization": "per_ct",
+      "search_query": "huggies natural care wipes 768 count"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-012",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Baby Wipes Pampers 720ct",
+      "normalization": "per_ct",
+      "search_query": "pampers sensitive wipes 720 count"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-013",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Formula Similac Pro 36oz",
+      "normalization": "per_oz",
+      "search_query": "similac pro advance 36 oz"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-014",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Formula Enfamil Neuropro 30oz",
+      "normalization": "per_oz",
+      "search_query": "enfamil neuropro 30 oz"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-015",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Baby Food Pouches 16pk",
+      "normalization": "per_ct",
+      "search_query": "gerber baby food pouches 16 pack"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-016",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Diaper Rash Cream Desitin 4oz",
+      "normalization": "per_oz",
+      "search_query": "desitin diaper rash cream 4 oz"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-017",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Baby Lotion Johnson's 27oz",
+      "normalization": "per_fl_oz",
+      "search_query": "johnsons baby lotion 27 oz"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-018",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Baby Shampoo Johnson's 27oz",
+      "normalization": "per_fl_oz",
+      "search_query": "johnsons baby shampoo 27 oz"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-019",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Baby Powder Johnson's 22oz",
+      "normalization": "per_oz",
+      "search_query": "johnsons baby powder 22 oz"
+    },
+    {
+      "sku_id": "hpc-baby_feminine-020",
+      "category": "hpc",
+      "subcategory": "baby_feminine",
+      "canonical_name": "Pacifiers Philips 2pk",
+      "normalization": "per_ct",
+      "search_query": "philips avent soothie pacifier 2 pack"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-001",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "AAA Alkaline Batteries 24pk Duracell",
+      "normalization": "per_ct",
+      "search_query": "duracell aaa batteries 24 pack"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-002",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "AA Alkaline Batteries 24pk Duracell",
+      "normalization": "per_ct",
+      "search_query": "duracell aa batteries 24 pack"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-003",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "AAA Energizer 24pk",
+      "normalization": "per_ct",
+      "search_query": "energizer max aaa 24 pack"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-004",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "AA Energizer 24pk",
+      "normalization": "per_ct",
+      "search_query": "energizer max aa 24 pack"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-005",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "9V Batteries Duracell 4pk",
+      "normalization": "per_ct",
+      "search_query": "duracell 9v batteries 4 pack"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-006",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "CR2032 Coin 6pk",
+      "normalization": "per_ct",
+      "search_query": "cr2032 coin batteries 6 pack"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-007",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "HDMI Cable 6ft",
+      "normalization": "per_each",
+      "search_query": "hdmi cable 6 ft 4k"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-008",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "USB-C to USB-C Cable 6ft",
+      "normalization": "per_each",
+      "search_query": "usb c to usb c cable 6 ft"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-009",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "Lightning Cable 6ft",
+      "normalization": "per_each",
+      "search_query": "apple lightning cable 6 ft"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-010",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "USB-C Wall Charger 20W",
+      "normalization": "per_each",
+      "search_query": "usb c wall charger 20w"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-011",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "Power Strip 6 Outlet",
+      "normalization": "per_each",
+      "search_query": "power strip surge protector 6 outlet"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-012",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "Extension Cord 25ft",
+      "normalization": "per_each",
+      "search_query": "extension cord 25 ft outdoor"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-013",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "LED Bulb 60W Equiv 4pk",
+      "normalization": "per_ct",
+      "search_query": "ge led 60w equivalent 4 pack"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-014",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "LED Bulb Smart 4pk",
+      "normalization": "per_ct",
+      "search_query": "philips hue white smart bulb 4 pack"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-015",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "Echo Dot 5th Gen",
+      "normalization": "per_each",
+      "search_query": "amazon echo dot 5th generation"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-016",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "Roku Express 4K",
+      "normalization": "per_each",
+      "search_query": "roku express 4k streaming device"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-017",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "Apple AirPods 4",
+      "normalization": "per_each",
+      "search_query": "apple airpods 4"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-018",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "Samsung 65 4K TV",
+      "normalization": "per_each",
+      "search_query": "samsung 65 inch 4k smart tv crystal"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-019",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "Sony WH-CH520 Headphones",
+      "normalization": "per_each",
+      "search_query": "sony wh ch520 wireless headphones"
+    },
+    {
+      "sku_id": "electronics-batteries_cables-020",
+      "category": "electronics",
+      "subcategory": "batteries_cables",
+      "canonical_name": "Logitech MX Master 3S",
+      "normalization": "per_each",
+      "search_query": "logitech mx master 3s wireless mouse"
+    },
+    {
+      "sku_id": "electronics-apparel-001",
+      "category": "electronics",
+      "subcategory": "apparel",
+      "canonical_name": "Hanes Men's Crew Tee 6pk",
+      "normalization": "per_ct",
+      "search_query": "hanes men's crew neck t shirt 6 pack white"
+    },
+    {
+      "sku_id": "electronics-apparel-002",
+      "category": "electronics",
+      "subcategory": "apparel",
+      "canonical_name": "Hanes Men's Boxer Briefs 5pk",
+      "normalization": "per_ct",
+      "search_query": "hanes men's boxer briefs 5 pack"
+    },
+    {
+      "sku_id": "electronics-apparel-003",
+      "category": "electronics",
+      "subcategory": "apparel",
+      "canonical_name": "Hanes Women's Briefs 6pk",
+      "normalization": "per_ct",
+      "search_query": "hanes women's cotton brief 6 pack"
+    },
+    {
+      "sku_id": "electronics-apparel-004",
+      "category": "electronics",
+      "subcategory": "apparel",
+      "canonical_name": "Fruit of the Loom Socks 10pk",
+      "normalization": "per_ct",
+      "search_query": "fruit of the loom men's socks 10 pack"
+    },
+    {
+      "sku_id": "electronics-apparel-005",
+      "category": "electronics",
+      "subcategory": "apparel",
+      "canonical_name": "Hanes Women's Socks 10pk",
+      "normalization": "per_ct",
+      "search_query": "hanes women's no show socks 10 pack"
+    },
+    {
+      "sku_id": "electronics-apparel-006",
+      "category": "electronics",
+      "subcategory": "apparel",
+      "canonical_name": "Champion Hoodie Men's",
+      "normalization": "per_each",
+      "search_query": "champion men's powerblend fleece hoodie"
+    },
+    {
+      "sku_id": "electronics-apparel-007",
+      "category": "electronics",
+      "subcategory": "apparel",
+      "canonical_name": "Levi's 505 Jeans Men's",
+      "normalization": "per_each",
+      "search_query": "levi's 505 men's jeans"
+    },
+    {
+      "sku_id": "electronics-apparel-008",
+      "category": "electronics",
+      "subcategory": "apparel",
+      "canonical_name": "Carhartt Beanie",
+      "normalization": "per_each",
+      "search_query": "carhartt acrylic watch hat beanie"
+    },
+    {
+      "sku_id": "electronics-apparel-009",
+      "category": "electronics",
+      "subcategory": "apparel",
+      "canonical_name": "Crocs Classic Clogs",
+      "normalization": "per_each",
+      "search_query": "crocs classic clog adult"
+    },
+    {
+      "sku_id": "electronics-apparel-010",
+      "category": "electronics",
+      "subcategory": "apparel",
+      "canonical_name": "Hanes Men's Hoodie",
+      "normalization": "per_each",
+      "search_query": "hanes men's ecosmart fleece hoodie"
+    },
+    {
+      "sku_id": "electronics-homegoods-001",
+      "category": "electronics",
+      "subcategory": "homegoods",
+      "canonical_name": "Bath Towel Set 4pk",
+      "normalization": "per_ct",
+      "search_query": "cotton bath towels 4 pack"
+    },
+    {
+      "sku_id": "electronics-homegoods-002",
+      "category": "electronics",
+      "subcategory": "homegoods",
+      "canonical_name": "Hand Towel Set 4pk",
+      "normalization": "per_ct",
+      "search_query": "cotton hand towels 4 pack"
+    },
+    {
+      "sku_id": "electronics-homegoods-003",
+      "category": "electronics",
+      "subcategory": "homegoods",
+      "canonical_name": "Washcloth Set 12pk",
+      "normalization": "per_ct",
+      "search_query": "cotton washcloths 12 pack"
+    },
+    {
+      "sku_id": "electronics-homegoods-004",
+      "category": "electronics",
+      "subcategory": "homegoods",
+      "canonical_name": "Sheet Set Twin",
+      "normalization": "per_each",
+      "search_query": "twin sheet set 4 piece"
+    },
+    {
+      "sku_id": "electronics-homegoods-005",
+      "category": "electronics",
+      "subcategory": "homegoods",
+      "canonical_name": "Sheet Set Queen",
+      "normalization": "per_each",
+      "search_query": "queen sheet set 4 piece"
+    },
+    {
+      "sku_id": "electronics-homegoods-006",
+      "category": "electronics",
+      "subcategory": "homegoods",
+      "canonical_name": "Pillow Standard 2pk",
+      "normalization": "per_ct",
+      "search_query": "standard bed pillow 2 pack"
+    },
+    {
+      "sku_id": "electronics-homegoods-007",
+      "category": "electronics",
+      "subcategory": "homegoods",
+      "canonical_name": "Comforter Queen",
+      "normalization": "per_each",
+      "search_query": "queen comforter set"
+    },
+    {
+      "sku_id": "electronics-homegoods-008",
+      "category": "electronics",
+      "subcategory": "homegoods",
+      "canonical_name": "Mattress Pad Queen",
+      "normalization": "per_each",
+      "search_query": "queen mattress pad protector"
+    },
+    {
+      "sku_id": "electronics-homegoods-009",
+      "category": "electronics",
+      "subcategory": "homegoods",
+      "canonical_name": "Throw Blanket Sherpa",
+      "normalization": "per_each",
+      "search_query": "sherpa fleece throw blanket 50x60"
+    },
+    {
+      "sku_id": "electronics-homegoods-010",
+      "category": "electronics",
+      "subcategory": "homegoods",
+      "canonical_name": "Memory Foam Mattress Topper Q",
+      "normalization": "per_each",
+      "search_query": "memory foam mattress topper queen"
+    }
+  ]
+}

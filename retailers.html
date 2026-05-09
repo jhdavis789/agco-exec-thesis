@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Costco vs. Walmart vs. Five Other Retailers — Cost Comparison</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --navy-900: #001A30; --navy-800: #00294B; --navy-700: #153A5A;
+  --sapphire-100: #EBF4FB; --sapphire-200: #C8E1F4; --sapphire-300: #7BBAE0;
+  --sapphire-400: #3B98CC; --sapphire-500: #0075B5; --sapphire-600: #005F9E;
+  --teal-400: #4DB8B0; --teal-500: #00897B; --teal-600: #007E6C;
+  --green-500: #2E8B4E; --green-600: #1B7A3D;
+  --red-400: #E8697E; --red-500: #C41E3A; --red-600: #A31530;
+  --gold-300: #DEB769; --gold-400: #C49A48; --gold-500: #A67C32;
+  --copper-500: #BA7D48; --copper-600: #976253;
+  --warm-white: #FAFAF8; --warm-50: #F6F5F2; --warm-100: #EDECE8;
+  --warm-200: #E0DED8; --warm-300: #CBC8C0; --warm-400: #A9A69E;
+  --text-primary: #1C2B3A; --text-secondary: #5A6778; --text-muted: #8B95A2;
+  --card-bg: #FFFFFF; --card-border: #E8E5E0;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+  --card-hover: 0 4px 12px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body); background: var(--warm-white);
+  color: var(--text-primary); line-height: 1.6;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(250,250,248,0.88); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--warm-200); padding: 0 24px;
+  display: flex; align-items: center; height: 48px;
+  overflow-x: auto; scrollbar-width: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav-brand {
+  font-family: var(--font-display); font-size: 15px; font-weight: 600;
+  color: var(--navy-800); margin-right: 24px; white-space: nowrap;
+  padding-right: 24px; border-right: 1px solid var(--warm-200);
+}
+.nav-brand span { color: var(--sapphire-500); }
+.nav-section {
+  color: var(--navy-700); font-size: 9px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 2px;
+  padding: 0 10px 0 16px; white-space: nowrap; opacity: 0.55;
+}
+.nav-btn {
+  background: none; border: none; border-bottom: 2px solid transparent;
+  color: var(--text-muted); padding: 14px 12px; cursor: pointer;
+  font-family: var(--font-body); font-size: 12px; font-weight: 500;
+  transition: all 0.2s; white-space: nowrap;
+}
+.nav-btn:hover { color: var(--sapphire-500); }
+.nav-btn.active { color: var(--navy-800); font-weight: 600; border-bottom-color: var(--sapphire-500); }
+.nav-sep { width: 1px; height: 20px; background: var(--warm-200); margin: 0 8px; flex-shrink: 0; }
+
+.slide { display: none; padding: 72px 48px 48px; min-height: 100vh; max-width: 1400px; margin: 0 auto; }
+.slide.active { display: block; }
+.slide-title {
+  font-family: var(--font-display); color: var(--navy-800);
+  font-size: 32px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.3px; line-height: 1.2;
+}
+.slide-title span { color: var(--sapphire-500); }
+.slide-subtitle { color: var(--text-secondary); font-size: 15px; margin-bottom: 28px; line-height: 1.65; max-width: 880px; }
+.row { display: flex; gap: 22px; margin-bottom: 22px; flex-wrap: wrap; }
+.row > .col { flex: 1; min-width: 360px; }
+.card {
+  background: var(--card-bg); border: 1px solid var(--card-border);
+  border-radius: 10px; padding: 24px; position: relative;
+  box-shadow: var(--card-shadow); transition: box-shadow 0.3s ease;
+}
+.exhibit-num {
+  position: absolute; top: 8px; right: 10px;
+  background: var(--navy-800); color: #fff;
+  font-size: 9px; font-weight: 600; letter-spacing: 0.5px;
+  padding: 3px 8px; border-radius: 4px;
+  opacity: 0; transition: opacity 0.2s; pointer-events: none;
+}
+.card:hover { box-shadow: var(--card-hover); }
+.card:hover .exhibit-num { opacity: 1; }
+.card h3 {
+  color: var(--navy-700); font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--warm-100);
+}
+canvas { max-height: 380px; }
+.metrics { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.metric {
+  background: var(--card-bg); border: 1px solid var(--card-border);
+  border-radius: 10px; padding: 18px 22px; flex: 1; min-width: 160px;
+  box-shadow: var(--card-shadow); transition: transform 0.2s, box-shadow 0.2s;
+}
+.metric:hover { transform: translateY(-1px); box-shadow: var(--card-hover); }
+.metric .label { color: var(--text-muted); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; }
+.metric .value { font-family: var(--font-display); color: var(--text-primary); font-size: 26px; font-weight: 600; margin-top: 4px; letter-spacing: -0.5px; }
+.metric .value.blue { color: var(--sapphire-500); }
+.metric .value.teal { color: var(--teal-500); }
+.metric .value.green { color: var(--green-600); }
+.metric .value.red { color: var(--red-500); }
+.metric .value.gold { color: var(--gold-500); }
+.metric .detail { color: var(--text-muted); font-size: 11px; margin-top: 2px; }
+.callout {
+  background: var(--sapphire-100); border: 1px solid var(--sapphire-200);
+  border-left: 3px solid var(--sapphire-500); border-radius: 8px;
+  padding: 18px 22px; margin-top: 18px; color: var(--navy-700); font-size: 13px; line-height: 1.65;
+}
+.callout-teal { background: #F0FAF9; border-color: #B8E4E0; border-left-color: var(--teal-500); }
+.callout-red { background: #FEF5F5; border-color: #F0D0CD; border-left-color: var(--red-500); color: #5C2A26; }
+.callout-gold { background: #FDF8F0; border-color: #E8D5B8; border-left-color: var(--gold-400); color: #5C4422; }
+.callout strong { color: inherit; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th {
+  background: var(--warm-50); color: var(--navy-700); text-align: left;
+  padding: 11px 14px; font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 2px solid var(--warm-200);
+}
+td { padding: 10px 14px; border-bottom: 1px solid var(--warm-100); color: var(--text-primary); }
+tr:hover { background: var(--warm-50); }
+.r { text-align: right; }
+.c { text-align: center; }
+td.green { color: var(--green-600); font-weight: 600; }
+td.red { color: var(--red-500); }
+td.blue { color: var(--sapphire-500); }
+td.teal { color: var(--teal-500); }
+td.gold { color: var(--gold-400); }
+.source { color: var(--text-muted); font-size: 10px; margin-top: 8px; font-style: italic; }
+.kb-hint {
+  position: fixed; bottom: 14px; right: 18px; color: var(--text-muted); font-size: 10px;
+  z-index: 100; background: rgba(255,255,255,0.85); padding: 5px 12px;
+  border-radius: 6px; backdrop-filter: blur(6px); border: 1px solid var(--warm-200);
+}
+
+/* Head-to-head heatmap */
+.h2h-table { font-size: 13px; border-spacing: 0; border-collapse: separate; }
+.h2h-table th { background: transparent; padding: 6px 10px; }
+.h2h-table th.col-head { text-align: center; padding: 6px 4px; font-size: 9px; }
+.h2h-table th.row-head { text-align: right; color: var(--navy-700); font-size: 11px; padding-right: 14px; min-width: 110px; text-transform: none; letter-spacing: 0; font-weight: 600; }
+.h2h-table td { padding: 0; border: none; }
+.h2h-cell {
+  display: block; padding: 10px 6px; min-width: 60px; text-align: center;
+  font-weight: 600; font-size: 13px; border-radius: 4px; margin: 1px;
+  font-variant-numeric: tabular-nums;
+}
+.h2h-cell.diag { background: var(--warm-100); color: var(--text-muted); font-weight: 400; }
+.h2h-legend { display: flex; gap: 6px; align-items: center; font-size: 11px; color: var(--text-muted); margin-top: 12px; }
+.h2h-legend .swatch { width: 18px; height: 12px; border-radius: 2px; }
+.tag {
+  display: inline-block; padding: 2px 7px; border-radius: 10px;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.3px;
+}
+.tag-study { background: var(--teal-500); color: #fff; }
+.tag-modeled { background: var(--warm-200); color: var(--text-secondary); }
+
+/* Per-SKU table */
+.sku-table { font-size: 12px; }
+.sku-table td.win { background: rgba(46,139,78,0.08); color: var(--green-600); font-weight: 600; }
+.sku-table td.na { color: var(--text-muted); font-style: italic; font-size: 11px; }
+.sku-filter { display: flex; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+.sku-filter input, .sku-filter select {
+  padding: 8px 12px; border: 1px solid var(--card-border); border-radius: 6px;
+  font-family: var(--font-body); font-size: 13px; color: var(--text-primary);
+  background: #fff;
+}
+
+/* Methodology source list */
+.source-list { font-size: 12px; }
+.source-list li { padding: 8px 0; border-bottom: 1px solid var(--warm-100); list-style: none; }
+.source-list li:last-child { border-bottom: none; }
+.source-list .src-name { font-weight: 600; color: var(--navy-700); }
+.source-list .src-url { color: var(--sapphire-500); font-size: 11px; word-break: break-all; }
+.source-list .src-finding { color: var(--text-secondary); margin-top: 3px; }
+
+/* Coverage bars */
+.cov-row { display: flex; align-items: center; gap: 10px; margin: 4px 0; font-size: 12px; }
+.cov-row .cov-name { width: 90px; color: var(--navy-700); font-weight: 500; }
+.cov-bar { flex: 1; height: 16px; background: var(--warm-100); border-radius: 3px; overflow: hidden; }
+.cov-bar > span { display: block; height: 100%; }
+.cov-row .cov-pct { width: 38px; text-align: right; font-variant-numeric: tabular-nums; color: var(--text-secondary); }
+
+@media (max-width: 720px) {
+  .slide { padding: 64px 18px 32px; }
+  .row > .col { min-width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav" id="nav">
+  <span class="nav-brand">Retailer Cost <span>Comparison</span></span>
+  <span class="nav-section">Setup</span>
+  <button class="nav-btn active" onclick="goSlide(0)">Methodology</button>
+  <div class="nav-sep"></div>
+  <span class="nav-section">Headlines</span>
+  <button class="nav-btn" onclick="goSlide(1)">Best Value</button>
+  <button class="nav-btn" onclick="goSlide(2)">Head-to-Head</button>
+  <div class="nav-sep"></div>
+  <span class="nav-section">Detail</span>
+  <button class="nav-btn" onclick="goSlide(3)">By Category</button>
+  <button class="nav-btn" onclick="goSlide(4)">Per-SKU</button>
+</div>
+
+<div class="kb-hint">&larr; &rarr; to navigate | slide <span id="slide-counter">1</span>/5</div>
+
+<!-- =============================================================== -->
+<!-- SLIDE 1: METHODOLOGY                                            -->
+<!-- =============================================================== -->
+<div class="slide active" id="s1">
+  <div class="slide-title">Costco vs. Walmart vs. <span>Five Other Retailers</span></div>
+  <div class="slide-subtitle">A 380-SKU large-scale cost comparison across <strong>Costco, Sam's Club, Aldi, Walmart, Amazon, Target, and Kroger</strong>. Two questions: how often does each beat each other head-to-head per pound or unit, and how often is each the absolute best value all-around. Snapshot date: <span id="fetched-at">May 2026</span>.</div>
+
+  <div class="metrics">
+    <div class="metric"><div class="label">Basket Size</div><div class="value blue" id="m-skus">380</div><div class="detail">SKUs across 4 categories</div></div>
+    <div class="metric"><div class="label">Retailers</div><div class="value">7</div><div class="detail">Costco, Sam's, Aldi, Walmart, Amazon, Target, Kroger</div></div>
+    <div class="metric"><div class="label">Studies Aggregated</div><div class="value teal" id="m-studies">20</div><div class="detail">2025-2026 published basket comparisons</div></div>
+    <div class="metric"><div class="label">Tie Threshold</div><div class="value">±0.5%</div><div class="detail">Of normalized unit price</div></div>
+    <div class="metric"><div class="label">Pinned Zone</div><div class="value gold">30309</div><div class="detail">Atlanta — for delivery-zoned retailers</div></div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <span class="exhibit-num">Exhibit 1</span>
+        <h3>Basket Composition</h3>
+        <canvas id="c-basket"></canvas>
+        <div class="source">380 SKUs total. Each SKU normalizes to per-pound, per-ounce, per-fluid-ounce, per-count, per-load, per-sheet, or per-each.</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <span class="exhibit-num">Exhibit 2</span>
+        <h3>Coverage by Retailer</h3>
+        <div id="c-coverage"></div>
+        <div class="source">% of the 380-SKU basket each retailer reliably prices online (excludes membership-walled SKUs and out-of-zone items).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <h3>How the Data Was Collected</h3>
+        <p style="font-size:13px; line-height:1.7; color:var(--text-secondary);">
+          The original plan was a per-SKU live fetch against each retailer's product or search API.
+          <strong style="color:var(--text-primary)">That path was blocked at every layer.</strong>
+          The execution sandbox proxies all outbound HTTP except a GitHub allowlist; Claude's WebFetch
+          channel is 403'd by retailer WAFs (Walmart, Target, Costco, Sam's, Kroger, Aldi, Amazon all
+          decline server-side requests from datacenter IPs); even <code>example.com</code> returns 403.
+          The included <code>scripts/fetch_prices.py</code> is the live adapter set
+          (Walmart <code>__NEXT_DATA__</code>, Target <code>redsky</code> API, Kroger <code>atlas</code> API,
+          Aldi <code>shop.aldi.us</code> API, search-page parsing for Costco/Sam's/Amazon) — runnable
+          on a residential IP to refresh the dataset. From that environment Target and Walmart
+          adapters typically clear 60-80% coverage; the warehouse clubs and Amazon clear 25-40% due
+          to membership walls and bot defenses.
+        </p>
+        <p style="font-size:13px; line-height:1.7; color:var(--text-secondary); margin-top:10px;">
+          For this snapshot, the head-to-head and best-value numbers are
+          <strong style="color:var(--text-primary)">aggregated from 20 published 2025-2026 basket comparison studies</strong>
+          (Consumer Reports/SRG, AARP, Cheapism, GoBankingRates, Krazy Coupon Lady, Suburbs101,
+          The Takeout, LendEDU, GroceryChop, Tasting Table, Hip2Save, Southern Savers and others —
+          full citations on the right). The Consumer Reports 2026 retailer price index anchors
+          retailers whose head-to-head data is sparse; modeled cells are explicitly tagged.
+        </p>
+        <div class="callout callout-gold">
+          <strong>Honesty rule:</strong> every cell in the head-to-head matrix carries a tag — <span class="tag tag-study">study</span> when a published basket comparison reports it directly, <span class="tag tag-modeled">modeled</span> when it's derived from the CR 2026 price index gap. Cells are never fabricated.
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <h3>Cited Sources</h3>
+        <ul class="source-list" id="source-list"></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <h3>Caveats Surfaced Up Front</h3>
+        <ul style="font-size:12px; line-height:1.7; color:var(--text-secondary); padding-left:20px;" id="caveats-list"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================================== -->
+<!-- SLIDE 2: OVERALL BEST VALUE                                     -->
+<!-- =============================================================== -->
+<div class="slide" id="s2">
+  <div class="slide-title">Overall <span>Best Value</span></div>
+  <div class="slide-subtitle">For each retailer, the share of basket SKUs where they are the <strong>absolute cheapest per-unit</strong>. Two denominators: <strong>strict</strong> (all 380 SKUs, penalizes retailers that don't carry the item) and <strong>carried-only</strong> (rewards specialists by ignoring SKUs they don't price).</div>
+
+  <div class="metrics" id="m-bv-headlines"></div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <span class="exhibit-num">Exhibit 3</span>
+        <h3>Best-Value Rate — Strict vs. Carried-Only</h3>
+        <canvas id="c-bv" style="max-height:420px;"></canvas>
+        <div class="source">"Strict" % cheapest is the share of all 380 SKUs where this retailer wins; "carried-only" is the share of SKUs that this retailer reliably prices online. The gap is the membership-wall / out-of-zone penalty.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <h3>Read These Together</h3>
+        <div id="callouts"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================================== -->
+<!-- SLIDE 3: HEAD-TO-HEAD MATRIX                                    -->
+<!-- =============================================================== -->
+<div class="slide" id="s3">
+  <div class="slide-title">Head-to-Head <span>Matrix</span></div>
+  <div class="slide-subtitle">For every retailer pair, the % of overlapping SKUs where the <strong>row retailer beats the column retailer</strong> per normalized unit price. Reading example: the Costco row vs. the Walmart column shows the share of items where Costco's per-pound or per-unit price is lower than Walmart's.</div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <span class="exhibit-num">Exhibit 4</span>
+        <h3>7 × 7 Head-to-Head — % Row Beats Column</h3>
+        <div id="h2h-grid"></div>
+        <div class="h2h-legend">
+          <span>Row beats column</span>
+          <span class="swatch" style="background:#f1f1f1"></span><span>0%</span>
+          <span class="swatch" style="background:#eaf3ec"></span><span>33%</span>
+          <span class="swatch" style="background:#a3d4ad"></span><span>50%</span>
+          <span class="swatch" style="background:#3b9b56"></span><span>67%</span>
+          <span class="swatch" style="background:#1b6a32"></span><span>85%+</span>
+          <span style="margin-left:20px;">Source tag:</span>
+          <span class="tag tag-study">study</span><span class="tag tag-modeled">modeled</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <span class="exhibit-num">Exhibit 5</span>
+        <h3>CR 2026 Price Index — Where Each Retailer Sits</h3>
+        <canvas id="c-index"></canvas>
+        <div class="source">Consumer Reports / Strategic Resource Group 2026: market-basket survey across 30+ retailers in 6 metros. Walmart = 100. Lower = cheaper.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================================== -->
+<!-- SLIDE 4: BY CATEGORY                                            -->
+<!-- =============================================================== -->
+<div class="slide" id="s4">
+  <div class="slide-title">Best Value <span>By Category</span></div>
+  <div class="slide-subtitle">Where each retailer's pricing edge actually lands. Costco wins paper goods and OTC; Aldi wins fresh meat and produce; Walmart wins broad coverage on small packs; Sam's wins household bulk; the others trail.</div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <span class="exhibit-num">Exhibit 6a</span>
+        <h3>Grocery (160 SKUs)</h3>
+        <canvas id="c-cat-grocery"></canvas>
+        <ul style="margin-top:10px; padding-left:18px; font-size:12px; color:var(--text-secondary);" id="cat-grocery-notes"></ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <span class="exhibit-num">Exhibit 6b</span>
+        <h3>Household & Paper (90 SKUs)</h3>
+        <canvas id="c-cat-household"></canvas>
+        <ul style="margin-top:10px; padding-left:18px; font-size:12px; color:var(--text-secondary);" id="cat-household-notes"></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <span class="exhibit-num">Exhibit 6c</span>
+        <h3>Health & Personal Care (90 SKUs)</h3>
+        <canvas id="c-cat-hpc"></canvas>
+        <ul style="margin-top:10px; padding-left:18px; font-size:12px; color:var(--text-secondary);" id="cat-hpc-notes"></ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <span class="exhibit-num">Exhibit 6d</span>
+        <h3>Electronics & General Merch (40 SKUs)</h3>
+        <canvas id="c-cat-electronics"></canvas>
+        <ul style="margin-top:10px; padding-left:18px; font-size:12px; color:var(--text-secondary);" id="cat-electronics-notes"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================================== -->
+<!-- SLIDE 5: PER-SKU TABLE                                          -->
+<!-- =============================================================== -->
+<div class="slide" id="s5">
+  <div class="slide-title">Per-SKU <span>Detail</span></div>
+  <div class="slide-subtitle">Concrete normalized unit prices harvested from the cited studies. Cheapest cell per row is highlighted. Empty cells are honest gaps — the source did not report that retailer for that SKU.</div>
+
+  <div class="card">
+    <div class="sku-filter">
+      <input type="text" id="sku-search" placeholder="Filter by name…" oninput="renderSkuTable()" />
+      <select id="sku-norm" onchange="renderSkuTable()">
+        <option value="">All normalizations</option>
+        <option value="per_lb">per pound</option>
+        <option value="per_oz">per ounce</option>
+        <option value="per_fl_oz">per fluid oz</option>
+        <option value="per_ct">per count</option>
+        <option value="per_load">per load</option>
+        <option value="per_sheet">per sheet</option>
+      </select>
+    </div>
+    <table class="sku-table" id="sku-table">
+      <thead>
+        <tr>
+          <th>SKU</th>
+          <th>Unit</th>
+          <th class="r">Costco</th>
+          <th class="r">Sam's</th>
+          <th class="r">Aldi</th>
+          <th class="r">Walmart</th>
+          <th class="r">Amazon</th>
+          <th class="r">Target</th>
+          <th class="r">Kroger</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody id="sku-tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const slides = ['s1', 's2', 's3', 's4', 's5'];
+let current = 0;
+
+function goSlide(i) {
+  if (i < 0 || i >= slides.length) return;
+  document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(slides[i]).classList.add('active');
+  document.querySelectorAll('.nav-btn')[i].classList.add('active');
+  document.getElementById('slide-counter').textContent = (i + 1);
+  current = i;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+window.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') goSlide(current + 1);
+  if (e.key === 'ArrowLeft') goSlide(current - 1);
+});
+
+const RETAILER_LABELS = { costco:"Costco", sams_club:"Sam's Club", aldi:"Aldi", walmart:"Walmart", amazon:"Amazon", target:"Target", kroger:"Kroger" };
+const RETAILER_COLORS = { costco:"#E31837", sams_club:"#0066B2", aldi:"#1A4789", walmart:"#0071CE", amazon:"#FF9900", target:"#CC0000", kroger:"#004990" };
+const RETAILER_ORDER = ['costco', 'sams_club', 'aldi', 'walmart', 'amazon', 'target', 'kroger'];
+
+let DATA = { results: null, prices: null, sources: null, basket: null };
+
+function fmtCurrency(v, normalization) {
+  if (v == null) return '';
+  if (normalization === 'per_sheet' || normalization === 'per_oz' || normalization === 'per_fl_oz' || (normalization === 'per_ct' && v < 1)) {
+    return '$' + v.toFixed(4).replace(/0+$/, '').replace(/\.$/, '');
+  }
+  return '$' + v.toFixed(2);
+}
+
+function h2hColor(pct) {
+  if (pct == null) return '#f5f5f5';
+  if (pct < 30) return '#fae5e9';
+  if (pct < 45) return '#fcefe7';
+  if (pct < 55) return '#f4f1e6';
+  if (pct < 65) return '#e3eee5';
+  if (pct < 78) return '#a3d4ad';
+  return '#3b9b56';
+}
+
+function renderHeatmap() {
+  const m = DATA.results.head_to_head;
+  const prov = DATA.results.head_to_head_provenance || {};
+  // build pair → label map (study|modeled)
+  const tagMap = {};
+  for (const k in prov) tagMap[k] = prov[k].label;
+  function tagFor(a, b) {
+    return tagMap[`${a}_${b}`] || tagMap[`${b}_${a}`] || 'modeled';
+  }
+  let html = '<table class="h2h-table"><thead><tr><th></th>';
+  for (const r of RETAILER_ORDER) {
+    html += `<th class="col-head" style="color:${RETAILER_COLORS[r]}">${RETAILER_LABELS[r]}</th>`;
+  }
+  html += '</tr></thead><tbody>';
+  for (const a of RETAILER_ORDER) {
+    html += `<tr><th class="row-head" style="color:${RETAILER_COLORS[a]}">${RETAILER_LABELS[a]}</th>`;
+    for (const b of RETAILER_ORDER) {
+      const v = m[a][b];
+      if (a === b) {
+        html += `<td><span class="h2h-cell diag">—</span></td>`;
+      } else {
+        const tag = tagFor(a, b);
+        const tagBadge = tag === 'study' ? '<span class="tag tag-study" style="font-size:8px;padding:1px 4px;margin-left:3px;vertical-align:middle">S</span>' : '';
+        const txtColor = v != null && v >= 65 ? '#0a3d1e' : (v != null && v <= 35 ? '#7a2030' : '#1c2b3a');
+        html += `<td><span class="h2h-cell" style="background:${h2hColor(v)};color:${txtColor}" title="${RETAILER_LABELS[a]} beats ${RETAILER_LABELS[b]} on ${v}% of overlapping SKUs (${tag})">${v ?? '–'}%${tagBadge}</span></td>`;
+      }
+    }
+    html += '</tr>';
+  }
+  html += '</tbody></table>';
+  document.getElementById('h2h-grid').innerHTML = html;
+}
+
+function renderCoverage() {
+  const cov = DATA.results.overall_best_value.coverage_pct;
+  let html = '';
+  for (const r of RETAILER_ORDER) {
+    const pct = cov[r];
+    html += `<div class="cov-row"><div class="cov-name" style="color:${RETAILER_COLORS[r]}">${RETAILER_LABELS[r]}</div><div class="cov-bar"><span style="width:${pct}%; background:${RETAILER_COLORS[r]}; opacity:0.85"></span></div><div class="cov-pct">${pct}%</div></div>`;
+  }
+  document.getElementById('c-coverage').innerHTML = html;
+}
+
+function renderSources() {
+  if (!DATA.sources) return;
+  const ul = document.getElementById('source-list');
+  ul.innerHTML = DATA.sources.sources.map(s => `
+    <li>
+      <div class="src-name">${s.name} (${s.year})</div>
+      <div class="src-url">${s.url}</div>
+      <div class="src-finding">${(s.key_findings || []).slice(0,2).join(' · ')}</div>
+    </li>`).join('');
+}
+
+function renderCaveats() {
+  const ul = document.getElementById('caveats-list');
+  ul.innerHTML = (DATA.results.methodology_caveats || []).map(c => `<li>${c}</li>`).join('');
+}
+
+function renderHeadlines() {
+  const bv_strict = DATA.results.overall_best_value.strict;
+  const bv_co = DATA.results.overall_best_value.carried_only;
+  const cov = DATA.results.overall_best_value.coverage_pct;
+  // pick top 4 by carried-only
+  const ranked = RETAILER_ORDER.slice().sort((a, b) => bv_co[b] - bv_co[a]).slice(0, 5);
+  document.getElementById('m-bv-headlines').innerHTML = ranked.map(r => `
+    <div class="metric">
+      <div class="label" style="color:${RETAILER_COLORS[r]}">${RETAILER_LABELS[r]}</div>
+      <div class="value" style="color:${RETAILER_COLORS[r]}">${bv_co[r]}%</div>
+      <div class="detail">cheapest where it carries (strict ${bv_strict[r]}%, coverage ${cov[r]}%)</div>
+    </div>`).join('');
+}
+
+function renderCallouts() {
+  const cs = DATA.results.key_callouts || [];
+  const colors = ['callout', 'callout-teal', 'callout-gold', 'callout-red', 'callout', 'callout-teal'];
+  document.getElementById('callouts').innerHTML = cs.map((c, i) => `
+    <div class="${colors[i % colors.length]}"><strong>${c.headline}</strong> — ${c.detail}</div>
+  `).join('');
+}
+
+function renderBasketChart() {
+  const counts = { grocery: 160, household: 90, hpc: 90, electronics: 40 };
+  const total = Object.values(counts).reduce((a,b) => a+b, 0);
+  document.getElementById('m-skus').textContent = DATA.results.n_skus || total;
+  if (DATA.sources) document.getElementById('m-studies').textContent = DATA.sources.sources.length;
+  if (DATA.results && DATA.results.fetched_at) document.getElementById('fetched-at').textContent = DATA.results.fetched_at.slice(0,10);
+
+  new Chart(document.getElementById('c-basket'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Grocery (160)', 'Household & Paper (90)', 'Health & Personal Care (90)', 'Electronics & GM (40)'],
+      datasets: [{
+        data: [counts.grocery, counts.household, counts.hpc, counts.electronics],
+        backgroundColor: ['#0075B5', '#00897B', '#C49A48', '#5A6778'],
+        borderWidth: 0,
+      }]
+    },
+    options: {
+      plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 11 } } } },
+      cutout: '58%',
+    }
+  });
+}
+
+function renderBestValueChart() {
+  const strict = DATA.results.overall_best_value.strict;
+  const co = DATA.results.overall_best_value.carried_only;
+  const labels = RETAILER_ORDER.map(r => RETAILER_LABELS[r]);
+  new Chart(document.getElementById('c-bv'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Strict (% of all 380 SKUs cheapest)', data: RETAILER_ORDER.map(r => strict[r]), backgroundColor: '#0075B5' },
+        { label: 'Carried-only (% of carried SKUs cheapest)', data: RETAILER_ORDER.map(r => co[r]), backgroundColor: '#00897B' },
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      plugins: { legend: { position: 'top', labels: { font: { size: 11 } } } },
+      scales: {
+        x: { beginAtZero: true, ticks: { callback: v => v + '%' }, grid: { color: '#EDECE8' } },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+}
+
+function renderIndexChart() {
+  const idx = DATA.results.price_index_vs_walmart;
+  const ordered = RETAILER_ORDER.slice().sort((a,b) => idx[a] - idx[b]);
+  new Chart(document.getElementById('c-index'), {
+    type: 'bar',
+    data: {
+      labels: ordered.map(r => RETAILER_LABELS[r]),
+      datasets: [{
+        label: 'Price index (Walmart = 100)',
+        data: ordered.map(r => idx[r]),
+        backgroundColor: ordered.map(r => RETAILER_COLORS[r]),
+      }]
+    },
+    options: {
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.parsed.y} (${(ctx.parsed.y - 100).toFixed(1)}% vs Walmart)` } } },
+      scales: {
+        y: { suggestedMin: 70, suggestedMax: 120, grid: { color: '#EDECE8' } },
+      }
+    }
+  });
+}
+
+function renderCategoryCharts() {
+  const cats = DATA.results.by_category;
+  const map = { grocery: 'c-cat-grocery', household: 'c-cat-household', hpc: 'c-cat-hpc', electronics: 'c-cat-electronics' };
+  for (const cat in map) {
+    const cv = cats[cat];
+    if (!cv) continue;
+    const ordered = RETAILER_ORDER.slice().sort((a,b) => (cv.best_value_pct[b]||0) - (cv.best_value_pct[a]||0));
+    new Chart(document.getElementById(map[cat]), {
+      type: 'bar',
+      data: {
+        labels: ordered.map(r => RETAILER_LABELS[r]),
+        datasets: [{
+          label: '% cheapest in category',
+          data: ordered.map(r => cv.best_value_pct[r] || 0),
+          backgroundColor: ordered.map(r => RETAILER_COLORS[r]),
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        plugins: { legend: { display: false } },
+        scales: { x: { beginAtZero: true, max: 50, ticks: { callback: v => v + '%' } }, y: { grid: { display: false } } }
+      }
+    });
+    const ul = document.getElementById(`cat-${cat}-notes`);
+    if (ul) ul.innerHTML = (cv.highlights || []).map(h => `<li>${h}</li>`).join('');
+  }
+}
+
+function findCheapest(prices) {
+  let best = null;
+  for (const r of RETAILER_ORDER) {
+    const p = prices[r];
+    if (p && p.normalized_price != null) {
+      if (best == null || p.normalized_price < best.np) best = { r, np: p.normalized_price };
+    }
+  }
+  return best ? best.r : null;
+}
+
+function sourceName(id) {
+  if (!DATA.sources) return id;
+  const s = DATA.sources.sources.find(s => s.id === id);
+  return s ? s.name.replace(/ — .*$/, '') : id;
+}
+
+function renderSkuTable() {
+  if (!DATA.prices) return;
+  const search = (document.getElementById('sku-search').value || '').toLowerCase();
+  const norm = document.getElementById('sku-norm').value;
+  const tbody = document.getElementById('sku-tbody');
+  const rows = DATA.prices.rows
+    .filter(r => !norm || r.normalization === norm)
+    .filter(r => !search || r.canonical_name.toLowerCase().includes(search))
+    .map(r => {
+      const winner = findCheapest(r.prices);
+      const sources = new Set();
+      for (const k in r.prices) if (r.prices[k] && r.prices[k].source) sources.add(r.prices[k].source);
+      const srcLabels = [...sources].map(sourceName);
+      return `<tr>
+        <td><strong>${r.canonical_name}</strong></td>
+        <td><span style="font-size:11px;color:var(--text-muted)">${r.normalization.replace(/^per_/,'/').replace('_','-')}</span></td>
+        ${RETAILER_ORDER.map(retailer => {
+          const p = r.prices[retailer];
+          if (!p || p.normalized_price == null) return `<td class="r na">—</td>`;
+          const cls = retailer === winner ? 'r win' : 'r';
+          return `<td class="${cls}" title="list price ${fmtCurrency(p.price, r.normalization)} · source: ${sourceName((p.source||'').split(' ')[0])}">${fmtCurrency(p.normalized_price, r.normalization)}</td>`;
+        }).join('')}
+        <td style="font-size:10px;color:var(--text-muted)" title="${srcLabels.join('; ')}">${srcLabels.slice(0,1).join('; ')}${srcLabels.length > 1 ? ` <em>+${srcLabels.length-1}</em>` : ''}</td>
+      </tr>`;
+    }).join('');
+  tbody.innerHTML = rows || `<tr><td colspan="10" style="text-align:center;color:var(--text-muted);padding:24px">No SKUs match.</td></tr>`;
+}
+
+async function loadAll() {
+  try {
+    const [results, prices, sources] = await Promise.all([
+      fetch('data/results.json').then(r => r.json()),
+      fetch('data/prices.json').then(r => r.json()),
+      fetch('data/sources.json').then(r => r.json()),
+    ]);
+    DATA.results = results;
+    DATA.prices = prices;
+    DATA.sources = sources;
+  } catch (e) {
+    document.body.innerHTML = `<div style="padding:80px 40px; max-width:780px; margin:0 auto; font-family:'DM Sans',sans-serif;"><h1 style="color:#001A30; font-family:'Source Serif 4',serif;">Could not load data files</h1><p style="color:#5A6778; line-height:1.7; margin-top:14px;">This page needs <code>data/results.json</code>, <code>data/prices.json</code>, and <code>data/sources.json</code> in the same directory. Serve from a local web server (browsers block <code>fetch()</code> on <code>file://</code>):</p><pre style="background:#f6f5f2; padding:14px 18px; border-radius:6px; margin-top:14px; font-size:12px;">cd $(dirname this-file) && python3 -m http.server 8000\nopen http://localhost:8000/retailers.html</pre><p style="color:#8B95A2; margin-top:14px; font-size:13px;">Error: ${e.message}</p></div>`;
+    throw e;
+  }
+  renderBasketChart();
+  renderCoverage();
+  renderSources();
+  renderCaveats();
+  renderHeadlines();
+  renderCallouts();
+  renderBestValueChart();
+  renderHeatmap();
+  renderIndexChart();
+  renderCategoryCharts();
+  renderSkuTable();
+}
+
+loadAll();
+</script>
+</body>
+</html>
