@@ -1,0 +1,341 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://falfurrias.local/cim-extraction.schema.json",
+  "title": "CIM Extraction Schema",
+  "description": "Audited extraction for a Falfurrias CIM workup. Every leaf value is a Cited<T>.",
+  "type": "object",
+  "required": ["provenance", "company_and_transaction", "business_model", "financials", "market_and_competition", "customers_and_concentration", "management_and_employees", "risks_and_legal"],
+  "$defs": {
+    "Cited": {
+      "type": "object",
+      "required": ["value", "quote", "page", "source_type", "confidence"],
+      "properties": {
+        "value": {},
+        "quote": { "type": "string" },
+        "page": { "type": ["integer", "null"] },
+        "source_type": { "enum": ["stated", "computed", "inferred", "not_found"] },
+        "confidence": { "enum": ["high", "medium", "low"] },
+        "derivation": { "type": "string", "description": "Required when source_type=computed" },
+        "figure_or_chart_ref": { "type": "string" },
+        "quote_continues_from_prior_page": { "type": "boolean" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "source_type": { "const": "computed" } } },
+          "then": { "required": ["derivation"] }
+        },
+        {
+          "if": { "properties": { "source_type": { "const": "not_found" } } },
+          "then": {
+            "properties": {
+              "value": { "const": null },
+              "quote": { "const": "" }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "properties": {
+    "provenance": {
+      "type": "object",
+      "required": ["cim_path", "total_pages", "extracted_at", "extractor_version"],
+      "properties": {
+        "cim_path": { "type": "string" },
+        "total_pages": { "type": "integer" },
+        "extracted_at": { "type": "string", "format": "date-time" },
+        "extractor_version": { "type": "string" },
+        "audit_status": { "enum": ["pending", "clean", "flagged"] }
+      }
+    },
+    "company_and_transaction": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "object",
+          "properties": {
+            "legal_name": { "$ref": "#/$defs/Cited" },
+            "dba": { "$ref": "#/$defs/Cited" },
+            "hq_city_state": { "$ref": "#/$defs/Cited" },
+            "founded_year": { "$ref": "#/$defs/Cited" },
+            "ownership": { "$ref": "#/$defs/Cited" },
+            "current_owners": { "$ref": "#/$defs/Cited" }
+          }
+        },
+        "transaction": {
+          "type": "object",
+          "properties": {
+            "advisor": { "$ref": "#/$defs/Cited" },
+            "process_type": { "$ref": "#/$defs/Cited" },
+            "process_timeline": {
+              "type": "object",
+              "properties": {
+                "iol_due": { "$ref": "#/$defs/Cited" },
+                "lol_due": { "$ref": "#/$defs/Cited" },
+                "expected_close": { "$ref": "#/$defs/Cited" }
+              }
+            },
+            "asking_range": { "$ref": "#/$defs/Cited" },
+            "proposed_structure": { "$ref": "#/$defs/Cited" },
+            "rollover_expectation": { "$ref": "#/$defs/Cited" },
+            "management_rollover": { "$ref": "#/$defs/Cited" }
+          }
+        }
+      }
+    },
+    "business_model": {
+      "type": "object",
+      "properties": {
+        "description_one_sentence": { "$ref": "#/$defs/Cited" },
+        "products_services": { "$ref": "#/$defs/Cited" },
+        "revenue_model": { "$ref": "#/$defs/Cited" },
+        "recurring_revenue_pct": { "$ref": "#/$defs/Cited" },
+        "recurring_definition": { "$ref": "#/$defs/Cited" },
+        "avg_contract_length_months": { "$ref": "#/$defs/Cited" },
+        "pricing_model": { "$ref": "#/$defs/Cited" },
+        "customer_segments": { "$ref": "#/$defs/Cited" },
+        "gtm_channels": { "$ref": "#/$defs/Cited" },
+        "geography_pct": {
+          "type": "object",
+          "properties": {
+            "us": { "$ref": "#/$defs/Cited" },
+            "international": { "$ref": "#/$defs/Cited" }
+          }
+        },
+        "seasonality": { "$ref": "#/$defs/Cited" },
+        "unit_economics": {
+          "type": "object",
+          "properties": {
+            "cac": { "$ref": "#/$defs/Cited" },
+            "ltv": { "$ref": "#/$defs/Cited" },
+            "payback_months": { "$ref": "#/$defs/Cited" },
+            "gross_margin_per_unit": { "$ref": "#/$defs/Cited" }
+          }
+        }
+      }
+    },
+    "financials": {
+      "type": "object",
+      "properties": {
+        "fiscal_year_end": { "$ref": "#/$defs/Cited" },
+        "revenue": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/Cited" }
+        },
+        "gross_profit": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/Cited" }
+        },
+        "gross_margin_pct": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/Cited" }
+        },
+        "ebitda": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/Cited" }
+        },
+        "ebitda_adjustments": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": { "type": "string" },
+                "amount": { "$ref": "#/$defs/Cited" },
+                "justification_quote": { "type": "string" }
+              }
+            }
+          }
+        },
+        "ebitda_margin_pct": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/Cited" }
+        },
+        "capex": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/Cited" }
+        },
+        "fcf": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/Cited" }
+        },
+        "working_capital": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/Cited" }
+        },
+        "debt": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/Cited" }
+        },
+        "cash": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/Cited" }
+        },
+        "revenue_bridge": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "component": { "type": "string" },
+                "amount": { "$ref": "#/$defs/Cited" }
+              }
+            }
+          }
+        },
+        "kpis": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/Cited" }
+        },
+        "projection_assumptions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Cited" }
+        },
+        "projection_credibility_signals": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Cited" }
+        }
+      }
+    },
+    "market_and_competition": {
+      "type": "object",
+      "properties": {
+        "tam_usd": { "$ref": "#/$defs/Cited" },
+        "tam_source": { "$ref": "#/$defs/Cited" },
+        "sam_usd": { "$ref": "#/$defs/Cited" },
+        "growth_rate_cagr_pct": { "$ref": "#/$defs/Cited" },
+        "growth_horizon": { "$ref": "#/$defs/Cited" },
+        "target_share_pct": { "$ref": "#/$defs/Cited" },
+        "top_competitors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "$ref": "#/$defs/Cited" },
+              "revenue_or_share": { "$ref": "#/$defs/Cited" },
+              "positioning_quote": { "type": "string" }
+            }
+          }
+        },
+        "competitive_themes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Cited" }
+        },
+        "disruption_risks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Cited" }
+        }
+      }
+    },
+    "customers_and_concentration": {
+      "type": "object",
+      "properties": {
+        "top10": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name_or_label": { "$ref": "#/$defs/Cited" },
+              "pct_revenue": { "$ref": "#/$defs/Cited" },
+              "tenure_years": { "$ref": "#/$defs/Cited" },
+              "contract_type": { "$ref": "#/$defs/Cited" },
+              "contract_remaining": { "$ref": "#/$defs/Cited" }
+            }
+          }
+        },
+        "top1_pct": { "$ref": "#/$defs/Cited" },
+        "top10_total_pct": { "$ref": "#/$defs/Cited" },
+        "churn": {
+          "type": "object",
+          "properties": {
+            "gross_pct": { "$ref": "#/$defs/Cited" },
+            "net_pct": { "$ref": "#/$defs/Cited" }
+          }
+        },
+        "avg_tenure_years": { "$ref": "#/$defs/Cited" },
+        "contract_renewal_rate": { "$ref": "#/$defs/Cited" },
+        "named_anchors": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Cited" }
+        },
+        "customer_acquisition_costs": { "$ref": "#/$defs/Cited" }
+      }
+    },
+    "management_and_employees": {
+      "type": "object",
+      "properties": {
+        "key_execs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "$ref": "#/$defs/Cited" },
+              "title": { "$ref": "#/$defs/Cited" },
+              "tenure_years": { "$ref": "#/$defs/Cited" },
+              "prior_roles": { "$ref": "#/$defs/Cited" },
+              "equity_rollover_signal": { "$ref": "#/$defs/Cited" }
+            }
+          }
+        },
+        "ceo_will_stay": { "$ref": "#/$defs/Cited" },
+        "equity_rollover": { "$ref": "#/$defs/Cited" },
+        "employees": {
+          "type": "object",
+          "properties": {
+            "total_fte": { "$ref": "#/$defs/Cited" },
+            "attrition_pct": { "$ref": "#/$defs/Cited" },
+            "union_status": { "$ref": "#/$defs/Cited" },
+            "geography_concentration": { "$ref": "#/$defs/Cited" },
+            "key_dependencies": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/Cited" }
+            }
+          }
+        }
+      }
+    },
+    "risks_and_legal": {
+      "type": "object",
+      "properties": {
+        "litigation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": { "$ref": "#/$defs/Cited" },
+              "status": { "$ref": "#/$defs/Cited" },
+              "exposure": { "$ref": "#/$defs/Cited" }
+            }
+          }
+        },
+        "regulatory": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Cited" }
+        },
+        "customer_concentration": { "$ref": "#/$defs/Cited" },
+        "supplier_concentration": { "$ref": "#/$defs/Cited" },
+        "ip_status": { "$ref": "#/$defs/Cited" },
+        "cyber_incidents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": { "$ref": "#/$defs/Cited" },
+              "year": { "$ref": "#/$defs/Cited" }
+            }
+          }
+        },
+        "environmental": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Cited" }
+        },
+        "kpi_deltas": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Cited" }
+        }
+      }
+    }
+  }
+}
